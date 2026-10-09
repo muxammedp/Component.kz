@@ -1,0 +1,11 @@
+import {test} from 'node:test';
+import assert from 'node:assert/strict';
+import {seedProducts as all,evaluate,recommend} from '../catalog.mjs';
+const parts=ids=>ids.map(id=>all.find(p=>p.id===id));
+test('compatible complete build, power headroom, exact total',()=>{const p=parts([2,3,4,1,24,26,29,31]);const e=evaluate(p);assert.equal(e.complete,true);assert.deepEqual(e.errors,[]);assert.equal(e.total,p.reduce((s,p)=>s+p.price,0));assert.ok(e.recommendedPower>e.watts)});
+test('reject mismatched CPU socket and RAM type',()=>{const e=evaluate(parts([17,3,22]));assert.equal(e.errors.length,2);assert.equal(e.compatible,false);assert.ok(e.missing.includes('gpu'))});
+test('detect inadequate power and oversized GPU and cooler',()=>{const p=parts([17,19,22,11,24,27,29,31]).map(p=>({...p,spec:{...p.spec}}));p.find(p=>p.category==='psu').spec.power=300;p.find(p=>p.category==='case').spec.gpuMax=200;p.find(p=>p.category==='case').spec.coolerMax=100;const e=evaluate(p);assert.equal(e.errors.length,3)});
+test('price value declines as asking price increases',()=>{const p=parts([2,3,4,1,24,26,29,31]);assert.ok(evaluate(p,900000).value<evaluate(p,450000).value)});
+test('automatic configurations honor budget, condition and compatibility',()=>{for(const condition of ['new','used','mixed']){const r=recommend(all,500000,condition,'games');assert.ok(r,condition);assert.ok(r.evaluation.complete);assert.ok(r.evaluation.compatible);assert.ok(r.evaluation.total<=500000);if(condition!=='mixed')assert.ok(r.parts.every(p=>p.condition===condition));assert.equal(new Set(r.parts.map(p=>p.category)).size,r.parts.length)}});
+test('insufficient budget returns no misleading partial configuration',()=>{assert.equal(recommend(all,100000,'new'),null)});
+test('partial configuration never claims full performance',()=>{const e=evaluate(parts([2,3]));assert.equal(e.complete,false);assert.equal(e.performance,null);assert.equal(e.value,null)});
