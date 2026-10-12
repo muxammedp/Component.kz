@@ -108,6 +108,70 @@ try {
  await navigate('catalog?sort=cheap&page=2&max=1000000');await evaluate('window.scrollTo(0,650)');const catalogPosition=await evaluate('scrollY'),catalogURL=await evaluate('location.hash');await click('.product-title');await wait('!!document.querySelector(".catalog-return")');await shot('return-to-results-desktop');await call('Page.reload');await wait('!!document.querySelector(".catalog-return")');await click('[data-action="catalog-return"]');await wait('!!document.querySelector(".catalog-toolbar")');await wait('document.activeElement.classList.contains("product-title")');assert(await evaluate('location.hash')===catalogURL,'explicit return restores exact query URL including page and sort');assert(Math.abs((await evaluate('scrollY'))-catalogPosition)<5,'explicit return restores list scroll after product reload');
  await call('Emulation.setDeviceMetricsOverride',{width:390,height:844,deviceScaleFactor:1,mobile:true});await navigate('catalog?category=gpu');await click('[data-action="filters-toggle"]');await fill('#brand-search','msi');await evaluate('document.querySelector("#brand-search").dispatchEvent(new Event("input",{bubbles:true}))');await click('[data-brand="MSI"]');await wait('location.hash.includes("brand=MSI")');assert(await evaluate('document.querySelector("#filters").classList.contains("open")&&document.documentElement.scrollWidth<=innerWidth+1'),'brand refinement keeps mobile panel open');await shot('brand-search-mobile');await click('[data-action="filters-done"]');
 
+ await call('Emulation.setDeviceMetricsOverride',{width:1440,height:1080,deviceScaleFactor:1,mobile:false});
+ await call('Emulation.setEmulatedMedia',{features:[{name:'prefers-reduced-motion',value:'no-preference'}]});
+ await navigate('home');
+ await evaluate('document.querySelector("[data-theme-choice]").value="dark";document.querySelector("[data-theme-choice]").dispatchEvent(new Event("change",{bubbles:true}))');
+ assert(await evaluate('document.documentElement.dataset.theme==="dark"&&localStorage.getItem("component-theme")==="dark"'),'dark theme selectable and saved');
+ await shot('theme-dark-home');
+ await call('Page.reload');await wait('!!document.querySelector(".hero")');
+ assert(await evaluate('document.documentElement.dataset.theme==="dark"&&document.querySelector("[data-theme-choice]").value==="dark"'),'dark theme survives reload and control stays in sync');
+ await navigate('catalog?category=gpu');await shot('theme-dark-catalog');
+ assert(await evaluate('getComputedStyle(document.querySelector(".product-card")).backgroundColor==="rgb(20, 31, 48)"&&getComputedStyle(document.querySelector(".input")).color==="rgb(230, 237, 248)"'),'dark cards and filter inputs use readable theme colors');
+ for(const hash of ['catalog?category=gpu','catalog?category=cpu','builder','product/1','cart','compare']){
+   await navigate(hash);
+   assert(await evaluate('[...document.querySelectorAll(".sprite svg image")].every(image=>{const m=image.getScreenCTM();return Math.abs(m.a-m.d)<0.001})'),'illustration proportions preserved: '+hash);
+ }
+ await navigate('builder');await shot('theme-dark-builder');
+ await click('[data-action="assembly"]');await wait('!!document.querySelector("#checkout-form")');
+ assert(await evaluate('getComputedStyle(document.querySelector("dialog")).backgroundColor==="rgb(20, 31, 48)"'),'modal matches dark theme');await shot('theme-dark-modal');await click('[data-action="close-modal"]');
+ await evaluate('document.querySelector("[data-theme-choice]").value="system";document.querySelector("[data-theme-choice]").dispatchEvent(new Event("change",{bubbles:true}))');
+ await call('Emulation.setEmulatedMedia',{features:[{name:'prefers-color-scheme',value:'light'},{name:'prefers-reduced-motion',value:'no-preference'}]});await wait('document.documentElement.dataset.theme==="light"');
+ await call('Emulation.setEmulatedMedia',{features:[{name:'prefers-color-scheme',value:'dark'},{name:'prefers-reduced-motion',value:'no-preference'}]});await wait('document.documentElement.dataset.theme==="dark"');assert(true,'system theme follows live device preference changes');
+ await evaluate('document.querySelector("[data-theme-choice]").value="light";document.querySelector("[data-theme-choice]").dispatchEvent(new Event("change",{bubbles:true}))');
+ assert(await evaluate('document.documentElement.dataset.theme==="light"'),'explicit light choice overrides dark system');
+ await navigate('home');await shot('theme-light-home');
+ assert(await evaluate('getComputedStyle(document.querySelector(".hero-art .sprite")).animationName==="float-pc"'),'hero has gentle object movement');
+ await evaluate('document.querySelector("[data-motion-choice]").value="off";document.querySelector("[data-motion-choice]").dispatchEvent(new Event("change",{bubbles:true}))');
+ assert(await evaluate('document.documentElement.dataset.motion==="off"&&getComputedStyle(document.querySelector(".hero-art .sprite")).animationName==="none"'),'animation switch immediately stops movement');
+ await call('Page.reload');await wait('!!document.querySelector(".hero")');assert(await evaluate('document.documentElement.dataset.motion==="off"&&document.querySelector("[data-motion-choice]").value==="off"'),'animation preference survives reload');
+ await evaluate('document.querySelector("[data-motion-choice]").value="system";document.querySelector("[data-motion-choice]").dispatchEvent(new Event("change",{bubbles:true}))');
+ await call('Emulation.setEmulatedMedia',{features:[{name:'prefers-reduced-motion',value:'reduce'}]});await wait('document.documentElement.dataset.motion==="off"');assert(await evaluate('document.querySelector("[data-motion-choice]").value==="system"&&getComputedStyle(document.querySelector(".hero-art .sprite")).animationName==="none"'),'reduced-motion system setting disables animations');
+ await evaluate('document.querySelector("[data-motion-choice]").value="on";document.querySelector("[data-motion-choice]").dispatchEvent(new Event("change",{bubbles:true}))');
+ assert(await evaluate('document.documentElement.dataset.motion==="on"&&getComputedStyle(document.querySelector(".hero-art .sprite")).animationName==="float-pc"'),'explicit effects choice overrides reduced system motion');
+ await evaluate('window.scrollTo(0,0)');await new Promise(r=>setTimeout(r,100));
+ const parallaxStart=await evaluate('document.querySelector(".hero").style.getPropertyValue("--parallax-y")');
+ await call('Input.dispatchMouseEvent',{type:'mouseWheel',x:420,y:460,deltaX:0,deltaY:500});
+ await new Promise(r=>setTimeout(r,50));const intermediateScroll=await evaluate('scrollY');
+ assert(intermediateScroll>0&&intermediateScroll<500,'actual mouse wheel advances through intermediate scroll positions');
+ await wait('Math.abs(scrollY-500)<3');await new Promise(r=>setTimeout(r,100));
+ assert(await evaluate('scrollY')===500,'smooth wheel settles at requested distance');
+ assert(await evaluate('document.querySelector(".hero").style.getPropertyValue("--parallax-y")')!==parallaxStart,'hero parallax responds to actual scrolling');
+ await evaluate('window.scrollTo(0,0)');await new Promise(r=>setTimeout(r,100));
+ await call('Input.dispatchMouseEvent',{type:'mouseMoved',x:1000,y:350});await new Promise(r=>setTimeout(r,200));
+ assert(await evaluate('Math.abs(parseFloat(document.querySelector(".hero").style.getPropertyValue("--parallax-x")))>1'),'hero depth responds to mouse movement');
+ await shot('motion-parallax-desktop');
+ assert(await evaluate('getComputedStyle(document.querySelector(".hero-art .sprite")).animationIterationCount==="infinite"'),'floating objects continue while effects are enabled');
+ await call('Input.dispatchMouseEvent',{type:'mouseWheel',x:420,y:460,deltaX:0,deltaY:800});await navigate('catalog?category=gpu');await new Promise(r=>setTimeout(r,350));
+ assert(await evaluate('scrollY')===0,'route navigation cancels pending smooth scroll');
+ await evaluate('document.querySelector("#filters").scrollTop=0');
+ const filterWheelPoint=await evaluate('(()=>{const r=document.querySelector("#filters").getBoundingClientRect();return {x:r.left+30,y:r.top+80}})()');
+ await call('Input.dispatchMouseEvent',{type:'mouseWheel',...filterWheelPoint,deltaX:0,deltaY:180});await new Promise(r=>setTimeout(r,350));
+ assert(await evaluate('document.querySelector("#filters").scrollTop>0&&scrollY===0'),'wheel inside long filters scrolls sidebar without moving page');
+ await evaluate('document.querySelector("[data-motion-choice]").value="off";document.querySelector("[data-motion-choice]").dispatchEvent(new Event("change",{bubbles:true}))');
+ assert(await evaluate('document.body.dispatchEvent(new WheelEvent("wheel",{bubbles:true,cancelable:true,deltaY:120}))'),'effects off restores native wheel handling');
+ await evaluate('document.querySelector("[data-motion-choice]").value="on";document.querySelector("[data-motion-choice]").dispatchEvent(new Event("change",{bubbles:true}))');
+ assert(await evaluate('document.body.dispatchEvent(new WheelEvent("wheel",{bubbles:true,cancelable:true,deltaY:120,ctrlKey:true}))'),'pinch zoom wheel gesture is not intercepted');
+ await navigate('home');
+
+ await call('Emulation.setEmulatedMedia',{features:[{name:'prefers-reduced-motion',value:'no-preference'}]});await wait('document.documentElement.dataset.motion==="on"');
+ await evaluate('window.scrollTo(0,750)');await wait('!document.querySelector("#back-to-top").hidden');await click('#back-to-top');await wait('scrollY===0');assert(true,'back-to-top smoothly returns to header');
+ await call('Emulation.setDeviceMetricsOverride',{width:390,height:844,deviceScaleFactor:1,mobile:true});
+ await evaluate('document.querySelector("[data-theme-choice]").value="dark";document.querySelector("[data-theme-choice]").dispatchEvent(new Event("change",{bubbles:true}))');
+ await navigate('catalog?category=gpu');await shot('theme-dark-mobile');await click('[data-action="filters-toggle"]');await shot('theme-dark-filters-mobile');await click('[data-action="filters-done"]');
+ assert(await evaluate('document.documentElement.scrollWidth<=innerWidth+1&&document.querySelector("[data-theme-choice]").getBoundingClientRect().right<=innerWidth'),'mobile theme selector fits viewport');
+ await evaluate('document.querySelector("[data-theme-choice]").value="light";document.querySelector("[data-theme-choice]").dispatchEvent(new Event("change",{bubbles:true}))');
+
  for(const width of [360,390,768,1440]){
  await call('Emulation.setDeviceMetricsOverride',{width,height:844,deviceScaleFactor:1,mobile:width<600});
  for(const hash of ['home','catalog','builder','ai','product/1','profile','sell','cart','favorites','help','compare','edit/'+ownedId]){
