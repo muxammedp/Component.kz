@@ -131,14 +131,14 @@ try {
  await evaluate('document.querySelector("[data-theme-choice]").value="light";document.querySelector("[data-theme-choice]").dispatchEvent(new Event("change",{bubbles:true}))');
  assert(await evaluate('document.documentElement.dataset.theme==="light"'),'explicit light choice overrides dark system');
  await navigate('home');await shot('theme-light-home');
- assert(await evaluate('getComputedStyle(document.querySelector(".hero-art .sprite")).animationName==="float-pc"'),'hero has gentle object movement');
+ assert(await evaluate('getComputedStyle(document.querySelector(".hero-art .hero-photo")).animationName==="scene-breathe"'),'hero has gentle object movement');
  await evaluate('document.querySelector("[data-motion-choice]").value="off";document.querySelector("[data-motion-choice]").dispatchEvent(new Event("change",{bubbles:true}))');
- assert(await evaluate('document.documentElement.dataset.motion==="off"&&getComputedStyle(document.querySelector(".hero-art .sprite")).animationName==="none"'),'animation switch immediately stops movement');
+ assert(await evaluate('document.documentElement.dataset.motion==="off"&&getComputedStyle(document.querySelector(".hero-art .hero-photo")).animationName==="none"'),'animation switch immediately stops movement');
  await call('Page.reload');await wait('!!document.querySelector(".hero")');assert(await evaluate('document.documentElement.dataset.motion==="off"&&document.querySelector("[data-motion-choice]").value==="off"'),'animation preference survives reload');
  await evaluate('document.querySelector("[data-motion-choice]").value="system";document.querySelector("[data-motion-choice]").dispatchEvent(new Event("change",{bubbles:true}))');
- await call('Emulation.setEmulatedMedia',{features:[{name:'prefers-reduced-motion',value:'reduce'}]});await wait('document.documentElement.dataset.motion==="off"');assert(await evaluate('document.querySelector("[data-motion-choice]").value==="system"&&getComputedStyle(document.querySelector(".hero-art .sprite")).animationName==="none"'),'reduced-motion system setting disables animations');
+ await call('Emulation.setEmulatedMedia',{features:[{name:'prefers-reduced-motion',value:'reduce'}]});await wait('document.documentElement.dataset.motion==="off"');assert(await evaluate('document.querySelector("[data-motion-choice]").value==="system"&&getComputedStyle(document.querySelector(".hero-art .hero-photo")).animationName==="none"'),'reduced-motion system setting disables animations');
  await evaluate('document.querySelector("[data-motion-choice]").value="on";document.querySelector("[data-motion-choice]").dispatchEvent(new Event("change",{bubbles:true}))');
- assert(await evaluate('document.documentElement.dataset.motion==="on"&&getComputedStyle(document.querySelector(".hero-art .sprite")).animationName==="float-pc"'),'explicit effects choice overrides reduced system motion');
+ assert(await evaluate('document.documentElement.dataset.motion==="on"&&getComputedStyle(document.querySelector(".hero-art .hero-photo")).animationName==="scene-breathe"'),'explicit effects choice overrides reduced system motion');
  await evaluate('window.scrollTo(0,0)');await new Promise(r=>setTimeout(r,100));
  const parallaxStart=await evaluate('document.querySelector(".hero").style.getPropertyValue("--parallax-y")');
  await call('Input.dispatchMouseEvent',{type:'mouseWheel',x:420,y:460,deltaX:0,deltaY:500});
@@ -151,7 +151,7 @@ try {
  await call('Input.dispatchMouseEvent',{type:'mouseMoved',x:1000,y:350});await new Promise(r=>setTimeout(r,200));
  assert(await evaluate('Math.abs(parseFloat(document.querySelector(".hero").style.getPropertyValue("--parallax-x")))>1'),'hero depth responds to mouse movement');
  await shot('motion-parallax-desktop');
- assert(await evaluate('getComputedStyle(document.querySelector(".hero-art .sprite")).animationIterationCount==="infinite"'),'floating objects continue while effects are enabled');
+ assert(await evaluate('getComputedStyle(document.querySelector(".hero-art .hero-photo")).animationIterationCount==="infinite"'),'scene motion continues while effects are enabled');
  await call('Input.dispatchMouseEvent',{type:'mouseWheel',x:420,y:460,deltaX:0,deltaY:800});await navigate('catalog?category=gpu');await new Promise(r=>setTimeout(r,350));
  assert(await evaluate('scrollY')===0,'route navigation cancels pending smooth scroll');
  await evaluate('document.querySelector("#filters").scrollTop=0');
