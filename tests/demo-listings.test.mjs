@@ -21,13 +21,13 @@ test('bulk seeding is idempotent and preserves pre-existing user listings and ID
     const original=db.prepare('SELECT * FROM products ORDER BY id').all();
     assert.deepEqual(seedDemoListings(db,3000),{added:3000,skipped:0});
     assert.deepEqual(seedDemoListings(db,3000),{added:0,skipped:3000});
-    assert.equal(db.prepare('SELECT COUNT(*) AS n FROM products').get().n,3037);
-    assert.deepEqual(db.prepare('SELECT * FROM products WHERE id<=37 ORDER BY id').all(),original);
+    assert.equal(db.prepare('SELECT COUNT(*) AS n FROM products').get().n,seedProducts.length+3001);
+    assert.deepEqual(original.map(p=>db.prepare('SELECT * FROM products WHERE id=?').get(p.id)),original);
     assert.equal(db.prepare('SELECT COUNT(*) AS n FROM products WHERE id>37 AND (demo!=1 OR owner_id IS NOT NULL)').get().n,0);
   }finally{db.close()}
 });
 test('failed bulk seed rolls back the complete batch',()=>{
-  const db=database();try{db.exec('DELETE FROM products WHERE id=33');assert.throws(()=>seedDemoListings(db,100));assert.equal(db.prepare('SELECT COUNT(*) AS n FROM products').get().n,35)}finally{db.close()}
+  const db=database();try{db.exec('DELETE FROM products WHERE id=33');assert.throws(()=>seedDemoListings(db,100));assert.equal(db.prepare('SELECT COUNT(*) AS n FROM products').get().n,seedProducts.length-1)}finally{db.close()}
 });
 test('recommendation keeps cheapest equivalent offer and still respects condition and budget',()=>{
   const base=[1,2,3,4,5,26,29,31].map(id=>seedProducts.find(p=>p.id===id));

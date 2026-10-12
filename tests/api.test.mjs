@@ -1,3 +1,4 @@
+import {seedProducts} from '../catalog.mjs';
 import {test,before,after} from 'node:test';
 import assert from 'node:assert/strict';
 import {spawn} from 'node:child_process';
@@ -6,7 +7,7 @@ before(async()=>{processServer=spawn(process.execPath,['server.mjs'],{env:{...pr
 after(()=>processServer?.kill());
 async function request(route,method='GET',data,extra={}){const response=await fetch(base+'/api'+route,{method,headers:{'Content-Type':'application/json',Cookie:cookie,...extra},body:method==='GET'?undefined:JSON.stringify(data||{})});return {status:response.status,data:await response.json(),cookie:response.headers.get('set-cookie'),headers:response.headers}}
 test('marketplace API lifecycle and authorization boundaries',async t=>{
- await t.test('seed catalog and API do not expose credentials',async()=>{const r=await request('/bootstrap');assert.equal(r.status,200);assert.equal(r.data.products.length,36);assert.equal(r.data.user,null);assert.equal(r.data.aiEnabled,false)});
+ await t.test('seed catalog and API do not expose credentials',async()=>{const r=await request('/bootstrap');assert.equal(r.status,200);assert.equal(r.data.products.length,seedProducts.length);assert.equal(r.data.user,null);assert.equal(r.data.aiEnabled,false)});
  await t.test('anonymous write rejected',async()=>{assert.equal((await request('/listings','POST',{})).status,401)});
  await t.test('register seller with HttpOnly session',async()=>{const r=await request('/auth/register','POST',{name:'Seller QA',email:'seller@example.test',password:'StrongPass123!'});assert.equal(r.status,201);assert.ok(r.cookie.includes('HttpOnly'));assert.ok(r.cookie.includes('SameSite=Strict'));assert.equal(r.data.user.password,undefined);cookie=sellerCookie=r.cookie.split(';')[0]});
  await t.test('duplicate account and wrong password rejected',async()=>{assert.equal((await request('/auth/register','POST',{name:'Duplicate',email:'seller@example.test',password:'StrongPass123!'})).status,409);assert.equal((await request('/auth/login','POST',{email:'seller@example.test',password:'wrong'})).status,401)});

@@ -1,0 +1,5474 @@
+[
+  {
+    "category": "cpu",
+    "title": "Intel Core Ultra 7 270K Plus",
+    "brand": "Intel",
+    "externalId": "Intel Core Ultra 7 270K Plus",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1851",
+      "cores": 24,
+      "threads": 24,
+      "tdp": 125,
+      "graphics": "Intel Graphics",
+      "memoryTypes": "Up To DDR5 7200 MT/s",
+      "generation": "Series 2",
+      "boostClockGHz": 5.5,
+      "launchYear": 2026
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core Ultra 5 250K Plus",
+    "brand": "Intel",
+    "externalId": "Intel Core Ultra 5 250K Plus",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1851",
+      "cores": 18,
+      "threads": 18,
+      "tdp": 125,
+      "graphics": "Intel Graphics",
+      "memoryTypes": "Up To DDR5 7200 MT/s",
+      "generation": "Series 2",
+      "boostClockGHz": 5.3,
+      "launchYear": 2026
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core Ultra 5 250KF Plus",
+    "brand": "Intel",
+    "externalId": "Intel Core Ultra 5 250KF Plus",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1851",
+      "cores": 18,
+      "threads": 18,
+      "tdp": 125,
+      "graphics": "Нет",
+      "memoryTypes": "Up To DDR5 7200 MT/s",
+      "generation": "Series 2",
+      "boostClockGHz": 5.3,
+      "launchYear": 2026
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core Ultra 9 285",
+    "brand": "Intel",
+    "externalId": "Intel Core Ultra 9 285",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1851",
+      "cores": 24,
+      "threads": 24,
+      "tdp": 65,
+      "graphics": "Intel Graphics",
+      "memoryTypes": "Up to DDR5 6400 MT/s",
+      "generation": "Series 2",
+      "boostClockGHz": 5.6,
+      "launchYear": 2025
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core Ultra 9 285K",
+    "brand": "Intel",
+    "externalId": "Intel Core Ultra 9 285K",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1851",
+      "cores": 24,
+      "threads": 24,
+      "tdp": 125,
+      "graphics": "Intel Graphics",
+      "memoryTypes": "Up to DDR5 6400 MT/s",
+      "generation": "Series 2",
+      "boostClockGHz": 5.7,
+      "launchYear": 2024
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core Ultra 9 285T",
+    "brand": "Intel",
+    "externalId": "Intel Core Ultra 9 285T",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1851",
+      "cores": 24,
+      "threads": 24,
+      "tdp": 35,
+      "graphics": "Intel Graphics",
+      "memoryTypes": "Up to DDR5 6400 MT/s",
+      "generation": "Series 2",
+      "boostClockGHz": 5.4,
+      "launchYear": 2025
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core Ultra 7 265",
+    "brand": "Intel",
+    "externalId": "Intel Core Ultra 7 265",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1851",
+      "cores": 20,
+      "threads": 20,
+      "tdp": 65,
+      "graphics": "Intel Graphics",
+      "memoryTypes": "Up to DDR5 6400 MT/s",
+      "generation": "Series 2",
+      "boostClockGHz": 5.3,
+      "launchYear": 2025
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core Ultra 7 265K",
+    "brand": "Intel",
+    "externalId": "Intel Core Ultra 7 265K",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1851",
+      "cores": 20,
+      "threads": 20,
+      "tdp": 125,
+      "graphics": "Intel Graphics",
+      "memoryTypes": "Up to DDR5 6400 MT/s",
+      "generation": "Series 2",
+      "boostClockGHz": 5.5,
+      "launchYear": 2024
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core Ultra 7 265KF",
+    "brand": "Intel",
+    "externalId": "Intel Core Ultra 7 265KF",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1851",
+      "cores": 20,
+      "threads": 20,
+      "tdp": 125,
+      "graphics": "Нет",
+      "memoryTypes": "Up to DDR5 6400 MT/s",
+      "generation": "Series 2",
+      "boostClockGHz": 5.5,
+      "launchYear": 2024
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core Ultra 7 265F",
+    "brand": "Intel",
+    "externalId": "Intel Core Ultra 7 265F",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1851",
+      "cores": 20,
+      "threads": 20,
+      "tdp": 65,
+      "graphics": "Нет",
+      "memoryTypes": "Up to DDR5 6400 MT/s",
+      "generation": "Series 2",
+      "boostClockGHz": 5.3,
+      "launchYear": 2025
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core Ultra 7 265T",
+    "brand": "Intel",
+    "externalId": "Intel Core Ultra 7 265T",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1851",
+      "cores": 20,
+      "threads": 20,
+      "tdp": 35,
+      "graphics": "Intel Graphics",
+      "memoryTypes": "Up to DDR5 6400 MT/s",
+      "generation": "Series 2",
+      "boostClockGHz": 5.3,
+      "launchYear": 2025
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core Ultra 5 245",
+    "brand": "Intel",
+    "externalId": "Intel Core Ultra 5 245",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1851",
+      "cores": 14,
+      "threads": 14,
+      "tdp": 65,
+      "graphics": "Intel Graphics",
+      "memoryTypes": "Up to DDR5 6400 MT/s",
+      "generation": "Series 2",
+      "boostClockGHz": 5.1,
+      "launchYear": 2025
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core Ultra 5 245K",
+    "brand": "Intel",
+    "externalId": "Intel Core Ultra 5 245K",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1851",
+      "cores": 14,
+      "threads": 14,
+      "tdp": 125,
+      "graphics": "Intel Graphics",
+      "memoryTypes": "Up to DDR5 6400 MT/s",
+      "generation": "Series 2",
+      "boostClockGHz": 5.2,
+      "launchYear": 2024
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core Ultra 5 245KF",
+    "brand": "Intel",
+    "externalId": "Intel Core Ultra 5 245KF",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1851",
+      "cores": 14,
+      "threads": 14,
+      "tdp": 125,
+      "graphics": "Нет",
+      "memoryTypes": "Up to DDR5 6400 MT/s",
+      "generation": "Series 2",
+      "boostClockGHz": 5.2,
+      "launchYear": 2024
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core Ultra 5 245T",
+    "brand": "Intel",
+    "externalId": "Intel Core Ultra 5 245T",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1851",
+      "cores": 14,
+      "threads": 14,
+      "tdp": 35,
+      "graphics": "Intel Graphics",
+      "memoryTypes": "Up to DDR5 6400 MT/s",
+      "generation": "Series 2",
+      "boostClockGHz": 5.1,
+      "launchYear": 2025
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core Ultra 5 235",
+    "brand": "Intel",
+    "externalId": "Intel Core Ultra 5 235",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1851",
+      "cores": 14,
+      "threads": 14,
+      "tdp": 65,
+      "graphics": "Intel Graphics",
+      "memoryTypes": "Up to DDR5 6400 MT/s",
+      "generation": "Series 2",
+      "boostClockGHz": 5,
+      "launchYear": 2025
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core Ultra 5 235T",
+    "brand": "Intel",
+    "externalId": "Intel Core Ultra 5 235T",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1851",
+      "cores": 14,
+      "threads": 14,
+      "tdp": 35,
+      "graphics": "Intel Graphics",
+      "memoryTypes": "Up to DDR5 6400 MT/s",
+      "generation": "Series 2",
+      "boostClockGHz": 5,
+      "launchYear": 2025
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core Ultra 5 225",
+    "brand": "Intel",
+    "externalId": "Intel Core Ultra 5 225",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1851",
+      "cores": 10,
+      "threads": 10,
+      "tdp": 65,
+      "graphics": "Intel Graphics",
+      "memoryTypes": "Up to DDR5 6400 MT/s",
+      "generation": "Series 2",
+      "boostClockGHz": 4.9,
+      "launchYear": 2025
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core Ultra 5 225F",
+    "brand": "Intel",
+    "externalId": "Intel Core Ultra 5 225F",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1851",
+      "cores": 10,
+      "threads": 10,
+      "tdp": 65,
+      "graphics": "Нет",
+      "memoryTypes": "Up to DDR5 6400 MT/s",
+      "generation": "Series 2",
+      "boostClockGHz": 4.9,
+      "launchYear": 2025
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Processor 300",
+    "brand": "Intel",
+    "externalId": "Intel Processor 300",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1700",
+      "cores": 2,
+      "threads": 4,
+      "tdp": 46,
+      "graphics": "UHD 710",
+      "memoryTypes": "Up to DDR5 4800 MT/s Up to DDR4 3200 MT/s",
+      "generation": "N/A",
+      "boostClockGHz": 3.9,
+      "launchYear": 2024
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Processor 300T",
+    "brand": "Intel",
+    "externalId": "Intel Processor 300T",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1700",
+      "cores": 2,
+      "threads": 4,
+      "tdp": 35,
+      "graphics": "UHD 710",
+      "memoryTypes": "Up to DDR5 4800 MT/s Up to DDR4 3200 MT/s",
+      "generation": "N/A",
+      "boostClockGHz": 3.4,
+      "launchYear": 2024
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i9-14900KS",
+    "brand": "Intel",
+    "externalId": "Intel Core i9-14900KS",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1700",
+      "cores": 24,
+      "threads": 32,
+      "tdp": 150,
+      "graphics": "UHD 770",
+      "memoryTypes": "Up to DDR5 5600 MT/s Up to DDR4 3200 MT/s",
+      "generation": "14th",
+      "boostClockGHz": 6.2,
+      "launchYear": 2024
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i9-14900F",
+    "brand": "Intel",
+    "externalId": "Intel Core i9-14900F",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1700",
+      "cores": 24,
+      "threads": 32,
+      "tdp": 65,
+      "graphics": "Нет",
+      "memoryTypes": "Up to DDR5 5600 MT/s Up to DDR4 3200 MT/s",
+      "generation": "14th",
+      "boostClockGHz": 5.8,
+      "launchYear": 2024
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i9-14900",
+    "brand": "Intel",
+    "externalId": "Intel Core i9-14900",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1700",
+      "cores": 24,
+      "threads": 32,
+      "tdp": 65,
+      "graphics": "UHD 770",
+      "memoryTypes": "Up to DDR5 5600 MT/s Up to DDR4 3200 MT/s",
+      "generation": "14th",
+      "boostClockGHz": 5.8,
+      "launchYear": 2024
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i9-14900T",
+    "brand": "Intel",
+    "externalId": "Intel Core i9-14900T",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1700",
+      "cores": 24,
+      "threads": 32,
+      "tdp": 35,
+      "graphics": "UHD 770",
+      "memoryTypes": "Up to DDR5 5600 MT/s Up to DDR4 3200 MT/s",
+      "generation": "14th",
+      "boostClockGHz": 5.5,
+      "launchYear": 2024
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i7-14700F",
+    "brand": "Intel",
+    "externalId": "Intel Core i7-14700F",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1700",
+      "cores": 20,
+      "threads": 28,
+      "tdp": 65,
+      "graphics": "Нет",
+      "memoryTypes": "Up to DDR5 5600 MT/s Up to DDR4 3200 MT/s",
+      "generation": "14th",
+      "boostClockGHz": 5.4,
+      "launchYear": 2024
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i7-14700T",
+    "brand": "Intel",
+    "externalId": "Intel Core i7-14700T",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1700",
+      "cores": 20,
+      "threads": 28,
+      "tdp": 35,
+      "graphics": "UHD 770",
+      "memoryTypes": "Up to DDR5 5600 MT/s Up to DDR4 3200 MT/s",
+      "generation": "14th",
+      "boostClockGHz": 5.2,
+      "launchYear": 2024
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i7-14700",
+    "brand": "Intel",
+    "externalId": "Intel Core i7-14700",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1700",
+      "cores": 20,
+      "threads": 28,
+      "tdp": 65,
+      "graphics": "UHD 770",
+      "memoryTypes": "Up to DDR5 5600 MT/s Up to DDR4 3200 MT/s",
+      "generation": "14th",
+      "boostClockGHz": 5.4,
+      "launchYear": 2024
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i5-14600",
+    "brand": "Intel",
+    "externalId": "Intel Core i5-14600",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1700",
+      "cores": 14,
+      "threads": 20,
+      "tdp": 65,
+      "graphics": "UHD 770",
+      "memoryTypes": "Up to DDR5 5600 MT/s Up to DDR4 3200 MT/s",
+      "generation": "14th",
+      "boostClockGHz": 5.2,
+      "launchYear": 2024
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i5-14400T",
+    "brand": "Intel",
+    "externalId": "Intel Core i5-14400T",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1700",
+      "cores": 10,
+      "threads": 16,
+      "tdp": 35,
+      "graphics": "UHD 730",
+      "memoryTypes": "Up to DDR5 4800 MT/s Up to DDR4 3200 MT/s",
+      "generation": "14th",
+      "boostClockGHz": 4.5,
+      "launchYear": 2024
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i5-14400",
+    "brand": "Intel",
+    "externalId": "Intel Core i5-14400",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1700",
+      "cores": 10,
+      "threads": 16,
+      "tdp": 65,
+      "graphics": "UHD 730",
+      "memoryTypes": "Up to DDR5 4800 MT/s Up to DDR4 3200 MT/s",
+      "generation": "14th",
+      "boostClockGHz": 4.7,
+      "launchYear": 2024
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i5-14500",
+    "brand": "Intel",
+    "externalId": "Intel Core i5-14500",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1700",
+      "cores": 14,
+      "threads": 20,
+      "tdp": 65,
+      "graphics": "UHD 770",
+      "memoryTypes": "Up to DDR5 4800 MT/s Up to DDR4 3200 MT/s",
+      "generation": "14th",
+      "boostClockGHz": 5,
+      "launchYear": 2024
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i5-14600T",
+    "brand": "Intel",
+    "externalId": "Intel Core i5-14600T",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1700",
+      "cores": 14,
+      "threads": 20,
+      "tdp": 35,
+      "graphics": "UHD 770",
+      "memoryTypes": "Up to DDR5 5600 MT/s Up to DDR4 3200 MT/s",
+      "generation": "14th",
+      "boostClockGHz": 5.1,
+      "launchYear": 2024
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i5-14500T",
+    "brand": "Intel",
+    "externalId": "Intel Core i5-14500T",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1700",
+      "cores": 14,
+      "threads": 20,
+      "tdp": 35,
+      "graphics": "UHD 770",
+      "memoryTypes": "Up to DDR5 4800 MT/s Up to DDR4 3200 MT/s",
+      "generation": "14th",
+      "boostClockGHz": 4.8,
+      "launchYear": 2024
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i5-14400F",
+    "brand": "Intel",
+    "externalId": "Intel Core i5-14400F",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1700",
+      "cores": 10,
+      "threads": 16,
+      "tdp": 65,
+      "graphics": "Нет",
+      "memoryTypes": "Up to DDR5 4800 MT/s Up to DDR4 3200 MT/s",
+      "generation": "14th",
+      "boostClockGHz": 4.7,
+      "launchYear": 2024
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i3-14100F",
+    "brand": "Intel",
+    "externalId": "Intel Core i3-14100F",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1700",
+      "cores": 4,
+      "threads": 8,
+      "tdp": 58,
+      "graphics": "Нет",
+      "memoryTypes": "Up to DDR5 4800 MT/s Up to DDR4 3200 MT/s",
+      "generation": "14th",
+      "boostClockGHz": 4.7,
+      "launchYear": 2024
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i3-14100T",
+    "brand": "Intel",
+    "externalId": "Intel Core i3-14100T",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1700",
+      "cores": 4,
+      "threads": 8,
+      "tdp": 35,
+      "graphics": "UHD 730",
+      "memoryTypes": "Up to DDR5 4800 MT/s Up to DDR4 3200 MT/s",
+      "generation": "14th",
+      "boostClockGHz": 4.4,
+      "launchYear": 2024
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i3-14100",
+    "brand": "Intel",
+    "externalId": "Intel Core i3-14100",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1700",
+      "cores": 4,
+      "threads": 8,
+      "tdp": 60,
+      "graphics": "UHD 730",
+      "memoryTypes": "Up to DDR5 4800 MT/s Up to DDR4 3200 MT/s",
+      "generation": "14th",
+      "boostClockGHz": 4.7,
+      "launchYear": 2024
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i9-14900K",
+    "brand": "Intel",
+    "externalId": "Intel Core i9-14900K",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1700",
+      "cores": 24,
+      "threads": 32,
+      "tdp": 125,
+      "graphics": "UHD 770",
+      "memoryTypes": "Up to DDR5 5600, Up to DDR4 3200",
+      "generation": "14th",
+      "boostClockGHz": 6,
+      "launchYear": 2023
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i9-14900KF",
+    "brand": "Intel",
+    "externalId": "Intel Core i9-14900KF",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1700",
+      "cores": 24,
+      "threads": 32,
+      "tdp": 125,
+      "graphics": "Нет",
+      "memoryTypes": "Up to DDR5 5600, Up to DDR4 3200",
+      "generation": "14th",
+      "boostClockGHz": 6,
+      "launchYear": 2023
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i7-14700K",
+    "brand": "Intel",
+    "externalId": "Intel Core i7-14700K",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1700",
+      "cores": 20,
+      "threads": 28,
+      "tdp": 125,
+      "graphics": "UHD 770",
+      "memoryTypes": "Up to DDR5 5600, Up to DDR4 3200",
+      "generation": "14th",
+      "boostClockGHz": 5.6,
+      "launchYear": 2023
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i7-14700KF",
+    "brand": "Intel",
+    "externalId": "Intel Core i7-14700KF",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1700",
+      "cores": 20,
+      "threads": 28,
+      "tdp": 125,
+      "graphics": "Нет",
+      "memoryTypes": "Up to DDR5 5600, Up to DDR4 3200",
+      "generation": "14th",
+      "boostClockGHz": 5.6,
+      "launchYear": 2023
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i5-14600K",
+    "brand": "Intel",
+    "externalId": "Intel Core i5-14600K",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1700",
+      "cores": 14,
+      "threads": 20,
+      "tdp": 125,
+      "graphics": "UHD 770",
+      "memoryTypes": "Up to DDR5 5600, Up to DDR4 3200",
+      "generation": "14th",
+      "boostClockGHz": 5.3,
+      "launchYear": 2023
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i5-14600KF",
+    "brand": "Intel",
+    "externalId": "Intel Core i5-14600KF",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1700",
+      "cores": 14,
+      "threads": 20,
+      "tdp": 125,
+      "graphics": "Нет",
+      "memoryTypes": "Up to DDR5 5600, Up to DDR4 3200",
+      "generation": "14th",
+      "boostClockGHz": 5.3,
+      "launchYear": 2023
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i9-13900KS",
+    "brand": "Intel",
+    "externalId": "Intel Core i9-13900KS",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1700",
+      "cores": 24,
+      "threads": 32,
+      "tdp": 150,
+      "graphics": "UHD 770",
+      "memoryTypes": "Up to DDR5 5600 Up to DDR4 3200",
+      "generation": "13th",
+      "boostClockGHz": 6,
+      "launchYear": 2023
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i9-13900F",
+    "brand": "Intel",
+    "externalId": "Intel Core i9-13900F",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1700",
+      "cores": 24,
+      "threads": 32,
+      "tdp": 65,
+      "graphics": "Нет",
+      "memoryTypes": "Up to DDR5 5600, Up to DDR4 3200",
+      "generation": "13th",
+      "boostClockGHz": 5.6,
+      "launchYear": 2023
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i9-13900",
+    "brand": "Intel",
+    "externalId": "Intel Core i9-13900",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1700",
+      "cores": 24,
+      "threads": 32,
+      "tdp": 65,
+      "graphics": "UHD 770",
+      "memoryTypes": "Up to DDR5 5600, Up to DDR4 3200",
+      "generation": "13th",
+      "boostClockGHz": 5.6,
+      "launchYear": 2023
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i9-13900T",
+    "brand": "Intel",
+    "externalId": "Intel Core i9-13900T",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1700",
+      "cores": 24,
+      "threads": 32,
+      "tdp": 35,
+      "graphics": "UHD 770",
+      "memoryTypes": "Up to DDR5 5600, Up to DDR4 3200",
+      "generation": "13th",
+      "boostClockGHz": 5.3,
+      "launchYear": 2023
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i7-13700F",
+    "brand": "Intel",
+    "externalId": "Intel Core i7-13700F",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1700",
+      "cores": 16,
+      "threads": 24,
+      "tdp": 65,
+      "graphics": "Нет",
+      "memoryTypes": "Up to DDR5 5600, Up to DDR4 3200",
+      "generation": "13th",
+      "boostClockGHz": 5.2,
+      "launchYear": 2023
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i7-13700",
+    "brand": "Intel",
+    "externalId": "Intel Core i7-13700",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1700",
+      "cores": 16,
+      "threads": 24,
+      "tdp": 65,
+      "graphics": "UHD 770",
+      "memoryTypes": "Up to DDR5 5600, Up to DDR4 3200",
+      "generation": "13th",
+      "boostClockGHz": 5.2,
+      "launchYear": 2023
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i7-13700T",
+    "brand": "Intel",
+    "externalId": "Intel Core i7-13700T",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1700",
+      "cores": 16,
+      "threads": 24,
+      "tdp": 35,
+      "graphics": "UHD 770",
+      "memoryTypes": "Up to DDR5 5600, Up to DDR4 3200",
+      "generation": "13th",
+      "boostClockGHz": 4.9,
+      "launchYear": 2023
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i5-13600",
+    "brand": "Intel",
+    "externalId": "Intel Core i5-13600",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1700",
+      "cores": 14,
+      "threads": 20,
+      "tdp": 65,
+      "graphics": "UHD 770",
+      "memoryTypes": "Up to DDR5 4800 Up to DDR4 3200",
+      "generation": "13th",
+      "boostClockGHz": 5,
+      "launchYear": 2023
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i5-13600T",
+    "brand": "Intel",
+    "externalId": "Intel Core i5-13600T",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1700",
+      "cores": 14,
+      "threads": 20,
+      "tdp": 35,
+      "graphics": "UHD 770",
+      "memoryTypes": "Up to DDR5 4800 Up to DDR4 3200",
+      "generation": "13th",
+      "boostClockGHz": 4.8,
+      "launchYear": 2023
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i5-13500",
+    "brand": "Intel",
+    "externalId": "Intel Core i5-13500",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1700",
+      "cores": 14,
+      "threads": 20,
+      "tdp": 65,
+      "graphics": "UHD 770",
+      "memoryTypes": "Up to DDR5 4800 Up to DDR4 3200",
+      "generation": "13th",
+      "boostClockGHz": 4.8,
+      "launchYear": 2023
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i5-13500T",
+    "brand": "Intel",
+    "externalId": "Intel Core i5-13500T",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1700",
+      "cores": 14,
+      "threads": 20,
+      "tdp": 35,
+      "graphics": "UHD 770",
+      "memoryTypes": "Up to DDR5 4800 Up to DDR4 3200",
+      "generation": "13th",
+      "boostClockGHz": 4.6,
+      "launchYear": 2023
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i5-13400F",
+    "brand": "Intel",
+    "externalId": "Intel Core i5-13400F",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1700",
+      "cores": 10,
+      "threads": 16,
+      "tdp": 65,
+      "graphics": "Нет",
+      "memoryTypes": "Up to DDR5 4800 Up to DDR4 3200",
+      "generation": "13th",
+      "boostClockGHz": 4.6,
+      "launchYear": 2023
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i5-13400",
+    "brand": "Intel",
+    "externalId": "Intel Core i5-13400",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1700",
+      "cores": 10,
+      "threads": 16,
+      "tdp": 65,
+      "graphics": "UHD 730",
+      "memoryTypes": "Up to DDR5 4800 Up to DDR4 3200",
+      "generation": "13th",
+      "boostClockGHz": 4.6,
+      "launchYear": 2023
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i5-13400T",
+    "brand": "Intel",
+    "externalId": "Intel Core i5-13400T",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1700",
+      "cores": 10,
+      "threads": 16,
+      "tdp": 35,
+      "graphics": "UHD 730",
+      "memoryTypes": "Up to DDR5 4800 Up to DDR4 3200",
+      "generation": "13th",
+      "boostClockGHz": 4.4,
+      "launchYear": 2023
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i3-13100",
+    "brand": "Intel",
+    "externalId": "Intel Core i3-13100",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1700",
+      "cores": 4,
+      "threads": 8,
+      "tdp": 60,
+      "graphics": "UHD 730",
+      "memoryTypes": "Up to DDR5 4800 Up to DDR4 3200",
+      "generation": "13th",
+      "boostClockGHz": 4.5,
+      "launchYear": 2023
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i3-13100F",
+    "brand": "Intel",
+    "externalId": "Intel Core i3-13100F",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1700",
+      "cores": 4,
+      "threads": 8,
+      "tdp": 58,
+      "graphics": "Нет",
+      "memoryTypes": "Up to DDR5 4800 Up to DDR4 3200",
+      "generation": "13th",
+      "boostClockGHz": 4.5,
+      "launchYear": 2023
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i3-13100T",
+    "brand": "Intel",
+    "externalId": "Intel Core i3-13100T",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1700",
+      "cores": 4,
+      "threads": 8,
+      "tdp": 35,
+      "graphics": "UHD 730",
+      "memoryTypes": "Up to DDR5 4800 Up to DDR4 3200",
+      "generation": "13th",
+      "boostClockGHz": 4.2,
+      "launchYear": 2023
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i9-13900K",
+    "brand": "Intel",
+    "externalId": "Intel Core i9-13900K",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1700",
+      "cores": 24,
+      "threads": 32,
+      "tdp": 125,
+      "graphics": "UHD 770",
+      "memoryTypes": "Up to DDR5 5600, Up to DDR4 3200",
+      "generation": "13th",
+      "boostClockGHz": 5.8,
+      "launchYear": 2022
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i9-13900KF",
+    "brand": "Intel",
+    "externalId": "Intel Core i9-13900KF",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1700",
+      "cores": 24,
+      "threads": 32,
+      "tdp": 125,
+      "graphics": "Нет",
+      "memoryTypes": "Up to DDR5 5600, Up to DDR4 3200",
+      "generation": "13th",
+      "boostClockGHz": 5.8,
+      "launchYear": 2022
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i7-13700K",
+    "brand": "Intel",
+    "externalId": "Intel Core i7-13700K",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1700",
+      "cores": 16,
+      "threads": 24,
+      "tdp": 125,
+      "graphics": "UHD 770",
+      "memoryTypes": "Up to DDR5 5600, Up to DDR4 3200",
+      "generation": "13th",
+      "boostClockGHz": 5.4,
+      "launchYear": 2022
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i7-13700KF",
+    "brand": "Intel",
+    "externalId": "Intel Core i7-13700KF",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1700",
+      "cores": 16,
+      "threads": 24,
+      "tdp": 125,
+      "graphics": "Нет",
+      "memoryTypes": "Up to DDR5 5600, Up to DDR4 3200",
+      "generation": "13th",
+      "boostClockGHz": 5.4,
+      "launchYear": 2022
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i5-13600K",
+    "brand": "Intel",
+    "externalId": "Intel Core i5-13600K",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1700",
+      "cores": 14,
+      "threads": 20,
+      "tdp": 125,
+      "graphics": "UHD 770",
+      "memoryTypes": "Up to DDR5 5600, Up to DDR4 3200",
+      "generation": "13th",
+      "boostClockGHz": 5.1,
+      "launchYear": 2022
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i5-13600KF",
+    "brand": "Intel",
+    "externalId": "Intel Core i5-13600KF",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1700",
+      "cores": 14,
+      "threads": 20,
+      "tdp": 125,
+      "graphics": "Нет",
+      "memoryTypes": "Up to DDR5 5600, Up to DDR4 3200",
+      "generation": "13th",
+      "boostClockGHz": 5.1,
+      "launchYear": 2022
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i9-12900KS",
+    "brand": "Intel",
+    "externalId": "Intel Core i9-12900KS",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1700",
+      "cores": 16,
+      "threads": 24,
+      "tdp": 150,
+      "graphics": "UHD 770",
+      "memoryTypes": "Up to DDR5-4800, Up to DDR4-3200",
+      "generation": "12th",
+      "boostClockGHz": 5.5,
+      "launchYear": 2022
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i9-12900K",
+    "brand": "Intel",
+    "externalId": "Intel Core i9-12900K",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1700",
+      "cores": 16,
+      "threads": 24,
+      "tdp": 125,
+      "graphics": "UHD 770",
+      "memoryTypes": "Up to DDR5-4800, Up to DDR4-3200",
+      "generation": "12th",
+      "boostClockGHz": 5.2,
+      "launchYear": 2021
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i9-12900KF",
+    "brand": "Intel",
+    "externalId": "Intel Core i9-12900KF",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1700",
+      "cores": 16,
+      "threads": 24,
+      "tdp": 125,
+      "graphics": "Нет",
+      "memoryTypes": "Up to DDR5-4800, Up to DDR4-3200",
+      "generation": "12th",
+      "boostClockGHz": 5.2,
+      "launchYear": 2021
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i9-12900F",
+    "brand": "Intel",
+    "externalId": "Intel Core i9-12900F",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1700",
+      "cores": 16,
+      "threads": 24,
+      "tdp": 65,
+      "graphics": "Нет",
+      "memoryTypes": "Up to DDR5-4800, Up to DDR4-3200",
+      "generation": "12th",
+      "boostClockGHz": 5.1,
+      "launchYear": 2022
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i9-12900",
+    "brand": "Intel",
+    "externalId": "Intel Core i9-12900",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1700",
+      "cores": 16,
+      "threads": 24,
+      "tdp": 65,
+      "graphics": "UHD 770",
+      "memoryTypes": "Up to DDR5-4800, Up to DDR4-3200",
+      "generation": "12th",
+      "boostClockGHz": 5.1,
+      "launchYear": 2022
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i7-12700",
+    "brand": "Intel",
+    "externalId": "Intel Core i7-12700",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1700",
+      "cores": 12,
+      "threads": 20,
+      "tdp": 65,
+      "graphics": "UHD 770",
+      "memoryTypes": "Up to DDR5-4800, Up to DDR4-3200",
+      "generation": "12th",
+      "boostClockGHz": 4.9,
+      "launchYear": 2022
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i7-12700F",
+    "brand": "Intel",
+    "externalId": "Intel Core i7-12700F",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1700",
+      "cores": 12,
+      "threads": 20,
+      "tdp": 65,
+      "graphics": "Нет",
+      "memoryTypes": "Up to DDR5-4800, Up to DDR4-3200",
+      "generation": "12th",
+      "boostClockGHz": 4.9,
+      "launchYear": 2022
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i9-12900T",
+    "brand": "Intel",
+    "externalId": "Intel Core i9-12900T",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1700",
+      "cores": 16,
+      "threads": 24,
+      "tdp": 35,
+      "graphics": "UHD 770",
+      "memoryTypes": "Up to DDR5-4800, Up to DDR4-3200",
+      "generation": "12th",
+      "boostClockGHz": 4.9,
+      "launchYear": 2022
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i7-12700K",
+    "brand": "Intel",
+    "externalId": "Intel Core i7-12700K",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1700",
+      "cores": 12,
+      "threads": 20,
+      "tdp": 125,
+      "graphics": "UHD 770",
+      "memoryTypes": "Up to DDR5-4800, Up to DDR4-3200",
+      "generation": "12th",
+      "boostClockGHz": 5,
+      "launchYear": 2021
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i7-12700KF",
+    "brand": "Intel",
+    "externalId": "Intel Core i7-12700KF",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1700",
+      "cores": 12,
+      "threads": 20,
+      "tdp": 125,
+      "graphics": "Нет",
+      "memoryTypes": "Up to DDR5-4800, Up to DDR4-3200",
+      "generation": "12th",
+      "boostClockGHz": 5,
+      "launchYear": 2021
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i5-12600",
+    "brand": "Intel",
+    "externalId": "Intel Core i5-12600",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1700",
+      "cores": 6,
+      "threads": 12,
+      "tdp": 65,
+      "graphics": "UHD 770",
+      "memoryTypes": "Up to DDR5-4800, Up to DDR4-3200",
+      "generation": "12th",
+      "boostClockGHz": 4.8,
+      "launchYear": 2022
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i5-12400",
+    "brand": "Intel",
+    "externalId": "Intel Core i5-12400",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1700",
+      "cores": 6,
+      "threads": 12,
+      "tdp": 65,
+      "graphics": "UHD 730",
+      "memoryTypes": "Up to DDR5-4800, Up to DDR4-3200",
+      "generation": "12th",
+      "boostClockGHz": 4.4,
+      "launchYear": 2022
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i5-12400F",
+    "brand": "Intel",
+    "externalId": "Intel Core i5-12400F",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1700",
+      "cores": 6,
+      "threads": 12,
+      "tdp": 65,
+      "graphics": "Нет",
+      "memoryTypes": "Up to DDR5-4800, Up to DDR4-3200",
+      "generation": "12th",
+      "boostClockGHz": 4.4,
+      "launchYear": 2022
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i7-12700T",
+    "brand": "Intel",
+    "externalId": "Intel Core i7-12700T",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1700",
+      "cores": 12,
+      "threads": 20,
+      "tdp": 35,
+      "graphics": "UHD 770",
+      "memoryTypes": "Up to DDR5-4800, Up to DDR4-3200",
+      "generation": "12th",
+      "boostClockGHz": 4.7,
+      "launchYear": 2022
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i5-12400T",
+    "brand": "Intel",
+    "externalId": "Intel Core i5-12400T",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1700",
+      "cores": 6,
+      "threads": 12,
+      "tdp": 35,
+      "graphics": "UHD 730",
+      "memoryTypes": "Up to DDR5-4800, Up to DDR4-3200",
+      "generation": "12th",
+      "boostClockGHz": 4.2,
+      "launchYear": 2022
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i5-12500",
+    "brand": "Intel",
+    "externalId": "Intel Core i5-12500",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1700",
+      "cores": 6,
+      "threads": 12,
+      "tdp": 65,
+      "graphics": "UHD 770",
+      "memoryTypes": "Up to DDR5-4800, Up to DDR4-3200",
+      "generation": "12th",
+      "boostClockGHz": 4.6,
+      "launchYear": 2022
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i5-12500T",
+    "brand": "Intel",
+    "externalId": "Intel Core i5-12500T",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1700",
+      "cores": 6,
+      "threads": 12,
+      "tdp": 35,
+      "graphics": "UHD 770",
+      "memoryTypes": "Up to DDR5-4800, Up to DDR4-3200",
+      "generation": "12th",
+      "boostClockGHz": 4.4,
+      "launchYear": 2022
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i5-12600K",
+    "brand": "Intel",
+    "externalId": "Intel Core i5-12600K",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1700",
+      "cores": 10,
+      "threads": 16,
+      "tdp": 125,
+      "graphics": "UHD 770",
+      "memoryTypes": "Up to DDR5-4800, Up to DDR4-3200",
+      "generation": "12th",
+      "boostClockGHz": 4.9,
+      "launchYear": 2021
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i5-12600KF",
+    "brand": "Intel",
+    "externalId": "Intel Core i5-12600KF",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1700",
+      "cores": 10,
+      "threads": 16,
+      "tdp": 125,
+      "graphics": "Нет",
+      "memoryTypes": "Up to DDR5-4800, Up to DDR4-3200",
+      "generation": "12th",
+      "boostClockGHz": 4.9,
+      "launchYear": 2021
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i3-12300",
+    "brand": "Intel",
+    "externalId": "Intel Core i3-12300",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1700",
+      "cores": 4,
+      "threads": 8,
+      "tdp": 60,
+      "graphics": "UHD 730",
+      "memoryTypes": "Up to DDR5-4800, Up to DDR4-3200",
+      "generation": "12th",
+      "boostClockGHz": 4.4,
+      "launchYear": 2022
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i3-12100",
+    "brand": "Intel",
+    "externalId": "Intel Core i3-12100",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1700",
+      "cores": 4,
+      "threads": 8,
+      "tdp": 60,
+      "graphics": "UHD 730",
+      "memoryTypes": "Up to DDR5-4800, Up to DDR4-3200",
+      "generation": "12th",
+      "boostClockGHz": 4.3,
+      "launchYear": 2022
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i3-12100F",
+    "brand": "Intel",
+    "externalId": "Intel Core i3-12100F",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1700",
+      "cores": 4,
+      "threads": 8,
+      "tdp": 58,
+      "graphics": "Нет",
+      "memoryTypes": "Up to DDR5-4800, Up to DDR4-3200",
+      "generation": "12th",
+      "boostClockGHz": 4.3,
+      "launchYear": 2022
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i5-12600T",
+    "brand": "Intel",
+    "externalId": "Intel Core i5-12600T",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1700",
+      "cores": 6,
+      "threads": 12,
+      "tdp": 35,
+      "graphics": "UHD 770",
+      "memoryTypes": "Up to DDR5-4800, Up to DDR4-3200",
+      "generation": "12th",
+      "boostClockGHz": 4.6,
+      "launchYear": 2022
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i3-12300T",
+    "brand": "Intel",
+    "externalId": "Intel Core i3-12300T",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1700",
+      "cores": 4,
+      "threads": 8,
+      "tdp": 35,
+      "graphics": "UHD 730",
+      "memoryTypes": "Up to DDR5-4800, Up to DDR4-3200",
+      "generation": "12th",
+      "boostClockGHz": 4.2,
+      "launchYear": 2022
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i3-12100T",
+    "brand": "Intel",
+    "externalId": "Intel Core i3-12100T",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1700",
+      "cores": 4,
+      "threads": 8,
+      "tdp": 35,
+      "graphics": "UHD 730",
+      "memoryTypes": "Up to DDR5-4800, Up to DDR4-3200",
+      "generation": "12th",
+      "boostClockGHz": 4.1,
+      "launchYear": 2022
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i7-11700",
+    "brand": "Intel",
+    "externalId": "Intel Core i7-11700",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1200",
+      "cores": 8,
+      "threads": 16,
+      "tdp": 65,
+      "graphics": "UHD 750",
+      "memoryTypes": "DDR4-3200",
+      "generation": "11th",
+      "boostClockGHz": 4.9,
+      "launchYear": 2021
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i9-11900T",
+    "brand": "Intel",
+    "externalId": "Intel Core i9-11900T",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1200",
+      "cores": 8,
+      "threads": 16,
+      "tdp": 35,
+      "graphics": "UHD 750",
+      "memoryTypes": "DDR4-3200",
+      "generation": "11th",
+      "boostClockGHz": 4.9,
+      "launchYear": 2021
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i9-11900KF",
+    "brand": "Intel",
+    "externalId": "Intel Core i9-11900KF",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1200",
+      "cores": 8,
+      "threads": 16,
+      "tdp": 125,
+      "graphics": "Нет",
+      "memoryTypes": "DDR4-3200",
+      "generation": "11th",
+      "boostClockGHz": 5.2,
+      "launchYear": 2021
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i9-11900K",
+    "brand": "Intel",
+    "externalId": "Intel Core i9-11900K",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1200",
+      "cores": 8,
+      "threads": 16,
+      "tdp": 125,
+      "graphics": "UHD 750",
+      "memoryTypes": "DDR4-3200",
+      "generation": "11th",
+      "boostClockGHz": 5.3,
+      "launchYear": 2021
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i9-11900F",
+    "brand": "Intel",
+    "externalId": "Intel Core i9-11900F",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1200",
+      "cores": 8,
+      "threads": 16,
+      "tdp": 65,
+      "graphics": "Нет",
+      "memoryTypes": "DDR4-3200",
+      "generation": "11th",
+      "boostClockGHz": 5.2,
+      "launchYear": 2021
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i9-11900",
+    "brand": "Intel",
+    "externalId": "Intel Core i9-11900",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1200",
+      "cores": 8,
+      "threads": 16,
+      "tdp": 65,
+      "graphics": "UHD 750",
+      "memoryTypes": "DDR4-3200",
+      "generation": "11th",
+      "boostClockGHz": 5.2,
+      "launchYear": 2021
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i7-11700T",
+    "brand": "Intel",
+    "externalId": "Intel Core i7-11700T",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1200",
+      "cores": 8,
+      "threads": 16,
+      "tdp": 35,
+      "graphics": "UHD 750",
+      "memoryTypes": "DDR4-3200",
+      "generation": "11th",
+      "boostClockGHz": 4.6,
+      "launchYear": 2021
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i7-11700KF",
+    "brand": "Intel",
+    "externalId": "Intel Core i7-11700KF",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1200",
+      "cores": 8,
+      "threads": 16,
+      "tdp": 125,
+      "graphics": "Нет",
+      "memoryTypes": "DDR4-3200",
+      "generation": "11th",
+      "boostClockGHz": 5,
+      "launchYear": 2021
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i7-11700K",
+    "brand": "Intel",
+    "externalId": "Intel Core i7-11700K",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1200",
+      "cores": 8,
+      "threads": 16,
+      "tdp": 125,
+      "graphics": "UHD 750",
+      "memoryTypes": "DDR4-3200",
+      "generation": "11th",
+      "boostClockGHz": 5,
+      "launchYear": 2021
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i7-11700F",
+    "brand": "Intel",
+    "externalId": "Intel Core i7-11700F",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1200",
+      "cores": 8,
+      "threads": 16,
+      "tdp": 65,
+      "graphics": "Нет",
+      "memoryTypes": "DDR4-3200",
+      "generation": "11th",
+      "boostClockGHz": 4.9,
+      "launchYear": 2021
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i5-11600T",
+    "brand": "Intel",
+    "externalId": "Intel Core i5-11600T",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1200",
+      "cores": 6,
+      "threads": 12,
+      "tdp": 35,
+      "graphics": "UHD 750",
+      "memoryTypes": "DDR4-3200",
+      "generation": "11th",
+      "boostClockGHz": 4.1,
+      "launchYear": 2021
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i5-11600KF",
+    "brand": "Intel",
+    "externalId": "Intel Core i5-11600KF",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1200",
+      "cores": 6,
+      "threads": 12,
+      "tdp": 125,
+      "graphics": "Нет",
+      "memoryTypes": "DDR4-3200",
+      "generation": "11th",
+      "boostClockGHz": 4.9,
+      "launchYear": 2021
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i5-11600K",
+    "brand": "Intel",
+    "externalId": "Intel Core i5-11600K",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1200",
+      "cores": 6,
+      "threads": 12,
+      "tdp": 125,
+      "graphics": "UHD 750",
+      "memoryTypes": "DDR4-3200",
+      "generation": "11th",
+      "boostClockGHz": 4.9,
+      "launchYear": 2021
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i5-11600",
+    "brand": "Intel",
+    "externalId": "Intel Core i5-11600",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1200",
+      "cores": 6,
+      "threads": 12,
+      "tdp": 65,
+      "graphics": "UHD 750",
+      "memoryTypes": "DDR4-3200",
+      "generation": "11th",
+      "boostClockGHz": 4.8,
+      "launchYear": 2021
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i5-11500T",
+    "brand": "Intel",
+    "externalId": "Intel Core i5-11500T",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1200",
+      "cores": 6,
+      "threads": 12,
+      "tdp": 35,
+      "graphics": "UHD 750",
+      "memoryTypes": "DDR4-3200",
+      "generation": "11th",
+      "boostClockGHz": 3.9,
+      "launchYear": 2021
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i5-11500",
+    "brand": "Intel",
+    "externalId": "Intel Core i5-11500",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1200",
+      "cores": 6,
+      "threads": 12,
+      "tdp": 65,
+      "graphics": "UHD 750",
+      "memoryTypes": "DDR4-3200",
+      "generation": "11th",
+      "boostClockGHz": 4.6,
+      "launchYear": 2021
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i5-11400F",
+    "brand": "Intel",
+    "externalId": "Intel Core i5-11400F",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1200",
+      "cores": 6,
+      "threads": 12,
+      "tdp": 65,
+      "graphics": "Нет",
+      "memoryTypes": "DDR4-3200",
+      "generation": "11th",
+      "boostClockGHz": 4.4,
+      "launchYear": 2021
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i3-10325",
+    "brand": "Intel",
+    "externalId": "Intel Core i3-10325",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1200",
+      "cores": 4,
+      "threads": 8,
+      "tdp": 65,
+      "graphics": "UHD 630",
+      "memoryTypes": "DDR4-2666",
+      "generation": "10th",
+      "boostClockGHz": 4.7,
+      "launchYear": 2021
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i3-10305T",
+    "brand": "Intel",
+    "externalId": "Intel Core i3-10305T",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1200",
+      "cores": 4,
+      "threads": 8,
+      "tdp": 35,
+      "graphics": "UHD 630",
+      "memoryTypes": "DDR4-2666",
+      "generation": "10th",
+      "boostClockGHz": 4,
+      "launchYear": 2021
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i3-10305",
+    "brand": "Intel",
+    "externalId": "Intel Core i3-10305",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1200",
+      "cores": 4,
+      "threads": 8,
+      "tdp": 65,
+      "graphics": "UHD 630",
+      "memoryTypes": "DDR4-2666",
+      "generation": "10th",
+      "boostClockGHz": 4.5,
+      "launchYear": 2021
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i3-10105T",
+    "brand": "Intel",
+    "externalId": "Intel Core i3-10105T",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1200",
+      "cores": 4,
+      "threads": 8,
+      "tdp": 35,
+      "graphics": "UHD 630",
+      "memoryTypes": "DDR4-2666",
+      "generation": "10th",
+      "boostClockGHz": 3.9,
+      "launchYear": 2021
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i3-10105",
+    "brand": "Intel",
+    "externalId": "Intel Core i3-10105",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1200",
+      "cores": 4,
+      "threads": 8,
+      "tdp": 65,
+      "graphics": "UHD 630",
+      "memoryTypes": "DDR4-2666",
+      "generation": "10th",
+      "boostClockGHz": 4.4,
+      "launchYear": 2021
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i3-10105F",
+    "brand": "Intel",
+    "externalId": "Intel Core i3-10105F",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1200",
+      "cores": 4,
+      "threads": 8,
+      "tdp": 65,
+      "graphics": "Нет",
+      "memoryTypes": "DDR4-2666",
+      "generation": "10th",
+      "boostClockGHz": 4.4,
+      "launchYear": 2021
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i3-10100F",
+    "brand": "Intel",
+    "externalId": "Intel Core i3-10100F",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1200",
+      "cores": 4,
+      "threads": 8,
+      "tdp": 65,
+      "graphics": "Нет",
+      "memoryTypes": "DDR4-2666",
+      "generation": "10th",
+      "boostClockGHz": 4.3,
+      "launchYear": 2020
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i9-10850K",
+    "brand": "Intel",
+    "externalId": "Intel Core i9-10850K",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1200",
+      "cores": 10,
+      "threads": 20,
+      "tdp": 125,
+      "graphics": "UHD 630",
+      "memoryTypes": "DDR4-2933",
+      "generation": "10th",
+      "boostClockGHz": 5.2,
+      "launchYear": 2020
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i9-10900T",
+    "brand": "Intel",
+    "externalId": "Intel Core i9-10900T",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1200",
+      "cores": 10,
+      "threads": 20,
+      "tdp": 35,
+      "graphics": "UHD 630",
+      "memoryTypes": "DDR4-2933",
+      "generation": "10th",
+      "boostClockGHz": 4.6,
+      "launchYear": 2020
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i9-10900KF",
+    "brand": "Intel",
+    "externalId": "Intel Core i9-10900KF",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1200",
+      "cores": 10,
+      "threads": 20,
+      "tdp": 125,
+      "graphics": "Нет",
+      "memoryTypes": "DDR4-2933",
+      "generation": "10th",
+      "boostClockGHz": 5.3,
+      "launchYear": 2020
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i9-10900K",
+    "brand": "Intel",
+    "externalId": "Intel Core i9-10900K",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1200",
+      "cores": 10,
+      "threads": 20,
+      "tdp": 125,
+      "graphics": "UHD 630",
+      "memoryTypes": "DDR4-2933",
+      "generation": "10th",
+      "boostClockGHz": 5.3,
+      "launchYear": 2020
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i9-10900F",
+    "brand": "Intel",
+    "externalId": "Intel Core i9-10900F",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1200",
+      "cores": 10,
+      "threads": 20,
+      "tdp": 65,
+      "graphics": "Нет",
+      "memoryTypes": "DDR4-2933",
+      "generation": "10th",
+      "boostClockGHz": 5.2,
+      "launchYear": 2020
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i9-10900",
+    "brand": "Intel",
+    "externalId": "Intel Core i9-10900",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1200",
+      "cores": 10,
+      "threads": 20,
+      "tdp": 65,
+      "graphics": "UHD 630",
+      "memoryTypes": "DDR4-2933",
+      "generation": "10th",
+      "boostClockGHz": 5.2,
+      "launchYear": 2020
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i7-10700T",
+    "brand": "Intel",
+    "externalId": "Intel Core i7-10700T",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1200",
+      "cores": 8,
+      "threads": 16,
+      "tdp": 35,
+      "graphics": "UHD 630",
+      "memoryTypes": "DDR4-2933",
+      "generation": "10th",
+      "boostClockGHz": 4.5,
+      "launchYear": 2020
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i7-10700KF",
+    "brand": "Intel",
+    "externalId": "Intel Core i7-10700KF",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1200",
+      "cores": 8,
+      "threads": 16,
+      "tdp": 125,
+      "graphics": "Нет",
+      "memoryTypes": "DDR4-2933",
+      "generation": "10th",
+      "boostClockGHz": 5.1,
+      "launchYear": 2020
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i7-10700K",
+    "brand": "Intel",
+    "externalId": "Intel Core i7-10700K",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1200",
+      "cores": 8,
+      "threads": 16,
+      "tdp": 125,
+      "graphics": "UHD 630",
+      "memoryTypes": "DDR4-2933",
+      "generation": "10th",
+      "boostClockGHz": 5.1,
+      "launchYear": 2020
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i7-10700F",
+    "brand": "Intel",
+    "externalId": "Intel Core i7-10700F",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1200",
+      "cores": 8,
+      "threads": 16,
+      "tdp": 65,
+      "graphics": "Нет",
+      "memoryTypes": "DDR4-2933",
+      "generation": "10th",
+      "boostClockGHz": 4.8,
+      "launchYear": 2020
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i7-10700",
+    "brand": "Intel",
+    "externalId": "Intel Core i7-10700",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1200",
+      "cores": 8,
+      "threads": 16,
+      "tdp": 65,
+      "graphics": "UHD 630",
+      "memoryTypes": "DDR4-2933",
+      "generation": "10th",
+      "boostClockGHz": 4.8,
+      "launchYear": 2020
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i5-10600T",
+    "brand": "Intel",
+    "externalId": "Intel Core i5-10600T",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1200",
+      "cores": 6,
+      "threads": 12,
+      "tdp": 35,
+      "graphics": "UHD 630",
+      "memoryTypes": "DDR4-2666",
+      "generation": "10th",
+      "boostClockGHz": 4,
+      "launchYear": 2020
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i5-10600KF",
+    "brand": "Intel",
+    "externalId": "Intel Core i5-10600KF",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1200",
+      "cores": 6,
+      "threads": 12,
+      "tdp": 125,
+      "graphics": "Нет",
+      "memoryTypes": "DDR4-2666",
+      "generation": "10th",
+      "boostClockGHz": 4.8,
+      "launchYear": 2020
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i5-10600K",
+    "brand": "Intel",
+    "externalId": "Intel Core i5-10600K",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1200",
+      "cores": 6,
+      "threads": 12,
+      "tdp": 125,
+      "graphics": "UHD 630",
+      "memoryTypes": "DDR4-2666",
+      "generation": "10th",
+      "boostClockGHz": 4.8,
+      "launchYear": 2020
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i5-10600",
+    "brand": "Intel",
+    "externalId": "Intel Core i5-10600",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1200",
+      "cores": 6,
+      "threads": 12,
+      "tdp": 65,
+      "graphics": "UHD 630",
+      "memoryTypes": "DDR4-2666",
+      "generation": "10th",
+      "boostClockGHz": 4.8,
+      "launchYear": 2020
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i5-10500T",
+    "brand": "Intel",
+    "externalId": "Intel Core i5-10500T",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1200",
+      "cores": 6,
+      "threads": 12,
+      "tdp": 35,
+      "graphics": "UHD 630",
+      "memoryTypes": "DDR4-2666",
+      "generation": "10th",
+      "boostClockGHz": 3.8,
+      "launchYear": 2020
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i5-10500",
+    "brand": "Intel",
+    "externalId": "Intel Core i5-10500",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1200",
+      "cores": 6,
+      "threads": 12,
+      "tdp": 65,
+      "graphics": "UHD 630",
+      "memoryTypes": "DDR4-2666",
+      "generation": "10th",
+      "boostClockGHz": 4.5,
+      "launchYear": 2020
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i5-10400T",
+    "brand": "Intel",
+    "externalId": "Intel Core i5-10400T",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1200",
+      "cores": 6,
+      "threads": 12,
+      "tdp": 35,
+      "graphics": "UHD 630",
+      "memoryTypes": "DDR4-2666",
+      "generation": "10th",
+      "boostClockGHz": 3.6,
+      "launchYear": 2020
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i5-10400F",
+    "brand": "Intel",
+    "externalId": "Intel Core i5-10400F",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1200",
+      "cores": 6,
+      "threads": 12,
+      "tdp": 65,
+      "graphics": "Нет",
+      "memoryTypes": "DDR4-2666",
+      "generation": "10th",
+      "boostClockGHz": 4.3,
+      "launchYear": 2020
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i5-10400",
+    "brand": "Intel",
+    "externalId": "Intel Core i5-10400",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1200",
+      "cores": 6,
+      "threads": 12,
+      "tdp": 65,
+      "graphics": "UHD 630",
+      "memoryTypes": "DDR4-2666",
+      "generation": "10th",
+      "boostClockGHz": 4.3,
+      "launchYear": 2020
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i3-10320",
+    "brand": "Intel",
+    "externalId": "Intel Core i3-10320",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1200",
+      "cores": 4,
+      "threads": 8,
+      "tdp": 65,
+      "graphics": "UHD 630",
+      "memoryTypes": "DDR4-2666",
+      "generation": "10th",
+      "boostClockGHz": 4.6,
+      "launchYear": 2020
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i3-10300T",
+    "brand": "Intel",
+    "externalId": "Intel Core i3-10300T",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1200",
+      "cores": 4,
+      "threads": 8,
+      "tdp": 35,
+      "graphics": "UHD 630",
+      "memoryTypes": "DDR4-2666",
+      "generation": "10th",
+      "boostClockGHz": 3.9,
+      "launchYear": 2020
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i3-10300",
+    "brand": "Intel",
+    "externalId": "Intel Core i3-10300",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1200",
+      "cores": 4,
+      "threads": 8,
+      "tdp": 65,
+      "graphics": "UHD 630",
+      "memoryTypes": "DDR4-2666",
+      "generation": "10th",
+      "boostClockGHz": 4.4,
+      "launchYear": 2020
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i3-10100T",
+    "brand": "Intel",
+    "externalId": "Intel Core i3-10100T",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1200",
+      "cores": 4,
+      "threads": 8,
+      "tdp": 35,
+      "graphics": "UHD 630",
+      "memoryTypes": "DDR4-2666",
+      "generation": "10th",
+      "boostClockGHz": 3.8,
+      "launchYear": 2020
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i3-10100",
+    "brand": "Intel",
+    "externalId": "Intel Core i3-10100",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1200",
+      "cores": 4,
+      "threads": 8,
+      "tdp": 65,
+      "graphics": "UHD 630",
+      "memoryTypes": "DDR4-2666",
+      "generation": "10th",
+      "boostClockGHz": 4.3,
+      "launchYear": 2020
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i9-9900KS",
+    "brand": "Intel",
+    "externalId": "Intel Core i9-9900KS",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1151",
+      "cores": 8,
+      "threads": 16,
+      "tdp": 127,
+      "graphics": "UHD 630",
+      "memoryTypes": "DDR4-2666",
+      "generation": "9th",
+      "boostClockGHz": 5,
+      "launchYear": 2019
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i9-10980XE",
+    "brand": "Intel",
+    "externalId": "Intel Core i9-10980XE",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA2066",
+      "cores": 18,
+      "threads": 36,
+      "tdp": 165,
+      "graphics": "Нет",
+      "memoryTypes": "DDR4-2933",
+      "generation": "10th",
+      "boostClockGHz": 4.8,
+      "launchYear": 2019
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i9-10940X",
+    "brand": "Intel",
+    "externalId": "Intel Core i9-10940X",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA2066",
+      "cores": 14,
+      "threads": 28,
+      "tdp": 165,
+      "graphics": "Нет",
+      "memoryTypes": "DDR4-2933",
+      "generation": "10th",
+      "boostClockGHz": 4.8,
+      "launchYear": 2019
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i9-10920X",
+    "brand": "Intel",
+    "externalId": "Intel Core i9-10920X",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA2066",
+      "cores": 12,
+      "threads": 24,
+      "tdp": 165,
+      "graphics": "Нет",
+      "memoryTypes": "DDR4-2933",
+      "generation": "10th",
+      "boostClockGHz": 4.8,
+      "launchYear": 2019
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i9-10900X",
+    "brand": "Intel",
+    "externalId": "Intel Core i9-10900X",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA2066",
+      "cores": 10,
+      "threads": 20,
+      "tdp": 165,
+      "graphics": "Нет",
+      "memoryTypes": "DDR4-2933",
+      "generation": "10th",
+      "boostClockGHz": 4.7,
+      "launchYear": 2019
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i9-9900T",
+    "brand": "Intel",
+    "externalId": "Intel Core i9-9900T",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1151",
+      "cores": 8,
+      "threads": 16,
+      "tdp": 35,
+      "graphics": "UHD 630",
+      "memoryTypes": "DDR4-2666",
+      "generation": "9th",
+      "boostClockGHz": 4.4,
+      "launchYear": 2019
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i9-9900",
+    "brand": "Intel",
+    "externalId": "Intel Core i9-9900",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1151",
+      "cores": 8,
+      "threads": 16,
+      "tdp": 65,
+      "graphics": "UHD 630",
+      "memoryTypes": "DDR4-2666",
+      "generation": "9th",
+      "boostClockGHz": 5,
+      "launchYear": 2019
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i7-9700T",
+    "brand": "Intel",
+    "externalId": "Intel Core i7-9700T",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1151",
+      "cores": 8,
+      "threads": 8,
+      "tdp": 35,
+      "graphics": "UHD 630",
+      "memoryTypes": "DDR4-2666",
+      "generation": "9th",
+      "boostClockGHz": 4.3,
+      "launchYear": 2019
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i7-9700F",
+    "brand": "Intel",
+    "externalId": "Intel Core i7-9700F",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1151",
+      "cores": 8,
+      "threads": 8,
+      "tdp": 65,
+      "graphics": "Нет",
+      "memoryTypes": "DDR4-2666",
+      "generation": "9th",
+      "boostClockGHz": 4.7,
+      "launchYear": 2019
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i7-9700",
+    "brand": "Intel",
+    "externalId": "Intel Core i7-9700",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1151",
+      "cores": 8,
+      "threads": 8,
+      "tdp": 65,
+      "graphics": "UHD 630",
+      "memoryTypes": "DDR4-2666",
+      "generation": "9th",
+      "boostClockGHz": 4.7,
+      "launchYear": 2019
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i5-9600T",
+    "brand": "Intel",
+    "externalId": "Intel Core i5-9600T",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1151",
+      "cores": 6,
+      "threads": 6,
+      "tdp": 35,
+      "graphics": "UHD 630",
+      "memoryTypes": "DDR4-2666",
+      "generation": "9th",
+      "boostClockGHz": 3.9,
+      "launchYear": 2019
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i5-9600",
+    "brand": "Intel",
+    "externalId": "Intel Core i5-9600",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1151",
+      "cores": 6,
+      "threads": 6,
+      "tdp": 65,
+      "graphics": "UHD 630",
+      "memoryTypes": "DDR4-2666",
+      "generation": "9th",
+      "boostClockGHz": 4.6,
+      "launchYear": 2019
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i5-9500T",
+    "brand": "Intel",
+    "externalId": "Intel Core i5-9500T",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1151",
+      "cores": 6,
+      "threads": 6,
+      "tdp": 35,
+      "graphics": "UHD 630",
+      "memoryTypes": "DDR4-2666",
+      "generation": "9th",
+      "boostClockGHz": 3.7,
+      "launchYear": 2019
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i5-9500F",
+    "brand": "Intel",
+    "externalId": "Intel Core i5-9500F",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1151",
+      "cores": 6,
+      "threads": 6,
+      "tdp": 65,
+      "graphics": "Нет",
+      "memoryTypes": "DDR4-2666",
+      "generation": "9th",
+      "boostClockGHz": 4.4,
+      "launchYear": 2019
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i5-9500",
+    "brand": "Intel",
+    "externalId": "Intel Core i5-9500",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1151",
+      "cores": 6,
+      "threads": 6,
+      "tdp": 65,
+      "graphics": "UHD 630",
+      "memoryTypes": "DDR4-2666",
+      "generation": "9th",
+      "boostClockGHz": 4.4,
+      "launchYear": 2019
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i5-9400T",
+    "brand": "Intel",
+    "externalId": "Intel Core i5-9400T",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1151",
+      "cores": 6,
+      "threads": 6,
+      "tdp": 35,
+      "graphics": "UHD 630",
+      "memoryTypes": "DDR4-2666",
+      "generation": "9th",
+      "boostClockGHz": 3.4,
+      "launchYear": 2019
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i3-9350K",
+    "brand": "Intel",
+    "externalId": "Intel Core i3-9350K",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1151",
+      "cores": 4,
+      "threads": 4,
+      "tdp": 91,
+      "graphics": "UHD 630",
+      "memoryTypes": "DDR4-2400",
+      "generation": "9th",
+      "boostClockGHz": 4.6,
+      "launchYear": 2019
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i3-9320",
+    "brand": "Intel",
+    "externalId": "Intel Core i3-9320",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1151",
+      "cores": 4,
+      "threads": 4,
+      "tdp": 62,
+      "graphics": "UHD 630",
+      "memoryTypes": "DDR4-2400",
+      "generation": "9th",
+      "boostClockGHz": 4.4,
+      "launchYear": 2019
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i3-9300T",
+    "brand": "Intel",
+    "externalId": "Intel Core i3-9300T",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1151",
+      "cores": 4,
+      "threads": 4,
+      "tdp": 35,
+      "graphics": "UHD 630",
+      "memoryTypes": "DDR4-2400",
+      "generation": "9th",
+      "boostClockGHz": 3.8,
+      "launchYear": 2019
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i3-9300",
+    "brand": "Intel",
+    "externalId": "Intel Core i3-9300",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1151",
+      "cores": 4,
+      "threads": 4,
+      "tdp": 62,
+      "graphics": "UHD 630",
+      "memoryTypes": "DDR4-2400",
+      "generation": "9th",
+      "boostClockGHz": 4.3,
+      "launchYear": 2019
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i3-9100T",
+    "brand": "Intel",
+    "externalId": "Intel Core i3-9100T",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1151",
+      "cores": 4,
+      "threads": 4,
+      "tdp": 35,
+      "graphics": "UHD 630",
+      "memoryTypes": "DDR4-2400",
+      "generation": "9th",
+      "boostClockGHz": 3.7,
+      "launchYear": 2019
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i3-9100F",
+    "brand": "Intel",
+    "externalId": "Intel Core i3-9100F",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1151",
+      "cores": 4,
+      "threads": 4,
+      "tdp": 65,
+      "graphics": "Нет",
+      "memoryTypes": "DDR4-2400",
+      "generation": "9th",
+      "boostClockGHz": 4.2,
+      "launchYear": 2019
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i3-9100",
+    "brand": "Intel",
+    "externalId": "Intel Core i3-9100",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1151",
+      "cores": 4,
+      "threads": 4,
+      "tdp": 65,
+      "graphics": "UHD 630",
+      "memoryTypes": "DDR4-2400",
+      "generation": "9th",
+      "boostClockGHz": 4.2,
+      "launchYear": 2019
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i9-9900KF",
+    "brand": "Intel",
+    "externalId": "Intel Core i9-9900KF",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1151",
+      "cores": 8,
+      "threads": 16,
+      "tdp": 95,
+      "graphics": "Нет",
+      "memoryTypes": "DDR4-2666",
+      "generation": "9th",
+      "boostClockGHz": 5,
+      "launchYear": 2019
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i7-9700KF",
+    "brand": "Intel",
+    "externalId": "Intel Core i7-9700KF",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1151",
+      "cores": 8,
+      "threads": 8,
+      "tdp": 95,
+      "graphics": "Нет",
+      "memoryTypes": "DDR4-2666",
+      "generation": "9th",
+      "boostClockGHz": 4.9,
+      "launchYear": 2019
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i5-9600KF",
+    "brand": "Intel",
+    "externalId": "Intel Core i5-9600KF",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1151",
+      "cores": 6,
+      "threads": 6,
+      "tdp": 95,
+      "graphics": "Нет",
+      "memoryTypes": "DDR4-2666",
+      "generation": "9th",
+      "boostClockGHz": 4.6,
+      "launchYear": 2019
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i5-9400F",
+    "brand": "Intel",
+    "externalId": "Intel Core i5-9400F",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1151",
+      "cores": 6,
+      "threads": 6,
+      "tdp": 65,
+      "graphics": "Нет",
+      "memoryTypes": "DDR4-2666",
+      "generation": "9th",
+      "boostClockGHz": 4.1,
+      "launchYear": 2019
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i5-9400",
+    "brand": "Intel",
+    "externalId": "Intel Core i5-9400",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1151",
+      "cores": 6,
+      "threads": 6,
+      "tdp": 65,
+      "graphics": "UHD 630",
+      "memoryTypes": "DDR4-2666",
+      "generation": "9th",
+      "boostClockGHz": 4.1,
+      "launchYear": 2019
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i3-9350KF",
+    "brand": "Intel",
+    "externalId": "Intel Core i3-9350KF",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1151",
+      "cores": 4,
+      "threads": 4,
+      "tdp": 91,
+      "graphics": "Нет",
+      "memoryTypes": "DDR4-2400",
+      "generation": "9th",
+      "boostClockGHz": 4.6,
+      "launchYear": 2019
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i9-9980XE",
+    "brand": "Intel",
+    "externalId": "Intel Core i9-9980XE",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA2066",
+      "cores": 18,
+      "threads": 36,
+      "tdp": 165,
+      "graphics": "Нет",
+      "memoryTypes": "DDR4-2666",
+      "generation": "9th",
+      "boostClockGHz": 4.5,
+      "launchYear": 2018
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i9-9960X",
+    "brand": "Intel",
+    "externalId": "Intel Core i9-9960X",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA2066",
+      "cores": 16,
+      "threads": 32,
+      "tdp": 165,
+      "graphics": "Нет",
+      "memoryTypes": "DDR4-2666",
+      "generation": "9th",
+      "boostClockGHz": 4.5,
+      "launchYear": 2018
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i9-9940X",
+    "brand": "Intel",
+    "externalId": "Intel Core i9-9940X",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA2066",
+      "cores": 14,
+      "threads": 28,
+      "tdp": 165,
+      "graphics": "Нет",
+      "memoryTypes": "DDR4-2666",
+      "generation": "9th",
+      "boostClockGHz": 4.5,
+      "launchYear": 2018
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i9-9920X",
+    "brand": "Intel",
+    "externalId": "Intel Core i9-9920X",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA2066",
+      "cores": 12,
+      "threads": 24,
+      "tdp": 165,
+      "graphics": "Нет",
+      "memoryTypes": "DDR4-2666",
+      "generation": "9th",
+      "boostClockGHz": 4.5,
+      "launchYear": 2018
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i9-9900X",
+    "brand": "Intel",
+    "externalId": "Intel Core i9-9900X",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA2066",
+      "cores": 10,
+      "threads": 20,
+      "tdp": 165,
+      "graphics": "Нет",
+      "memoryTypes": "DDR4-2666",
+      "generation": "9th",
+      "boostClockGHz": 4.5,
+      "launchYear": 2018
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i9-9900K",
+    "brand": "Intel",
+    "externalId": "Intel Core i9-9900K",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1151",
+      "cores": 8,
+      "threads": 16,
+      "tdp": 95,
+      "graphics": "UHD 630",
+      "memoryTypes": "DDR4-2666",
+      "generation": "9th",
+      "boostClockGHz": 5,
+      "launchYear": 2018
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i9-9820X",
+    "brand": "Intel",
+    "externalId": "Intel Core i9-9820X",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA2066",
+      "cores": 10,
+      "threads": 20,
+      "tdp": 165,
+      "graphics": "Нет",
+      "memoryTypes": "DDR4-2666",
+      "generation": "9th",
+      "boostClockGHz": 4.2,
+      "launchYear": 2018
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i7-9800X",
+    "brand": "Intel",
+    "externalId": "Intel Core i7-9800X",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA2066",
+      "cores": 8,
+      "threads": 16,
+      "tdp": 165,
+      "graphics": "Нет",
+      "memoryTypes": "DDR4-2666",
+      "generation": "9th",
+      "boostClockGHz": 4.5,
+      "launchYear": 2018
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i7-9700K",
+    "brand": "Intel",
+    "externalId": "Intel Core i7-9700K",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1151",
+      "cores": 8,
+      "threads": 8,
+      "tdp": 95,
+      "graphics": "UHD 630",
+      "memoryTypes": "DDR4-2666",
+      "generation": "9th",
+      "boostClockGHz": 4.9,
+      "launchYear": 2018
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i5-9600k",
+    "brand": "Intel",
+    "externalId": "Intel Core i5-9600k",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1151",
+      "cores": 6,
+      "threads": 6,
+      "tdp": 95,
+      "graphics": "UHD 630",
+      "memoryTypes": "DDR4-2666",
+      "generation": "9th",
+      "boostClockGHz": 4.6,
+      "launchYear": 2018
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i7-8700T",
+    "brand": "Intel",
+    "externalId": "Intel Core i7-8700T",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1151",
+      "cores": 6,
+      "threads": 12,
+      "tdp": 35,
+      "graphics": "UHD 630",
+      "memoryTypes": "DDR4-2666",
+      "generation": "8th",
+      "boostClockGHz": 4,
+      "launchYear": 2018
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i7-i7+8700",
+    "brand": "Intel",
+    "externalId": "Intel Core i7-i7+8700",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1151",
+      "cores": 6,
+      "threads": 12,
+      "tdp": 65,
+      "graphics": "UHD 630",
+      "memoryTypes": "DDR4-2666",
+      "generation": "8th",
+      "boostClockGHz": 4.6,
+      "launchYear": 2018
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i7-8086K",
+    "brand": "Intel",
+    "externalId": "Intel Core i7-8086K",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1151",
+      "cores": 6,
+      "threads": 12,
+      "tdp": 95,
+      "graphics": "UHD 630",
+      "memoryTypes": "DDR4-2666",
+      "generation": "8th",
+      "boostClockGHz": 5,
+      "launchYear": 2018
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i5-8600T",
+    "brand": "Intel",
+    "externalId": "Intel Core i5-8600T",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1151",
+      "cores": 6,
+      "threads": 6,
+      "tdp": 35,
+      "graphics": "UHD 630",
+      "memoryTypes": "DDR4-2666",
+      "generation": "8th",
+      "boostClockGHz": 3.7,
+      "launchYear": 2018
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i5-8600",
+    "brand": "Intel",
+    "externalId": "Intel Core i5-8600",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1151",
+      "cores": 6,
+      "threads": 6,
+      "tdp": 65,
+      "graphics": "UHD 630",
+      "memoryTypes": "DDR4-2666",
+      "generation": "8th",
+      "boostClockGHz": 4.3,
+      "launchYear": 2018
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i5-8500T",
+    "brand": "Intel",
+    "externalId": "Intel Core i5-8500T",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1151",
+      "cores": 6,
+      "threads": 6,
+      "tdp": 35,
+      "graphics": "UHD 630",
+      "memoryTypes": "DDR4-2666",
+      "generation": "8th",
+      "boostClockGHz": 3.5,
+      "launchYear": 2018
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i5-8500",
+    "brand": "Intel",
+    "externalId": "Intel Core i5-8500",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1151",
+      "cores": 6,
+      "threads": 6,
+      "tdp": 65,
+      "graphics": "UHD 630",
+      "memoryTypes": "DDR4-2666",
+      "generation": "8th",
+      "boostClockGHz": 4.1,
+      "launchYear": 2018
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i5-8400T",
+    "brand": "Intel",
+    "externalId": "Intel Core i5-8400T",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1151",
+      "cores": 6,
+      "threads": 6,
+      "tdp": 35,
+      "graphics": "UHD 630",
+      "memoryTypes": "DDR4-2666",
+      "generation": "8th",
+      "boostClockGHz": 3.3,
+      "launchYear": 2018
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i5-8400",
+    "brand": "Intel",
+    "externalId": "Intel Core i5-8400",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1151",
+      "cores": 6,
+      "threads": 6,
+      "tdp": 65,
+      "graphics": "UHD 630",
+      "memoryTypes": "DDR4-2666",
+      "generation": "8th",
+      "boostClockGHz": 4,
+      "launchYear": 2018
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i3-8300T",
+    "brand": "Intel",
+    "externalId": "Intel Core i3-8300T",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1151",
+      "cores": 4,
+      "threads": 4,
+      "tdp": 35,
+      "graphics": "UHD 630",
+      "memoryTypes": "DDR4-2400",
+      "generation": "8th",
+      "boostClockGHz": null,
+      "launchYear": 2018
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i3-8300",
+    "brand": "Intel",
+    "externalId": "Intel Core i3-8300",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1151",
+      "cores": 4,
+      "threads": 4,
+      "tdp": 62,
+      "graphics": "UHD 630",
+      "memoryTypes": "DDR4-2400",
+      "generation": "8th",
+      "boostClockGHz": null,
+      "launchYear": 2018
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i3-8100T",
+    "brand": "Intel",
+    "externalId": "Intel Core i3-8100T",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1151",
+      "cores": 4,
+      "threads": 4,
+      "tdp": 35,
+      "graphics": "UHD 630",
+      "memoryTypes": "DDR4-2400",
+      "generation": "8th",
+      "boostClockGHz": null,
+      "launchYear": 2018
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i7-8700K",
+    "brand": "Intel",
+    "externalId": "Intel Core i7-8700K",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1151",
+      "cores": 6,
+      "threads": 12,
+      "tdp": 95,
+      "graphics": "UHD 630",
+      "memoryTypes": "DDR4-2666",
+      "generation": "8th",
+      "boostClockGHz": 4.7,
+      "launchYear": 2017
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i7-8700",
+    "brand": "Intel",
+    "externalId": "Intel Core i7-8700",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1151",
+      "cores": 6,
+      "threads": 12,
+      "tdp": 65,
+      "graphics": "UHD 630",
+      "memoryTypes": "DDR4-2666",
+      "generation": "8th",
+      "boostClockGHz": 4.6,
+      "launchYear": 2017
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i5-8600K",
+    "brand": "Intel",
+    "externalId": "Intel Core i5-8600K",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1151",
+      "cores": 6,
+      "threads": 6,
+      "tdp": 95,
+      "graphics": "UHD 630",
+      "memoryTypes": "DDR4-2666",
+      "generation": "8th",
+      "boostClockGHz": 4.3,
+      "launchYear": 2017
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i5-i5+8400",
+    "brand": "Intel",
+    "externalId": "Intel Core i5-i5+8400",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1151",
+      "cores": 6,
+      "threads": 6,
+      "tdp": 65,
+      "graphics": "UHD 630",
+      "memoryTypes": "DDR4-2666",
+      "generation": "8th",
+      "boostClockGHz": 4,
+      "launchYear": 2018
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i3-8350K",
+    "brand": "Intel",
+    "externalId": "Intel Core i3-8350K",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1151",
+      "cores": 4,
+      "threads": 4,
+      "tdp": 91,
+      "graphics": "UHD 630",
+      "memoryTypes": "DDR4-2400",
+      "generation": "8th",
+      "boostClockGHz": null,
+      "launchYear": 2017
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i3-8100",
+    "brand": "Intel",
+    "externalId": "Intel Core i3-8100",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1151",
+      "cores": 4,
+      "threads": 4,
+      "tdp": 65,
+      "graphics": "UHD 630",
+      "memoryTypes": "DDR4-2400",
+      "generation": "8th",
+      "boostClockGHz": null,
+      "launchYear": 2017
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i9-7980XE",
+    "brand": "Intel",
+    "externalId": "Intel Core i9-7980XE",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA2066",
+      "cores": 18,
+      "threads": 36,
+      "tdp": 165,
+      "graphics": "Нет",
+      "memoryTypes": "DDR4-2666",
+      "generation": "7th",
+      "boostClockGHz": 4.2,
+      "launchYear": 2017
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i9-7960X",
+    "brand": "Intel",
+    "externalId": "Intel Core i9-7960X",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA2066",
+      "cores": 16,
+      "threads": 32,
+      "tdp": 165,
+      "graphics": "Нет",
+      "memoryTypes": "DDR4-2666",
+      "generation": "7th",
+      "boostClockGHz": 4.2,
+      "launchYear": 2017
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i9-7940X",
+    "brand": "Intel",
+    "externalId": "Intel Core i9-7940X",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA2066",
+      "cores": 14,
+      "threads": 28,
+      "tdp": 165,
+      "graphics": "Нет",
+      "memoryTypes": "DDR4-2666",
+      "generation": "7th",
+      "boostClockGHz": 4.3,
+      "launchYear": 2017
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i9-7920X",
+    "brand": "Intel",
+    "externalId": "Intel Core i9-7920X",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA2066",
+      "cores": 12,
+      "threads": 24,
+      "tdp": 140,
+      "graphics": "Нет",
+      "memoryTypes": "DDR4-2666",
+      "generation": "7th",
+      "boostClockGHz": 4.3,
+      "launchYear": 2017
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i9-7900X",
+    "brand": "Intel",
+    "externalId": "Intel Core i9-7900X",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA2066",
+      "cores": 10,
+      "threads": 20,
+      "tdp": 140,
+      "graphics": "Нет",
+      "memoryTypes": "DDR4-2666",
+      "generation": "7th",
+      "boostClockGHz": 4.3,
+      "launchYear": 2017
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i7-7820X",
+    "brand": "Intel",
+    "externalId": "Intel Core i7-7820X",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA2066",
+      "cores": 8,
+      "threads": 16,
+      "tdp": 140,
+      "graphics": "Нет",
+      "memoryTypes": "DDR4-2666",
+      "generation": "7th",
+      "boostClockGHz": 4.5,
+      "launchYear": 2017
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i7-7800X",
+    "brand": "Intel",
+    "externalId": "Intel Core i7-7800X",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA2066",
+      "cores": 6,
+      "threads": 12,
+      "tdp": 140,
+      "graphics": "Нет",
+      "memoryTypes": "DDR4-2400",
+      "generation": "7th",
+      "boostClockGHz": 4,
+      "launchYear": 2017
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i7-7740X",
+    "brand": "Intel",
+    "externalId": "Intel Core i7-7740X",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA2066",
+      "cores": 4,
+      "threads": 8,
+      "tdp": 112,
+      "graphics": "Нет",
+      "memoryTypes": "DDR4-2666",
+      "generation": "7th",
+      "boostClockGHz": 4.5,
+      "launchYear": 2017
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i5-7640X",
+    "brand": "Intel",
+    "externalId": "Intel Core i5-7640X",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA2066",
+      "cores": 4,
+      "threads": 4,
+      "tdp": 112,
+      "graphics": "Нет",
+      "memoryTypes": "DDR4-2666",
+      "generation": "7th",
+      "boostClockGHz": 4.2,
+      "launchYear": 2017
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i7-7700T",
+    "brand": "Intel",
+    "externalId": "Intel Core i7-7700T",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1151",
+      "cores": 4,
+      "threads": 8,
+      "tdp": 35,
+      "graphics": "HD 630",
+      "memoryTypes": "DDR4-2133/2400, DDR3L-1333/1600",
+      "generation": "7th",
+      "boostClockGHz": 3.8,
+      "launchYear": 2017
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i7-7700K",
+    "brand": "Intel",
+    "externalId": "Intel Core i7-7700K",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1151",
+      "cores": 4,
+      "threads": 8,
+      "tdp": 91,
+      "graphics": "HD 630",
+      "memoryTypes": "DDR4-2133/2400, DDR3L-1333/1600",
+      "generation": "7th",
+      "boostClockGHz": 4.5,
+      "launchYear": 2017
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i7-7700",
+    "brand": "Intel",
+    "externalId": "Intel Core i7-7700",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1151",
+      "cores": 4,
+      "threads": 8,
+      "tdp": 65,
+      "graphics": "HD 630",
+      "memoryTypes": "DDR4-2133/2400, DDR3L-1333/1600",
+      "generation": "7th",
+      "boostClockGHz": 4.2,
+      "launchYear": 2017
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i5-7600T",
+    "brand": "Intel",
+    "externalId": "Intel Core i5-7600T",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1151",
+      "cores": 4,
+      "threads": 4,
+      "tdp": 35,
+      "graphics": "HD 630",
+      "memoryTypes": "DDR4-2133/2400, DDR3L-1333/1600",
+      "generation": "7th",
+      "boostClockGHz": 3.7,
+      "launchYear": 2017
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i5-7600K",
+    "brand": "Intel",
+    "externalId": "Intel Core i5-7600K",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1151",
+      "cores": 4,
+      "threads": 4,
+      "tdp": 91,
+      "graphics": "HD 630",
+      "memoryTypes": "DDR4-2133/2400, DDR3L-1333/1600",
+      "generation": "7th",
+      "boostClockGHz": 4.2,
+      "launchYear": 2017
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i5-7600",
+    "brand": "Intel",
+    "externalId": "Intel Core i5-7600",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1151",
+      "cores": 4,
+      "threads": 4,
+      "tdp": 65,
+      "graphics": "HD 630",
+      "memoryTypes": "DDR4-2133/2400, DDR3L-1333/1600",
+      "generation": "7th",
+      "boostClockGHz": 4.1,
+      "launchYear": 2017
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i5-7500T",
+    "brand": "Intel",
+    "externalId": "Intel Core i5-7500T",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1151",
+      "cores": 4,
+      "threads": 4,
+      "tdp": 35,
+      "graphics": "HD 630",
+      "memoryTypes": "DDR4-2133/2400, DDR3L-1333/1600",
+      "generation": "7th",
+      "boostClockGHz": 3.3,
+      "launchYear": 2017
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i5-7500",
+    "brand": "Intel",
+    "externalId": "Intel Core i5-7500",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1151",
+      "cores": 4,
+      "threads": 4,
+      "tdp": 65,
+      "graphics": "HD 630",
+      "memoryTypes": "DDR4-2133/2400, DDR3L-1333/1600",
+      "generation": "7th",
+      "boostClockGHz": 3.8,
+      "launchYear": 2017
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i5-7400T",
+    "brand": "Intel",
+    "externalId": "Intel Core i5-7400T",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1151",
+      "cores": 4,
+      "threads": 4,
+      "tdp": 35,
+      "graphics": "HD 630",
+      "memoryTypes": "DDR4-2133/2400, DDR3L-1333/1600",
+      "generation": "7th",
+      "boostClockGHz": 3,
+      "launchYear": 2017
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i5-7400",
+    "brand": "Intel",
+    "externalId": "Intel Core i5-7400",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1151",
+      "cores": 4,
+      "threads": 4,
+      "tdp": 65,
+      "graphics": "HD 630",
+      "memoryTypes": "DDR4-2133/2400, DDR3L-1333/1600",
+      "generation": "7th",
+      "boostClockGHz": 3.5,
+      "launchYear": 2017
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i3-7350K",
+    "brand": "Intel",
+    "externalId": "Intel Core i3-7350K",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1151",
+      "cores": 2,
+      "threads": 4,
+      "tdp": 60,
+      "graphics": "HD 630",
+      "memoryTypes": "DDR4-2133/2400, DDR3L-1333/1600",
+      "generation": "7th",
+      "boostClockGHz": null,
+      "launchYear": 2017
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i3-7320",
+    "brand": "Intel",
+    "externalId": "Intel Core i3-7320",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1151",
+      "cores": 2,
+      "threads": 4,
+      "tdp": 51,
+      "graphics": "HD 630",
+      "memoryTypes": "DDR4-2133/2400, DDR3L-1333/1600",
+      "generation": "7th",
+      "boostClockGHz": null,
+      "launchYear": 2017
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i3-7300T",
+    "brand": "Intel",
+    "externalId": "Intel Core i3-7300T",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1151",
+      "cores": 2,
+      "threads": 4,
+      "tdp": 35,
+      "graphics": "HD 630",
+      "memoryTypes": "DDR4-2133/2400, DDR3L-1333/1600",
+      "generation": "7th",
+      "boostClockGHz": null,
+      "launchYear": 2017
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i3-7300",
+    "brand": "Intel",
+    "externalId": "Intel Core i3-7300",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1151",
+      "cores": 2,
+      "threads": 4,
+      "tdp": 51,
+      "graphics": "HD 630",
+      "memoryTypes": "DDR4-2133/2400, DDR3L-1333/1600",
+      "generation": "7th",
+      "boostClockGHz": null,
+      "launchYear": 2017
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i3-7101TE",
+    "brand": "Intel",
+    "externalId": "Intel Core i3-7101TE",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1151",
+      "cores": 2,
+      "threads": 4,
+      "tdp": 35,
+      "graphics": "HD 630",
+      "memoryTypes": "DDR3L-1600, DDR4-2400",
+      "generation": "7th",
+      "boostClockGHz": null,
+      "launchYear": 2017
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i3-7101E",
+    "brand": "Intel",
+    "externalId": "Intel Core i3-7101E",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1151",
+      "cores": 2,
+      "threads": 4,
+      "tdp": 54,
+      "graphics": "HD 630",
+      "memoryTypes": "DDR3L-1600, DDR4-2400",
+      "generation": "7th",
+      "boostClockGHz": null,
+      "launchYear": 2017
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i3-7100T",
+    "brand": "Intel",
+    "externalId": "Intel Core i3-7100T",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1151",
+      "cores": 2,
+      "threads": 4,
+      "tdp": 35,
+      "graphics": "HD 630",
+      "memoryTypes": "DDR4-2133/2400, DDR3L-1333/1600",
+      "generation": "7th",
+      "boostClockGHz": null,
+      "launchYear": 2017
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i3-7100",
+    "brand": "Intel",
+    "externalId": "Intel Core i3-7100",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1151",
+      "cores": 2,
+      "threads": 4,
+      "tdp": 51,
+      "graphics": "HD 630",
+      "memoryTypes": "DDR4-2133/2400, DDR3L-1333/1600",
+      "generation": "7th",
+      "boostClockGHz": null,
+      "launchYear": 2017
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i7-6950X",
+    "brand": "Intel",
+    "externalId": "Intel Core i7-6950X",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA2011-3",
+      "cores": 10,
+      "threads": 20,
+      "tdp": 140,
+      "graphics": "Нет",
+      "memoryTypes": "DDR4 2400/2133",
+      "generation": "6th",
+      "boostClockGHz": 4,
+      "launchYear": 2016
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i7-6900K",
+    "brand": "Intel",
+    "externalId": "Intel Core i7-6900K",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA2011-3",
+      "cores": 8,
+      "threads": 16,
+      "tdp": 140,
+      "graphics": "Нет",
+      "memoryTypes": "DDR4 2400/2133",
+      "generation": "6th",
+      "boostClockGHz": 4,
+      "launchYear": 2016
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i7-6850K",
+    "brand": "Intel",
+    "externalId": "Intel Core i7-6850K",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA2011-3",
+      "cores": 6,
+      "threads": 12,
+      "tdp": 140,
+      "graphics": "Нет",
+      "memoryTypes": "DDR4 2400/2133",
+      "generation": "6th",
+      "boostClockGHz": 4,
+      "launchYear": 2016
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i7-6800K",
+    "brand": "Intel",
+    "externalId": "Intel Core i7-6800K",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA2011-3",
+      "cores": 6,
+      "threads": 12,
+      "tdp": 140,
+      "graphics": "Нет",
+      "memoryTypes": "DDR4 2400/2133",
+      "generation": "6th",
+      "boostClockGHz": 3.8,
+      "launchYear": 2016
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i5-6685R",
+    "brand": "Intel",
+    "externalId": "Intel Core i5-6685R",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "FCLGA1151",
+      "cores": 4,
+      "threads": 4,
+      "tdp": 65,
+      "graphics": "Iris Pro 580",
+      "memoryTypes": "DDR4-1866/2133, DDR3L-1333/1600",
+      "generation": "6th",
+      "boostClockGHz": 3.8,
+      "launchYear": 2016
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i5-6585R",
+    "brand": "Intel",
+    "externalId": "Intel Core i5-6585R",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "FCLGA1151",
+      "cores": 4,
+      "threads": 4,
+      "tdp": 65,
+      "graphics": "Iris Pro 580",
+      "memoryTypes": "DDR4-1866/2133, DDR3L-1333/1600",
+      "generation": "6th",
+      "boostClockGHz": 3.6,
+      "launchYear": 2016
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i5-6402P",
+    "brand": "Intel",
+    "externalId": "Intel Core i5-6402P",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "FCLGA1151",
+      "cores": 4,
+      "threads": 4,
+      "tdp": 65,
+      "graphics": "HD 510",
+      "memoryTypes": "DDR4-1866/2133, DDR3L-1333/1600",
+      "generation": "6th",
+      "boostClockGHz": 3.4,
+      "launchYear": 2015
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i3-6098P",
+    "brand": "Intel",
+    "externalId": "Intel Core i3-6098P",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "FCLGA1151",
+      "cores": 2,
+      "threads": 4,
+      "tdp": 54,
+      "graphics": "HD 510",
+      "memoryTypes": "DDR4-1866/2133, DDR3L-1333/1600",
+      "generation": "6th",
+      "boostClockGHz": null,
+      "launchYear": 2015
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i7-6700T",
+    "brand": "Intel",
+    "externalId": "Intel Core i7-6700T",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "FCLGA1151",
+      "cores": 4,
+      "threads": 8,
+      "tdp": 35,
+      "graphics": "HD 530",
+      "memoryTypes": "DDR4-1866/2133, DDR3L-1333/1600",
+      "generation": "6th",
+      "boostClockGHz": 3.6,
+      "launchYear": 2015
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i7-6700K",
+    "brand": "Intel",
+    "externalId": "Intel Core i7-6700K",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "FCLGA1151",
+      "cores": 4,
+      "threads": 8,
+      "tdp": 91,
+      "graphics": "HD 530",
+      "memoryTypes": "DDR4-1866/2133, DDR3L-1333/1600",
+      "generation": "6th",
+      "boostClockGHz": 4.2,
+      "launchYear": 2015
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i7-6700",
+    "brand": "Intel",
+    "externalId": "Intel Core i7-6700",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "FCLGA1151",
+      "cores": 4,
+      "threads": 8,
+      "tdp": 65,
+      "graphics": "HD 530",
+      "memoryTypes": "DDR4-1866/2133, DDR3L-1333/1600",
+      "generation": "6th",
+      "boostClockGHz": 4,
+      "launchYear": 2015
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i5-6600T",
+    "brand": "Intel",
+    "externalId": "Intel Core i5-6600T",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "FCLGA1151",
+      "cores": 4,
+      "threads": 4,
+      "tdp": 35,
+      "graphics": "HD 530",
+      "memoryTypes": "DDR4-1866/2133, DDR3L-1333/1600",
+      "generation": "6th",
+      "boostClockGHz": 3.5,
+      "launchYear": 2015
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i5-6600K",
+    "brand": "Intel",
+    "externalId": "Intel Core i5-6600K",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "FCLGA1151",
+      "cores": 4,
+      "threads": 4,
+      "tdp": 91,
+      "graphics": "HD 530",
+      "memoryTypes": "DDR4-1866/2133, DDR3L-1333/1600",
+      "generation": "6th",
+      "boostClockGHz": 3.9,
+      "launchYear": 2015
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i5-6600",
+    "brand": "Intel",
+    "externalId": "Intel Core i5-6600",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "FCLGA1151",
+      "cores": 4,
+      "threads": 4,
+      "tdp": 65,
+      "graphics": "HD 530",
+      "memoryTypes": "DDR4-1866/2133, DDR3L-1333/1600",
+      "generation": "6th",
+      "boostClockGHz": 3.9,
+      "launchYear": 2015
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i5-6500T",
+    "brand": "Intel",
+    "externalId": "Intel Core i5-6500T",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "FCLGA1151",
+      "cores": 4,
+      "threads": 4,
+      "tdp": 35,
+      "graphics": "HD 530",
+      "memoryTypes": "DDR4-1866/2133, DDR3L-1333/1600",
+      "generation": "6th",
+      "boostClockGHz": 3.1,
+      "launchYear": 2015
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i5-6500",
+    "brand": "Intel",
+    "externalId": "Intel Core i5-6500",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "FCLGA1151",
+      "cores": 4,
+      "threads": 4,
+      "tdp": 65,
+      "graphics": "HD 530",
+      "memoryTypes": "DDR4-1866/2133, DDR3L-1333/1600",
+      "generation": "6th",
+      "boostClockGHz": 3.6,
+      "launchYear": 2015
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i5-6400T",
+    "brand": "Intel",
+    "externalId": "Intel Core i5-6400T",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "FCLGA1151",
+      "cores": 4,
+      "threads": 4,
+      "tdp": 35,
+      "graphics": "HD 530",
+      "memoryTypes": "DDR4-1866/2133, DDR3L-1333/1600",
+      "generation": "6th",
+      "boostClockGHz": 2.8,
+      "launchYear": 2015
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i5-6400",
+    "brand": "Intel",
+    "externalId": "Intel Core i5-6400",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "FCLGA1151",
+      "cores": 4,
+      "threads": 4,
+      "tdp": 65,
+      "graphics": "HD 530",
+      "memoryTypes": "DDR4-1866/2133, DDR3L-1333/1600",
+      "generation": "6th",
+      "boostClockGHz": 3.3,
+      "launchYear": 2015
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i3-6320",
+    "brand": "Intel",
+    "externalId": "Intel Core i3-6320",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "FCLGA1151",
+      "cores": 2,
+      "threads": 4,
+      "tdp": 51,
+      "graphics": "HD 530",
+      "memoryTypes": "DDR4-1866/2133, DDR3L-1333/1600",
+      "generation": "6th",
+      "boostClockGHz": null,
+      "launchYear": 2015
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i3-6300T",
+    "brand": "Intel",
+    "externalId": "Intel Core i3-6300T",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "FCLGA1151",
+      "cores": 2,
+      "threads": 4,
+      "tdp": 35,
+      "graphics": "HD 530",
+      "memoryTypes": "DDR4-1866/2133, DDR3L-1333/1600",
+      "generation": "6th",
+      "boostClockGHz": null,
+      "launchYear": 2015
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i3-6300",
+    "brand": "Intel",
+    "externalId": "Intel Core i3-6300",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "FCLGA1151",
+      "cores": 2,
+      "threads": 4,
+      "tdp": 51,
+      "graphics": "HD 530",
+      "memoryTypes": "DDR4-1866/2133, DDR3L-1333/1600",
+      "generation": "6th",
+      "boostClockGHz": null,
+      "launchYear": 2015
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i3-6100T",
+    "brand": "Intel",
+    "externalId": "Intel Core i3-6100T",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "FCLGA1151",
+      "cores": 2,
+      "threads": 4,
+      "tdp": 35,
+      "graphics": "HD 530",
+      "memoryTypes": "DDR4-1866/2133, DDR3L-1333/1600",
+      "generation": "6th",
+      "boostClockGHz": null,
+      "launchYear": 2015
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i3-6100",
+    "brand": "Intel",
+    "externalId": "Intel Core i3-6100",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "FCLGA1151",
+      "cores": 2,
+      "threads": 4,
+      "tdp": 51,
+      "graphics": "HD 530",
+      "memoryTypes": "DDR4-1866/2133, DDR3L-1333/1600",
+      "generation": "6th",
+      "boostClockGHz": null,
+      "launchYear": 2015
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i5-5675C",
+    "brand": "Intel",
+    "externalId": "Intel Core i5-5675C",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "FCLGA1150",
+      "cores": 4,
+      "threads": 4,
+      "tdp": 65,
+      "graphics": "Iris Pro 6200",
+      "memoryTypes": "DDR3L-1333/1600",
+      "generation": "5th",
+      "boostClockGHz": 3.6,
+      "launchYear": 2015
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i3-4170",
+    "brand": "Intel",
+    "externalId": "Intel Core i3-4170",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1150",
+      "cores": 2,
+      "threads": 4,
+      "tdp": 54,
+      "graphics": "HD 4400",
+      "memoryTypes": "DDR3-1333/1600, DDR3L-1333/1600",
+      "generation": "4th",
+      "boostClockGHz": null,
+      "launchYear": 2015
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i3-4170T",
+    "brand": "Intel",
+    "externalId": "Intel Core i3-4170T",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1150",
+      "cores": 2,
+      "threads": 4,
+      "tdp": 35,
+      "graphics": "HD 4400",
+      "memoryTypes": "DDR3-1333/1600, DDR3L-1333/1600",
+      "generation": "4th",
+      "boostClockGHz": null,
+      "launchYear": 2015
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i3-4370T",
+    "brand": "Intel",
+    "externalId": "Intel Core i3-4370T",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1150",
+      "cores": 2,
+      "threads": 4,
+      "tdp": 35,
+      "graphics": "HD 4600",
+      "memoryTypes": "DDR3-1333/1600, DDR3L-1333/1600",
+      "generation": "4th",
+      "boostClockGHz": null,
+      "launchYear": 2015
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i7-5960X",
+    "brand": "Intel",
+    "externalId": "Intel Core i7-5960X",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA2011-3",
+      "cores": 8,
+      "threads": 16,
+      "tdp": 140,
+      "graphics": "Нет",
+      "memoryTypes": "DDR4 1600/1866/2133",
+      "generation": "5th",
+      "boostClockGHz": 3.5,
+      "launchYear": 2014
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i7-5930K",
+    "brand": "Intel",
+    "externalId": "Intel Core i7-5930K",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA2011-3",
+      "cores": 6,
+      "threads": 12,
+      "tdp": 140,
+      "graphics": "Нет",
+      "memoryTypes": "DDR4 1600/1866/2133",
+      "generation": "5th",
+      "boostClockGHz": 3.7,
+      "launchYear": 2014
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i7-5820K",
+    "brand": "Intel",
+    "externalId": "Intel Core i7-5820K",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA2011-3",
+      "cores": 6,
+      "threads": 12,
+      "tdp": 140,
+      "graphics": "Нет",
+      "memoryTypes": "DDR4 1600/1866/2133",
+      "generation": "5th",
+      "boostClockGHz": 3.6,
+      "launchYear": 2014
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i3-4160",
+    "brand": "Intel",
+    "externalId": "Intel Core i3-4160",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1150",
+      "cores": 2,
+      "threads": 4,
+      "tdp": 54,
+      "graphics": "HD 4400",
+      "memoryTypes": "DDR3-1333/1600, DDR3L-1333/1600",
+      "generation": "4th",
+      "boostClockGHz": null,
+      "launchYear": 2014
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i3-4160T",
+    "brand": "Intel",
+    "externalId": "Intel Core i3-4160T",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1150",
+      "cores": 2,
+      "threads": 4,
+      "tdp": 35,
+      "graphics": "HD 4400",
+      "memoryTypes": "DDR3-1333/1600, DDR3L-1333/1600",
+      "generation": "4th",
+      "boostClockGHz": null,
+      "launchYear": 2014
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i3-4360T",
+    "brand": "Intel",
+    "externalId": "Intel Core i3-4360T",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1150",
+      "cores": 2,
+      "threads": 4,
+      "tdp": 35,
+      "graphics": "HD 4600",
+      "memoryTypes": "DDR3-1333/1600, DDR3L-1333/1600",
+      "generation": "4th",
+      "boostClockGHz": null,
+      "launchYear": 2014
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i3-4370",
+    "brand": "Intel",
+    "externalId": "Intel Core i3-4370",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1150",
+      "cores": 2,
+      "threads": 4,
+      "tdp": 54,
+      "graphics": "HD 4600",
+      "memoryTypes": "DDR3-1333/1600, DDR3L-1333/1600",
+      "generation": "4th",
+      "boostClockGHz": null,
+      "launchYear": 2014
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i3-4150",
+    "brand": "Intel",
+    "externalId": "Intel Core i3-4150",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1150",
+      "cores": 2,
+      "threads": 4,
+      "tdp": 54,
+      "graphics": "HD 4400",
+      "memoryTypes": "DDR3-1333/1600, DDR3L-1333/1600",
+      "generation": "4th",
+      "boostClockGHz": null,
+      "launchYear": 2014
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i3-4150T",
+    "brand": "Intel",
+    "externalId": "Intel Core i3-4150T",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1150",
+      "cores": 2,
+      "threads": 4,
+      "tdp": 35,
+      "graphics": "HD 4400",
+      "memoryTypes": "DDR3-1333/1600, DDR3L-1333/1600",
+      "generation": "4th",
+      "boostClockGHz": null,
+      "launchYear": 2014
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i3-4350",
+    "brand": "Intel",
+    "externalId": "Intel Core i3-4350",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1150",
+      "cores": 2,
+      "threads": 4,
+      "tdp": 54,
+      "graphics": "HD 4600",
+      "memoryTypes": "DDR3-1333/1600, DDR3L-1333/1600",
+      "generation": "4th",
+      "boostClockGHz": null,
+      "launchYear": 2014
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i3-4350T",
+    "brand": "Intel",
+    "externalId": "Intel Core i3-4350T",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1150",
+      "cores": 2,
+      "threads": 4,
+      "tdp": 35,
+      "graphics": "HD 4600",
+      "memoryTypes": "DDR3-1333/1600, DDR3L-1333/1600",
+      "generation": "4th",
+      "boostClockGHz": null,
+      "launchYear": 2014
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i3-4360",
+    "brand": "Intel",
+    "externalId": "Intel Core i3-4360",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1150",
+      "cores": 2,
+      "threads": 4,
+      "tdp": 54,
+      "graphics": "HD 4600",
+      "memoryTypes": "DDR3-1333/1600, DDR3L-1333/1600",
+      "generation": "4th",
+      "boostClockGHz": null,
+      "launchYear": 2014
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i5-4460",
+    "brand": "Intel",
+    "externalId": "Intel Core i5-4460",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1150",
+      "cores": 4,
+      "threads": 4,
+      "tdp": 84,
+      "graphics": "HD 4600",
+      "memoryTypes": "DDR3-1333/1600, DDR3L-1333/1600",
+      "generation": "4th",
+      "boostClockGHz": 3.4,
+      "launchYear": 2014
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i5-4460S",
+    "brand": "Intel",
+    "externalId": "Intel Core i5-4460S",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1150",
+      "cores": 4,
+      "threads": 4,
+      "tdp": 65,
+      "graphics": "HD 4600",
+      "memoryTypes": "DDR3-1333/1600, DDR3L-1333/1600",
+      "generation": "4th",
+      "boostClockGHz": 3.4,
+      "launchYear": 2014
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i5-4460T",
+    "brand": "Intel",
+    "externalId": "Intel Core i5-4460T",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1150",
+      "cores": 4,
+      "threads": 4,
+      "tdp": 35,
+      "graphics": "HD 4600",
+      "memoryTypes": "DDR3-1333/1600, DDR3L-1333/1600",
+      "generation": "4th",
+      "boostClockGHz": 2.7,
+      "launchYear": 2014
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i5-4590",
+    "brand": "Intel",
+    "externalId": "Intel Core i5-4590",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1150",
+      "cores": 4,
+      "threads": 4,
+      "tdp": 84,
+      "graphics": "HD 4600",
+      "memoryTypes": "DDR3-1333/1600, DDR3L-1333/1600",
+      "generation": "4th",
+      "boostClockGHz": 3.7,
+      "launchYear": 2014
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i5-4590S",
+    "brand": "Intel",
+    "externalId": "Intel Core i5-4590S",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1150",
+      "cores": 4,
+      "threads": 4,
+      "tdp": 65,
+      "graphics": "HD 4600",
+      "memoryTypes": "DDR3-1333/1600, DDR3L-1333/1600",
+      "generation": "4th",
+      "boostClockGHz": 3.7,
+      "launchYear": 2014
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i5-4590T",
+    "brand": "Intel",
+    "externalId": "Intel Core i5-4590T",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1150",
+      "cores": 4,
+      "threads": 4,
+      "tdp": 35,
+      "graphics": "HD 4600",
+      "memoryTypes": "DDR3-1333/1600, DDR3L-1333/1600",
+      "generation": "4th",
+      "boostClockGHz": 3,
+      "launchYear": 2014
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i5-4690",
+    "brand": "Intel",
+    "externalId": "Intel Core i5-4690",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1150",
+      "cores": 4,
+      "threads": 4,
+      "tdp": 84,
+      "graphics": "HD 4600",
+      "memoryTypes": "DDR3-1333/1600, DDR3L-1333/1600",
+      "generation": "4th",
+      "boostClockGHz": 3.9,
+      "launchYear": 2014
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i5-4690K",
+    "brand": "Intel",
+    "externalId": "Intel Core i5-4690K",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1150",
+      "cores": 4,
+      "threads": 4,
+      "tdp": 88,
+      "graphics": "HD 4600",
+      "memoryTypes": "DDR3-1333/1600, DDR3L-1333/1600",
+      "generation": "4th",
+      "boostClockGHz": 3.9,
+      "launchYear": 2014
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i5-4690S",
+    "brand": "Intel",
+    "externalId": "Intel Core i5-4690S",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1150",
+      "cores": 4,
+      "threads": 4,
+      "tdp": 65,
+      "graphics": "HD 4600",
+      "memoryTypes": "DDR3-1333/1600, DDR3L-1333/1600",
+      "generation": "4th",
+      "boostClockGHz": 3.9,
+      "launchYear": 2014
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i5-4690T",
+    "brand": "Intel",
+    "externalId": "Intel Core i5-4690T",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1150",
+      "cores": 4,
+      "threads": 4,
+      "tdp": 45,
+      "graphics": "HD 4600",
+      "memoryTypes": "DDR3-1333/1600, DDR3L-1333/1600",
+      "generation": "4th",
+      "boostClockGHz": 3.5,
+      "launchYear": 2014
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i7-4785T",
+    "brand": "Intel",
+    "externalId": "Intel Core i7-4785T",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1150",
+      "cores": 4,
+      "threads": 8,
+      "tdp": 35,
+      "graphics": "HD 4600",
+      "memoryTypes": "DDR3-1333/1600, DDR3L-1333/1600",
+      "generation": "4th",
+      "boostClockGHz": 3.2,
+      "launchYear": 2014
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i7-4790",
+    "brand": "Intel",
+    "externalId": "Intel Core i7-4790",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1150",
+      "cores": 4,
+      "threads": 8,
+      "tdp": 84,
+      "graphics": "HD 4600",
+      "memoryTypes": "DDR3-1333/1600, DDR3L-1333/1600",
+      "generation": "4th",
+      "boostClockGHz": 4,
+      "launchYear": 2014
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i7-4790K",
+    "brand": "Intel",
+    "externalId": "Intel Core i7-4790K",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1150",
+      "cores": 4,
+      "threads": 8,
+      "tdp": 88,
+      "graphics": "HD 4600",
+      "memoryTypes": "DDR3-1333/1600, DDR3L-1333/1600",
+      "generation": "4th",
+      "boostClockGHz": 4.4,
+      "launchYear": 2014
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i7-4790S",
+    "brand": "Intel",
+    "externalId": "Intel Core i7-4790S",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1150",
+      "cores": 4,
+      "threads": 8,
+      "tdp": 65,
+      "graphics": "HD 4600",
+      "memoryTypes": "DDR3-1333/1600, DDR3L-1333/1600",
+      "generation": "4th",
+      "boostClockGHz": 4,
+      "launchYear": 2014
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i7-4790T",
+    "brand": "Intel",
+    "externalId": "Intel Core i7-4790T",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1150",
+      "cores": 4,
+      "threads": 8,
+      "tdp": 45,
+      "graphics": "HD 4600",
+      "memoryTypes": "DDR3-1333/1600, DDR3L-1333/1600",
+      "generation": "4th",
+      "boostClockGHz": 3.9,
+      "launchYear": 2014
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i3-4130",
+    "brand": "Intel",
+    "externalId": "Intel Core i3-4130",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1150",
+      "cores": 2,
+      "threads": 4,
+      "tdp": 54,
+      "graphics": "HD 4400",
+      "memoryTypes": "DDR3-1333/1600, DDR3L-1333/1600",
+      "generation": "4th",
+      "boostClockGHz": null,
+      "launchYear": 2013
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i3-4130T",
+    "brand": "Intel",
+    "externalId": "Intel Core i3-4130T",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1150",
+      "cores": 2,
+      "threads": 4,
+      "tdp": 35,
+      "graphics": "HD 4400",
+      "memoryTypes": "DDR3-1333/1600, DDR3L-1333/1600",
+      "generation": "4th",
+      "boostClockGHz": null,
+      "launchYear": 2013
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i3-4330",
+    "brand": "Intel",
+    "externalId": "Intel Core i3-4330",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1150",
+      "cores": 2,
+      "threads": 4,
+      "tdp": 54,
+      "graphics": "HD 4600",
+      "memoryTypes": "DDR3-1333/1600, DDR3L-1333/1600",
+      "generation": "4th",
+      "boostClockGHz": null,
+      "launchYear": 2013
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i3-4330T",
+    "brand": "Intel",
+    "externalId": "Intel Core i3-4330T",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1150",
+      "cores": 2,
+      "threads": 4,
+      "tdp": 35,
+      "graphics": "HD 4600",
+      "memoryTypes": "DDR3-1333/1600, DDR3L-1333/1600",
+      "generation": "4th",
+      "boostClockGHz": null,
+      "launchYear": 2013
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i3-4340",
+    "brand": "Intel",
+    "externalId": "Intel Core i3-4340",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1150",
+      "cores": 2,
+      "threads": 4,
+      "tdp": 54,
+      "graphics": "HD 4600",
+      "memoryTypes": "DDR3-1333/1600, DDR3L-1333/1600",
+      "generation": "4th",
+      "boostClockGHz": null,
+      "launchYear": 2013
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i5-4440",
+    "brand": "Intel",
+    "externalId": "Intel Core i5-4440",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1150",
+      "cores": 4,
+      "threads": 4,
+      "tdp": 84,
+      "graphics": "HD 4600",
+      "memoryTypes": "DDR3-1333/1600, DDR3L-1333/1600",
+      "generation": "4th",
+      "boostClockGHz": 3.3,
+      "launchYear": 2013
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i5-4440S",
+    "brand": "Intel",
+    "externalId": "Intel Core i5-4440S",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1150",
+      "cores": 4,
+      "threads": 4,
+      "tdp": 65,
+      "graphics": "HD 4600",
+      "memoryTypes": "DDR3-1333/1600, DDR3L-1333/1600",
+      "generation": "4th",
+      "boostClockGHz": 3.3,
+      "launchYear": 2013
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i7-4771",
+    "brand": "Intel",
+    "externalId": "Intel Core i7-4771",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1150",
+      "cores": 4,
+      "threads": 8,
+      "tdp": 84,
+      "graphics": "HD 4600",
+      "memoryTypes": "DDR3-1333/1600, DDR3L-1333/1600",
+      "generation": "4th",
+      "boostClockGHz": 3.9,
+      "launchYear": 2013
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i7-4820K",
+    "brand": "Intel",
+    "externalId": "Intel Core i7-4820K",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA2011",
+      "cores": 4,
+      "threads": 8,
+      "tdp": 130,
+      "graphics": "Нет",
+      "memoryTypes": "DDR3 1333/1600/1866",
+      "generation": "4th",
+      "boostClockGHz": 3.9,
+      "launchYear": 2013
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i7-4930K",
+    "brand": "Intel",
+    "externalId": "Intel Core i7-4930K",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA2011",
+      "cores": 6,
+      "threads": 12,
+      "tdp": 130,
+      "graphics": "Нет",
+      "memoryTypes": "DDR3 1333/1600/1866",
+      "generation": "4th",
+      "boostClockGHz": 3.9,
+      "launchYear": 2013
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i7-4960X",
+    "brand": "Intel",
+    "externalId": "Intel Core i7-4960X",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA2011",
+      "cores": 6,
+      "threads": 12,
+      "tdp": 130,
+      "graphics": "Нет",
+      "memoryTypes": "DDR3 1333/1600/1866",
+      "generation": "5th",
+      "boostClockGHz": 4,
+      "launchYear": 2013
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i5-4430",
+    "brand": "Intel",
+    "externalId": "Intel Core i5-4430",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1150",
+      "cores": 4,
+      "threads": 4,
+      "tdp": 84,
+      "graphics": "HD 4600",
+      "memoryTypes": "DDR3-1333/1600, DDR3L-1333/1600",
+      "generation": "4th",
+      "boostClockGHz": 3.2,
+      "launchYear": 2013
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i5-4430S",
+    "brand": "Intel",
+    "externalId": "Intel Core i5-4430S",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1150",
+      "cores": 4,
+      "threads": 4,
+      "tdp": 65,
+      "graphics": "HD 4600",
+      "memoryTypes": "DDR3-1333/1600, DDR3L-1333/1600",
+      "generation": "4th",
+      "boostClockGHz": 3.2,
+      "launchYear": 2013
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i5-4570",
+    "brand": "Intel",
+    "externalId": "Intel Core i5-4570",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1150",
+      "cores": 4,
+      "threads": 4,
+      "tdp": 84,
+      "graphics": "HD 4600",
+      "memoryTypes": "DDR3-1333/1600, DDR3L-1333/1600",
+      "generation": "4th",
+      "boostClockGHz": 3.6,
+      "launchYear": 2013
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i5-4570S",
+    "brand": "Intel",
+    "externalId": "Intel Core i5-4570S",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1150",
+      "cores": 4,
+      "threads": 4,
+      "tdp": 65,
+      "graphics": "HD 4600",
+      "memoryTypes": "DDR3-1333/1600, DDR3L-1333/1600",
+      "generation": "4th",
+      "boostClockGHz": 3.6,
+      "launchYear": 2013
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i5-4570T",
+    "brand": "Intel",
+    "externalId": "Intel Core i5-4570T",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1150",
+      "cores": 2,
+      "threads": 4,
+      "tdp": 35,
+      "graphics": "HD 4600",
+      "memoryTypes": "DDR3-1333/1600, DDR3L-1333/1600",
+      "generation": "4th",
+      "boostClockGHz": 3.6,
+      "launchYear": 2013
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i5-4670",
+    "brand": "Intel",
+    "externalId": "Intel Core i5-4670",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1150",
+      "cores": 4,
+      "threads": 4,
+      "tdp": 84,
+      "graphics": "HD 4600",
+      "memoryTypes": "DDR3-1333/1600, DDR3L-1333/1600",
+      "generation": "4th",
+      "boostClockGHz": 3.8,
+      "launchYear": 2013
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i5-4670K",
+    "brand": "Intel",
+    "externalId": "Intel Core i5-4670K",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1150",
+      "cores": 4,
+      "threads": 4,
+      "tdp": 84,
+      "graphics": "HD 4600",
+      "memoryTypes": "DDR3-1333/1600, DDR3L-1333/1600",
+      "generation": "4th",
+      "boostClockGHz": 3.8,
+      "launchYear": 2013
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i5-4670S",
+    "brand": "Intel",
+    "externalId": "Intel Core i5-4670S",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1150",
+      "cores": 4,
+      "threads": 4,
+      "tdp": 65,
+      "graphics": "HD 4600",
+      "memoryTypes": "DDR3-1333/1600, DDR3L-1333/1600",
+      "generation": "4th",
+      "boostClockGHz": 3.8,
+      "launchYear": 2013
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i5-4670T",
+    "brand": "Intel",
+    "externalId": "Intel Core i5-4670T",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1150",
+      "cores": 4,
+      "threads": 4,
+      "tdp": 45,
+      "graphics": "HD 4600",
+      "memoryTypes": "DDR3-1333/1600, DDR3L-1333/1600",
+      "generation": "4th",
+      "boostClockGHz": 3.3,
+      "launchYear": 2013
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i7-4765T",
+    "brand": "Intel",
+    "externalId": "Intel Core i7-4765T",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1150",
+      "cores": 4,
+      "threads": 8,
+      "tdp": 35,
+      "graphics": "HD 4600",
+      "memoryTypes": "DDR3-1333/1600, DDR3L-1333/1600",
+      "generation": "4th",
+      "boostClockGHz": 3,
+      "launchYear": 2013
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i7-4770",
+    "brand": "Intel",
+    "externalId": "Intel Core i7-4770",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1150",
+      "cores": 4,
+      "threads": 8,
+      "tdp": 84,
+      "graphics": "HD4600",
+      "memoryTypes": "DDR3-1333/1600, DDR3L-1333/1600",
+      "generation": "4th",
+      "boostClockGHz": 3.9,
+      "launchYear": 2013
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i7-4770K",
+    "brand": "Intel",
+    "externalId": "Intel Core i7-4770K",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1150",
+      "cores": 4,
+      "threads": 8,
+      "tdp": 84,
+      "graphics": "HD 4600",
+      "memoryTypes": "DDR3-1333/1600, DDR3L-1333/1600",
+      "generation": "4th",
+      "boostClockGHz": 3.9,
+      "launchYear": 2013
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i7-4770S",
+    "brand": "Intel",
+    "externalId": "Intel Core i7-4770S",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1150",
+      "cores": 4,
+      "threads": 8,
+      "tdp": 65,
+      "graphics": "HD 4600",
+      "memoryTypes": "DDR3-1333/1600, DDR3L-1333/1600",
+      "generation": "4th",
+      "boostClockGHz": 3.9,
+      "launchYear": 2013
+    }
+  },
+  {
+    "category": "cpu",
+    "title": "Intel Core i7-4770T",
+    "brand": "Intel",
+    "externalId": "Intel Core i7-4770T",
+    "url": "https://www.intel.com/content/www/us/en/support/articles/000005505/processors.html",
+    "spec": {
+      "socket": "LGA1150",
+      "cores": 4,
+      "threads": 8,
+      "tdp": 45,
+      "graphics": "HD 4600",
+      "memoryTypes": "DDR3-1333/1600, DDR3L-1333/1600",
+      "generation": "4th",
+      "boostClockGHz": 3.7,
+      "launchYear": 2013
+    }
+  }
+]

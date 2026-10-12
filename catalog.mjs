@@ -1,3 +1,5 @@
+import {expandedModels} from './expanded-models.mjs';
+import {classifyModel} from './public/model-taxonomy.js';
 export const categories = [
   ['gpu','Видеокарты','Видеокарта',0],['cpu','Процессоры','Процессор',1],
   ['board','Материнские платы','Материнская плата',2],['ram','Оперативная память','Оперативная память',3],
@@ -43,14 +45,37 @@ item(32,'cooler','DeepCool AG400',9990,'used','DeepCool',{sockets:['AM4','AM5','
 item(33,'monitor','LG UltraGear 27″ 144Hz',119990,'new','LG',{resolution:'2560 × 1440',hz:144},'cat8'),
 item(34,'peripheral','Logitech G213 + G102',34990,'new','Logitech',{type:'Клавиатура и мышь'},'cat9'),
 item(35,'pc','Игровой ПК • RTX 4060 Ti / Ryzen 5',459990,'new','Custom',{cpu:'Ryzen 5 5600X',gpu:'RTX 4060 Ti',ram:'32 GB DDR4',ssd:'1 TB'},'cat10',66),
-item(36,'pc','Игровой ПК • RTX 3070 / Ryzen 5',329990,'used','Custom',{cpu:'Ryzen 5 5600X',gpu:'RTX 3070',ram:'16 GB DDR4',ssd:'512 GB'},'cat10',63)
+item(36,'pc','Игровой ПК • RTX 3070 / Ryzen 5',329990,'used','Custom',{cpu:'Ryzen 5 5600X',gpu:'RTX 3070',ram:'16 GB DDR4',ssd:'512 GB'},'cat10',63),
+item(1000001,'cpu','AMD Ryzen 5 5600G',59990,'new','AMD',{socket:'AM4',cores:6,threads:12,watts:65,graphics:'Radeon Graphics (7 ядер)',graphicsScore:16},'cat1',60),
+item(1000002,'cpu','AMD Ryzen 5 5600G',39990,'used','AMD',{socket:'AM4',cores:6,threads:12,watts:65,graphics:'Radeon Graphics (7 ядер)',graphicsScore:16},'cat1',60)
 ];
+seedProducts.push(...expandedModels(item));
+for(const p of seedProducts){
+ if(p.category==='cpu'&&!p.spec.graphics) Object.assign(p.spec,p.id===17?{graphics:'Radeon Graphics (2 ядра)',graphicsScore:8}:{graphics:'Нет',graphicsScore:0});
+ if([3,20].includes(p.id)) p.spec.displayOutputs='HDMI, DVI-D, VGA';
+ if(p.id===19) p.spec.displayOutputs='HDMI, DisplayPort';
+ if(p.id===18) p.spec.displayOutputs='HDMI, DisplayPort, VGA';
+ p.model=classifyModel(p);
+}
+const referenceModels=new Map(seedProducts.map(p=>[p.id,p]));
+export function withGraphicsMetadata(p){
+ const model=referenceModels.get(p.spec.referenceId||(p.demo?p.id:0));
+ if(!model||model.category!==p.category||(!p.spec.referenceId&&p.title!==model.title)) return p;
+ const fields=p.category==='cpu'?['graphics','graphicsScore']:p.category==='board'?['displayOutputs']:[];
+ return {...p,model:model.model,spec:{...p.spec,...Object.fromEntries(fields.filter(k=>model.spec[k]!==undefined).map(k=>[k,model.spec[k]]))}};
+}
+export const hasIntegratedGraphics=cpu=>Boolean(cpu?.spec.graphics&&cpu.spec.graphics!=='Нет');
 export const requiredParts=['cpu','board','ram','gpu','ssd','psu','case','cooler'];
 export function evaluate(parts,askingPrice) {
  const map=Object.fromEntries(parts.map(p=>[p.category,p]));
  const errors=[],warnings=[];
+ const unverified=parts.filter(p=>p.evaluationReady===false);
+ if(unverified.length)errors.push('Для выбранных моделей пока недостаточно проверенных данных совместимости: '+unverified.map(p=>p.model?.name||p.title).join(', ')+'.');
  const {cpu,board,ram,gpu,psu,cooler}=map;
+ const integrated=!gpu&&hasIntegratedGraphics(cpu);
+ if(integrated&&board&&!board.spec.displayOutputs) errors.push('Для встроенной графики нужна плата с подтверждёнными видеовыходами. Выберите другую плату или добавьте видеокарту.');
  if(cpu&&board&&cpu.spec.socket!==board.spec.socket) errors.push(`Процессор ${cpu.spec.socket} несовместим с платой ${board.spec.socket}.`);
+ if(cpu?.spec.supportedBoards&&board&&!cpu.spec.supportedBoards.includes(board.model?.name||board.title)) errors.push('Для этого процессора совместимость платы не подтверждена. Выберите плату из списка поддерживаемых моделей CPU; одного совпадения сокета недостаточно.');
  if(ram&&board&&ram.spec.ram!==board.spec.ram) errors.push(`Плата поддерживает ${board.spec.ram}, выбрана память ${ram.spec.ram}.`);
  if(cpu&&cooler&&!cooler.spec.sockets?.includes(cpu.spec.socket)) errors.push('Кулер не поддерживает сокет процессора.');
  const watts=(cpu?.spec.watts||0)+(gpu?.spec.watts||0)+80;
@@ -60,20 +85,23 @@ export function evaluate(parts,askingPrice) {
  if(map.case&&gpu&&gpu.spec.length>map.case.spec.gpuMax) errors.push('Видеокарта не помещается в корпус.');
  if(map.case&&cooler&&cooler.spec.height>map.case.spec.coolerMax) errors.push('Кулер слишком высокий для корпуса.');
  if(map.case&&board&&map.case.spec.form==='mATX'&&board.spec.form==='ATX') errors.push('ATX-плата не помещается в mATX-корпус.');
- const missing=requiredParts.filter(k=>!map[k]);
+ const missing=requiredParts.filter(k=>!map[k]&&!(k==='gpu'&&integrated));
+ if(integrated) warnings.push('Подключите монитор к видеовыходу материнской платы. Встроенная графика использует оперативную память; для игр её возможности ограничены.');
+ if(cpu&&!gpu&&!integrated) warnings.push('У процессора нет подтверждённой встроенной графики — нужна отдельная видеокарта.');
  if(parts.some(p=>p.condition==='used')) warnings.push('Для б/у деталей запросите стресс-тест, температуры и историю ремонта.');
  if(cpu&&gpu&&gpu.score-cpu.score>25) warnings.push('В некоторых играх процессор может ограничивать видеокарту.');
  if(parts.some(p=>!p.demo&&p.spec.referenceId)) warnings.push('Модель реального товара указана продавцом; соответствие справочнику не проверено сервисом.');
  warnings.push('Проверьте версию BIOS, разъёмы питания и комплектацию у продавца.');
  const total=parts.reduce((s,p)=>s+p.price,0);
- const performance=cpu&&gpu?Math.round(Math.min(gpu.score,cpu.score*1.2)*.75+cpu.score*.25):null;
+ const graphicsScore=gpu?.score??(integrated?cpu.spec.graphicsScore:null);
+ const performance=!unverified.length&&cpu&&graphicsScore!=null?gpu?Math.round(Math.min(graphicsScore,cpu.score*1.2)*.75+cpu.score*.25):Math.round(Math.min(graphicsScore,cpu.score)):null;
  const estimated=true;
  const price=Number(askingPrice)||total;
  const value=total&&performance?Math.max(1,Math.min(10,Math.round((performance/price*42000)*10)/10)):null;
- return {total,askingPrice:price,performance,value,watts,recommendedPower,errors,warnings,missing,compatible:errors.length===0,complete:missing.length===0,estimated,method:'Ориентировочный индекс 0–100 на основе демонстрационных коэффициентов CPU/GPU. Не бенчмарк и не оценка рыночной стоимости.',tasks:performance?{games:performance,work:Math.min(100,Math.round(cpu.score*.85+Math.min(ram?.spec.size||0,32)*.45)),render:Math.round(cpu.score*.55+gpu.score*.45)}:null};
+ return {total,askingPrice:price,performance,value,watts:unverified.length?null:watts,recommendedPower:unverified.length?null:recommendedPower,dataIncomplete:!!unverified.length,errors,warnings,missing,graphics:gpu?{type:'discrete',name:gpu.title}:integrated?{type:'integrated',name:cpu.spec.graphics}:null,compatible:errors.length===0,complete:missing.length===0,estimated,method:'Ориентировочный индекс 0–100 на основе демонстрационных коэффициентов CPU/GPU. Не бенчмарк и не оценка рыночной стоимости.',tasks:performance?{games:performance,work:Math.min(100,Math.round(cpu.score*.85+Math.min(ram?.spec.size||0,32)*.45)),render:Math.round(cpu.score*.55+graphicsScore*.45)}:null};
 }
 export function recommend(products,budget,condition,task='games') {
- const candidates=products.filter(p=>(p.demo||p.spec.referenceId)&&(condition==='mixed'||p.condition===condition)&&requiredParts.includes(p.category));
+ const candidates=products.filter(p=>p.evaluationReady!==false&&(p.demo||p.spec.referenceId)&&(condition==='mixed'||p.condition===condition)&&requiredParts.includes(p.category));
  const equivalent=new Map();
  for(const p of candidates){
   const specs=Object.fromEntries(Object.entries(p.spec).filter(([key])=>key!=='referenceId').sort(([a],[b])=>a.localeCompare(b)));
@@ -82,16 +110,18 @@ export function recommend(products,budget,condition,task='games') {
  }
  const available=[...equivalent.values()];
  let best=null;
- for(const cpu of available.filter(p=>p.category==='cpu')) for(const gpu of available.filter(p=>p.category==='gpu')) {
-  const selected=[cpu,gpu];
-  for(const kind of ['board','ram','ssd','psu','case','cooler']) {
-   const options=available.filter(p=>p.category===kind).filter(p=>evaluate([...selected,p]).errors.length===0).sort((a,b)=>a.price-b.price);
+ for(const cpu of available.filter(p=>p.category==='cpu')) for(const gpu of [...(hasIntegratedGraphics(cpu)?[null]:[]),...available.filter(p=>p.category==='gpu')]) for(const board of available.filter(p=>p.category==='board'&&p.spec.socket===cpu.spec.socket)) {
+  const selected=[cpu,...(gpu?[gpu]:[]),board];
+  if(evaluate(selected).errors.length) continue;
+  for(const kind of ['ram','ssd','psu','case','cooler']) {
+   const options=available.filter(p=>p.category===kind).filter(p=>task!=='work'||(kind!=='ram'||p.spec.size>=16)&&(kind!=='ssd'||p.spec.size>=240)).filter(p=>evaluate([...selected,p]).errors.length===0).sort((a,b)=>a.price-b.price);
    if(options[0]) selected.push(options[0]);
   }
   const result=evaluate(selected);
   if(!result.complete||!result.compatible||result.total>budget) continue;
-  const utility=result.tasks[task==='work'?'work':task==='render'?'render':'games'];
+  const utility=task==='work'?Math.min(result.tasks.work,55):result.tasks[task==='render'?'render':'games'];
   if(!best||utility>best.utility||(utility===best.utility&&result.total<best.evaluation.total)) best={parts:selected,evaluation:result,utility};
  }
+ if(best&&task==='work') best.reason=best.evaluation.graphics.type==='integrated'?'Для документов, браузера и учёбы достаточно встроенной графики. Выбрана недорогая конфигурация с 16 ГБ памяти или больше; весь бюджет тратить необязательно.':'В подходящей конфигурации нет встроенной графики, поэтому добавлена отдельная видеокарта. Для офисных задач выбираем достаточную мощность по меньшей цене.';
  return best;
 }

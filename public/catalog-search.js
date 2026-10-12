@@ -7,7 +7,7 @@ export const fixKeyboard=q=>q.toLowerCase().replace(/[а-я]/g,c=>keyboardMap[c]
 function referenceModel(p,products){return p.spec?.referenceId?products.find(model=>model.id===p.spec.referenceId&&model.demo&&model.category===p.category):null}
 function index(p,products){
   const units={watts:'w',power:'w',tdp:'w',hz:'hz',speed:'mhz',size:'gb',length:'mm',height:'mm',gpuMax:'mm',coolerMax:'mm'};
-  const specs=Object.entries(p.spec||{}).filter(([k])=>k!=='referenceId').map(([k,v])=>Array.isArray(v)?v.join(' '):`${v} ${units[k]||''}`).join(' ');
+  const specs=Object.entries(p.spec||{}).filter(([k])=>!['referenceId','graphicsScore'].includes(k)).map(([k,v])=>Array.isArray(v)?v.join(' '):`${v} ${units[k]||''}`).join(' ');
   const reference=referenceModel(p,products);
   const storage=p.category==='ssd'&&Number(p.spec?.size)>=1000&&Number(p.spec.size)%1000===0?`${Number(p.spec.size)/1000} tb`:'';
   return normalizeSearch(`${p.title} ${p.brand} ${reference?.title||''} ${categoryWords[p.category]||''} ${specs} ${storage} ${p.description||''} ${/geforce|\brtx\b/i.test(p.title+' '+(reference?.title||''))?'nvidia':''}`);

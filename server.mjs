@@ -4,7 +4,8 @@ import {randomBytes,scryptSync,timingSafeEqual,createHash} from 'node:crypto';
 import {readFile,mkdir} from 'node:fs/promises';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
-import {categories,seedProducts,evaluate,recommend} from './catalog.mjs';
+import {categories,seedProducts,evaluate,recommend,withGraphicsMetadata} from './catalog.mjs';
+import {initModels,listModels,getModel,importModels} from './model-store.mjs';
 
 const root=path.dirname(fileURLToPath(import.meta.url));
 await mkdir(path.join(root,'data'),{recursive:true});
@@ -21,8 +22,19 @@ const registerSeller=db.prepare('INSERT OR IGNORE INTO order_sellers(order_id,se
 for(const order of db.prepare("SELECT id,items FROM orders WHERE kind='purchase'").all()) for(const id of new Set(JSON.parse(order.items).map(p=>p.owner_id).filter(Boolean))) registerSeller.run(order.id,id);
 const insert=db.prepare('INSERT OR IGNORE INTO products(id,title,category,price,condition,city,brand,description,spec,art,score,demo) VALUES(?,?,?,?,?,?,?,?,?,?,?,1)');
 for(const p of seedProducts) insert.run(p.id,p.title,p.category,p.price,p.condition,p.city,p.brand,p.description,JSON.stringify(p.spec),p.art,p.score);
+initModels(db,seedProducts);
+for(const source of ['amd-cpu','amd-gpu','intel'])if(!db.prepare('SELECT 1 FROM model_sources WHERE source=? LIMIT 1').get(source)){
+ const records=JSON.parse(await readFile(path.join(root,'data/reference',source+'.json'),'utf8'));
+ importModels(db,source,records);
+}
 db.prepare('DELETE FROM sessions WHERE expires < ?').run(Date.now());
-const product=r=>r?{...r,spec:JSON.parse(r.spec),demo:!!r.demo}:null;
+const product=r=>{
+ if(!r)return null;
+ const p=withGraphicsMetadata({...r,spec:JSON.parse(r.spec),demo:!!r.demo});
+ const model=getModel(db,p.spec.referenceId||(p.demo?p.id:0));
+ if(model&&model.category===p.category&&(p.spec.referenceId||p.title===model.title))return {...p,model:model.model,modelId:model.id,evaluationReady:model.evaluationReady,modelSources:model.sources};
+ return p;
+};
 const products=()=>db.prepare("SELECT p.*,u.name AS seller FROM products p LEFT JOIN users u ON u.id=p.owner_id WHERE p.status='active' ORDER BY p.id").all().map(product);
 const publicUser=u=>u?{id:u.id,name:u.name,email:u.email,city:u.city}:null;
 const fail=(status,message)=>{throw Object.assign(new Error(message),{status})};
@@ -54,8 +66,8 @@ function listingFields(b,previous){
   const valid=(b.image.startsWith('data:image/jpeg')&&raw[0]===255&&raw[1]===216)||(b.image.startsWith('data:image/png')&&raw.subarray(0,8).equals(Buffer.from([137,80,78,71,13,10,26,10])))||(b.image.startsWith('data:image/webp')&&raw.toString('ascii',0,4)==='RIFF'&&raw.toString('ascii',8,12)==='WEBP');
   if(!valid)fail(400,'Содержимое файла не соответствует формату изображения.');image=b.image;
  }
- const model=b.modelId?seedProducts.find(p=>p.id===Number(b.modelId)&&p.category===b.category):null;
- if(b.modelId&&!model)fail(400,'Модель должна соответствовать категории объявления.');
+ const model=b.modelId?getModel(db,int(b.modelId,1,1e9,'Модель')):null;
+ if(b.modelId&&(!model||model.category!==b.category))fail(400,'Модель должна соответствовать категории объявления.');
  return {title,description,city,category:b.category,price:int(b.price,100,100000000,'Цена'),condition:b.condition,brand:txt(b.brand||'Частное объявление',1,60,'Бренд'),spec:JSON.stringify(model?{...model.spec,referenceId:model.id}:{}),art:`cat${categories.find(c=>c.id===b.category).art}`,image,score:model?.score||0};
 }
 async function api(req,res,url){
@@ -63,7 +75,22 @@ async function api(req,res,url){
  if(!['GET','HEAD'].includes(method)) {rate(req.socket.remoteAddress);if(req.headers.origin&&req.headers.origin!==`http://${req.headers.host}`&&req.headers.origin!==process.env.PUBLIC_ORIGIN) fail(403,'Запрос с другого сайта запрещён.');if(!req.headers['content-type']?.startsWith('application/json')) fail(415,'Ожидается application/json.');}
  const user=getUser(req), auth=()=>{if(!user) fail(401,'Войдите в аккаунт, чтобы продолжить.');return user};
  if(route==='/api/health') return json(res,{ok:true});
- if(route==='/api/bootstrap'&&method==='GET') return json(res,{categories,products:products(),user:publicUser(user),favorites:user?db.prepare('SELECT product_id FROM favorites WHERE user_id=?').all(user.id).map(r=>r.product_id):[],aiEnabled:!!(process.env.OPENAI_API_KEY&&process.env.OPENAI_MODEL)});
+ if(route==='/api/bootstrap'&&method==='GET') return json(res,{categories,models:listModels(db),products:products(),user:publicUser(user),favorites:user?db.prepare('SELECT product_id FROM favorites WHERE user_id=?').all(user.id).map(r=>r.product_id):[],aiEnabled:!!(process.env.OPENAI_API_KEY&&process.env.OPENAI_MODEL)});
+ if(route==='/api/models'&&method==='GET'){
+  const q=(url.searchParams.get('q')||'').toLowerCase().slice(0,120),category=url.searchParams.get('category');
+  const offset=int(url.searchParams.get('offset')||0,0,1000000,'Смещение'),limit=int(url.searchParams.get('limit')||50,1,100,'Лимит');
+  const rows=listModels(db).filter(p=>(!category||p.category===category)&&(!q||`${p.title} ${p.brand} ${JSON.stringify(p.spec)}`.toLowerCase().includes(q)));
+  return json(res,{total:rows.length,items:rows.slice(offset,offset+limit)});
+ }
+ if(route==='/api/model-requests'&&method==='POST'){
+  auth();rate('model-request:'+user.id,5);const b=await body(req);
+  if(!categories.some(c=>c.id===b.category&&!['pc','monitor','peripheral'].includes(c.id)))fail(400,'Выберите комплектующее.');
+  const title=txt(b.title,3,160,'Модель'),urlText=txt(b.url||'',0,1000,'Ссылка');
+  if(urlText){let u;try{u=new URL(urlText)}catch{fail(400,'Укажите ссылку производителя.')}if(u.protocol!=='https:'||u.username||u.password)fail(400,'Нужна HTTPS-ссылка без пароля.');}
+  db.prepare('INSERT OR IGNORE INTO model_requests(user_id,category,title,url) VALUES(?,?,?,?)').run(user.id,b.category,title,urlText);
+  const request=db.prepare('SELECT id,status FROM model_requests WHERE user_id=? AND category=? AND title=?').get(user.id,b.category,title);
+  return json(res,request,201);
+ }
  if(route==='/api/auth/register'&&method==='POST') {
   rate('auth:'+req.socket.remoteAddress,12);const b=await body(req);const name=txt(b.name,2,60,'Имя'),email=txt(b.email,5,120,'Email').toLowerCase(),password=txt(b.password,8,128,'Пароль');if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) fail(400,'Введите корректный email.');if(db.prepare('SELECT id FROM users WHERE email=?').get(email)) fail(409,'Этот email уже зарегистрирован.');const salt=randomBytes(16).toString('hex');const hash=scryptSync(password,salt,64).toString('hex');const result=db.prepare('INSERT INTO users(name,email,password) VALUES(?,?,?)').run(name,email,`${salt}:${hash}`);const u=db.prepare('SELECT * FROM users WHERE id=?').get(Number(result.lastInsertRowid));session(res,u.id);return json(res,{user:publicUser(u)},201);
  }

@@ -1,6 +1,6 @@
 export function createJourney({state,api,bootstrap,render,openModal,toast,money,esc,icon,authModal,checkoutForm,modelOptions}) {
   let pendingCheckout=null,busy=false;
-  const fields=['title','category','condition','modelId','brand','description','price','city'];
+  const fields=['modelGuide','title','category','condition','modelId','brand','description','price','city'];
   const key=form=>state.user?`component-draft:${state.user.id}:${form.id==='sell-form'?'new':form.dataset.id}`:null;
   function readDraft(form){try{const d=JSON.parse(localStorage.getItem(key(form)));return d&&typeof d==='object'&&d.values&&typeof d.values==='object'?d:null}catch{return null}}
   function clearDraft(form){try{localStorage.removeItem(key(form))}catch{}}
@@ -13,7 +13,8 @@ export function createJourney({state,api,bootstrap,render,openModal,toast,money,
   function restore(form,draft){
     const values=draft.values;
     if(typeof values.category==='string'&&state.categories.some(c=>c.id===values.category)){form.elements.category.value=values.category;form.elements.modelId.innerHTML=modelOptions(values.category)}
-    for(const name of fields){const input=form.elements.namedItem(name);if(input&&typeof values[name]==='string')input.value=values[name].slice(0,name==='description'?3000:120)}
+    for(const name of fields){const input=form.elements.namedItem(name);if(input&&typeof values[name]==='string')input.value=values[name].slice(0,name==='description'?3000:name==='modelGuide'?2000:120)}
+    form.dispatchEvent(new CustomEvent('model-guide-restore',{bubbles:true}));
     form.querySelector('.draft-message').textContent='Черновик восстановлен. Проверь данные перед сохранением. Фото в черновик не входит.';
     form.querySelector('[data-action=draft-restore]')?.remove();
   }

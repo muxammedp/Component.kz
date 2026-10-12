@@ -5,9 +5,15 @@
   "type": "module",
   "scripts": {
     "start": "node --env-file-if-exists=.env server.mjs",
+    "models:import": "node --env-file-if-exists=.env scripts/import-models.mjs",
+    "models:sync": "node --env-file-if-exists=.env scripts/sync-models.mjs",
+    "models:requests": "node --env-file-if-exists=.env scripts/model-requests.mjs",
     "seed:demo": "node --env-file-if-exists=.env scripts/seed-demo.mjs",
     "test": "node --test tests/*.test.mjs",
-    "test:browser": "node tests/browser-smoke.mjs"
+    "test:browser": "node tests/browser-smoke.mjs",
+    "test:browser:graphics": "node tests/browser-graphics.mjs",
+    "test:browser:models": "node tests/browser-model-guide.mjs",
+    "test:browser:directory": "node tests/browser-directory.mjs"
   },
   "engines": {
     "node": ">=24"

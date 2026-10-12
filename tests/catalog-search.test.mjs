@@ -8,7 +8,7 @@ test('search accepts joined model numbers, reversed words and punctuation',()=>{
   for(const q of ['RTX4060Ti','4060 MSI','  MSI   RTX-4060  ','8гб 4060'])assert.ok(find(q).some(p=>p.id===1),q);
 });
 test('search indexes reference specs and Russian component names',()=>{
-  assert.deepEqual(find('DDR4 32GB').map(p=>p.id).sort((a,b)=>a-b),[4,23,35]);
+  assert.deepEqual(find('DDR4 32GB').map(p=>p.id).sort((a,b)=>a-b),[4,23,35,2000303]);
   assert.ok(find('райзен 5600').some(p=>p.id===2));assert.ok(find('оперативная память').every(p=>p.category==='ram'));
   assert.ok(find('интел 13400').some(p=>p.id===14));
 });
@@ -31,7 +31,7 @@ test('facet counts respect other filters and exclude only their own condition',(
 test('spec filters combine OR within a field and AND across fields',()=>{
   const f={...filter,category:'gpu',spec:{memory:['8 GB','12 GB'],type:['GDDR6X']}};
   assert.deepEqual(filterProducts(seedProducts,f).map(p=>p.id),[8]);
-  assert.ok(filterProducts(seedProducts,{...filter,category:'cooler',spec:{sockets:['AM5']}}).length===2);
+  assert.deepEqual(filterProducts(seedProducts,{...filter,category:'cooler',spec:{sockets:['AM5']}}).map(p=>p.id).sort((a,b)=>a-b),[31,32,2000701,2000702,2000703]);
 });
 test('sorting is numeric, deterministic, and favors actual listings for unfiltered browsing',()=>{
   const actual={...seedProducts[0],id:100,demo:false,city:'Алматы'};const products=[...seedProducts,actual];
@@ -51,9 +51,9 @@ test('search finds seller-declared reference model even when missing from title'
   assert.equal(filterProducts([...seedProducts,{...actual,category:'cpu'}],{...filter,q:'RTX4060',category:'cpu'}).length,0);
 });
 test('search supports typed power, frequency and capacity units with paired values',()=>{
-  assert.deepEqual(find('750 вт').map(p=>p.id).sort((a,b)=>a-b),[26,28]);
+  assert.deepEqual(find('750 вт').map(p=>p.id).sort((a,b)=>a-b),[26,28,2000506]);
   assert.deepEqual(find('144 гц').map(p=>p.id),[33]);
-  assert.deepEqual(find('3200 мгц').map(p=>p.id).sort((a,b)=>a-b),[4,21,23]);
+  assert.deepEqual(find('3200 мгц').map(p=>p.id).sort((a,b)=>a-b),[4,21,23,2000301,2000307]);
   assert.equal(find('8 вт').length,0);assert.equal(find('160 гб').length,0);
   assert.ok(find('1 тб').some(p=>p.id===24));
 });

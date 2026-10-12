@@ -1,0 +1,853 @@
+[
+  {
+    "category": "gpu",
+    "title": "Radeon 630",
+    "brand": "AMD",
+    "externalId": "Radeon 630",
+    "url": "https://www.amd.com/en/support/downloads/drivers.html/graphics/radeon-600-500-400/radeon-600-series/radeon-630.html",
+    "spec": {
+      "memory": "4 GB",
+      "type": "GDDR5",
+      "watts": null,
+      "length": null,
+      "powerConnectors": "",
+      "recommendedPsu": null,
+      "generation": "Radeon 600 Series"
+    },
+    "model": {
+      "maker": "AMD",
+      "family": "Radeon 600|500|400",
+      "generation": "Radeon 600 Series",
+      "chip": "Radeon 630",
+      "brand": "AMD"
+    }
+  },
+  {
+    "category": "gpu",
+    "title": "Radeon RX 640",
+    "brand": "AMD",
+    "externalId": "Radeon RX 640",
+    "url": "https://www.amd.com/en/support/downloads/drivers.html/graphics/radeon-600-500-400/radeon-600-series/radeon-rx-640.html",
+    "spec": {
+      "memory": "4 GB",
+      "type": "GDDR5",
+      "watts": null,
+      "length": null,
+      "powerConnectors": "",
+      "recommendedPsu": null,
+      "generation": "Radeon 600 Series"
+    },
+    "model": {
+      "maker": "AMD",
+      "family": "Radeon 600|500|400",
+      "generation": "Radeon 600 Series",
+      "chip": "Radeon RX 640",
+      "brand": "AMD"
+    }
+  },
+  {
+    "category": "gpu",
+    "title": "Radeon RX 540X",
+    "brand": "AMD",
+    "externalId": "Radeon RX 540X",
+    "url": "https://www.amd.com/en/support/downloads/drivers.html/graphics/radeon-600-500-400/radeon-rx-500x-series/radeon-rx-540x.html",
+    "spec": {
+      "memory": "4 GB",
+      "type": "GDDR5",
+      "watts": null,
+      "length": null,
+      "powerConnectors": "",
+      "recommendedPsu": null,
+      "generation": "Radeon RX 500X Series"
+    },
+    "model": {
+      "maker": "AMD",
+      "family": "Radeon 600|500|400",
+      "generation": "Radeon RX 500X Series",
+      "chip": "Radeon RX 540X",
+      "brand": "AMD"
+    }
+  },
+  {
+    "category": "gpu",
+    "title": "Radeon RX 550X",
+    "brand": "AMD",
+    "externalId": "Radeon RX 550X",
+    "url": "https://www.amd.com/en/support/downloads/drivers.html/graphics/radeon-600-500-400/radeon-rx-500x-series/radeon-rx-550x.html",
+    "spec": {
+      "memory": "4 GB",
+      "type": "GDDR5",
+      "watts": null,
+      "length": null,
+      "powerConnectors": "",
+      "recommendedPsu": null,
+      "generation": "Radeon RX 500X Series"
+    },
+    "model": {
+      "maker": "AMD",
+      "family": "Radeon 600|500|400",
+      "generation": "Radeon RX 500X Series",
+      "chip": "Radeon RX 550X",
+      "brand": "AMD"
+    }
+  },
+  {
+    "category": "gpu",
+    "title": "Radeon RX 560X",
+    "brand": "AMD",
+    "externalId": "Radeon RX 560X",
+    "url": "https://www.amd.com/en/support/downloads/drivers.html/graphics/radeon-600-500-400/radeon-rx-500x-series/radeon-rx-560x.html",
+    "spec": {
+      "memory": "4 GB",
+      "type": "GDDR5",
+      "watts": null,
+      "length": null,
+      "powerConnectors": "",
+      "recommendedPsu": null,
+      "generation": "Radeon RX 500X Series"
+    },
+    "model": {
+      "maker": "AMD",
+      "family": "Radeon 600|500|400",
+      "generation": "Radeon RX 500X Series",
+      "chip": "Radeon RX 560X",
+      "brand": "AMD"
+    }
+  },
+  {
+    "category": "gpu",
+    "title": "Radeon RX 580X",
+    "brand": "AMD",
+    "externalId": "Radeon RX 580X",
+    "url": "https://www.amd.com/en/support/downloads/drivers.html/graphics/radeon-600-500-400/radeon-rx-500x-series/radeon-rx-580x.html",
+    "spec": {
+      "memory": "8 GB",
+      "type": "GDDR5",
+      "watts": null,
+      "length": null,
+      "powerConnectors": "",
+      "recommendedPsu": null,
+      "generation": "Radeon RX 500X Series"
+    },
+    "model": {
+      "maker": "AMD",
+      "family": "Radeon 600|500|400",
+      "generation": "Radeon RX 500X Series",
+      "chip": "Radeon RX 580X",
+      "brand": "AMD"
+    }
+  },
+  {
+    "category": "gpu",
+    "title": "Radeon RX 570X",
+    "brand": "AMD",
+    "externalId": "Radeon RX 570X",
+    "url": "https://www.amd.com/en/support/downloads/drivers.html/graphics/radeon-600-500-400/radeon-rx-500x-series/radeon-rx-570x.html",
+    "spec": {
+      "memory": "8 GB",
+      "type": "GDDR5",
+      "watts": null,
+      "length": null,
+      "powerConnectors": "",
+      "recommendedPsu": null,
+      "generation": "Radeon RX 500X Series"
+    },
+    "model": {
+      "maker": "AMD",
+      "family": "Radeon 600|500|400",
+      "generation": "Radeon RX 500X Series",
+      "chip": "Radeon RX 570X",
+      "brand": "AMD"
+    }
+  },
+  {
+    "category": "gpu",
+    "title": "Radeon 540X",
+    "brand": "AMD",
+    "externalId": "Radeon 540X",
+    "url": "https://www.amd.com/en/support/downloads/drivers.html/graphics/radeon-600-500-400/radeon-500x-series/radeon-540x.html",
+    "spec": {
+      "memory": "4 GB",
+      "type": "GDDR5",
+      "watts": null,
+      "length": null,
+      "powerConnectors": "",
+      "recommendedPsu": null,
+      "generation": "Radeon 500X Series"
+    },
+    "model": {
+      "maker": "AMD",
+      "family": "Radeon 600|500|400",
+      "generation": "Radeon 500X Series",
+      "chip": "Radeon 540X",
+      "brand": "AMD"
+    }
+  },
+  {
+    "category": "gpu",
+    "title": "Radeon 550X",
+    "brand": "AMD",
+    "externalId": "Radeon 550X",
+    "url": "https://www.amd.com/en/support/downloads/drivers.html/graphics/radeon-600-500-400/radeon-500x-series/radeon-550x.html",
+    "spec": {
+      "memory": "4 GB",
+      "type": "GDDR5",
+      "watts": null,
+      "length": null,
+      "powerConnectors": "",
+      "recommendedPsu": null,
+      "generation": "Radeon 500X Series"
+    },
+    "model": {
+      "maker": "AMD",
+      "family": "Radeon 600|500|400",
+      "generation": "Radeon 500X Series",
+      "chip": "Radeon 550X",
+      "brand": "AMD"
+    }
+  },
+  {
+    "category": "gpu",
+    "title": "Radeon RX 570 (OEM)",
+    "brand": "AMD",
+    "externalId": "Radeon RX 570 (OEM)",
+    "url": "https://www.amd.com/en/support/downloads/drivers.html/graphics/radeon-600-500-400/radeon-rx-500-series/radeon-rx-570.html",
+    "spec": {
+      "memory": "8 GB",
+      "type": "GDDR5",
+      "watts": 150,
+      "length": null,
+      "powerConnectors": "",
+      "recommendedPsu": 450,
+      "generation": "Radeon RX 500 Series"
+    },
+    "model": {
+      "maker": "AMD",
+      "family": "Radeon 600|500|400",
+      "generation": "Radeon RX 500 Series",
+      "chip": "Radeon RX 570 (OEM)",
+      "brand": "AMD"
+    }
+  },
+  {
+    "category": "gpu",
+    "title": "Radeon RX 560 (OEM)",
+    "brand": "AMD",
+    "externalId": "Radeon RX 560 (OEM)",
+    "url": "https://www.amd.com/en/support/downloads/drivers.html/graphics/radeon-600-500-400/radeon-rx-500-series/radeon-rx-560.html",
+    "spec": {
+      "memory": "4 GB",
+      "type": "GDDR5",
+      "watts": 60,
+      "length": null,
+      "powerConnectors": "",
+      "recommendedPsu": 450,
+      "generation": "Radeon RX 500 Series"
+    },
+    "model": {
+      "maker": "AMD",
+      "family": "Radeon 600|500|400",
+      "generation": "Radeon RX 500 Series",
+      "chip": "Radeon RX 560 (OEM)",
+      "brand": "AMD"
+    }
+  },
+  {
+    "category": "gpu",
+    "title": "Radeon RX 580 (OEM)",
+    "brand": "AMD",
+    "externalId": "Radeon RX 580 (OEM)",
+    "url": "https://www.amd.com/en/support/downloads/drivers.html/graphics/radeon-600-500-400/radeon-rx-500-series/radeon-rx-580.html",
+    "spec": {
+      "memory": "8 GB",
+      "type": "GDDR5",
+      "watts": 185,
+      "length": null,
+      "powerConnectors": "",
+      "recommendedPsu": 500,
+      "generation": "Radeon RX 500 Series"
+    },
+    "model": {
+      "maker": "AMD",
+      "family": "Radeon 600|500|400",
+      "generation": "Radeon RX 500 Series",
+      "chip": "Radeon RX 580 (OEM)",
+      "brand": "AMD"
+    }
+  },
+  {
+    "category": "gpu",
+    "title": "Radeon 535",
+    "brand": "AMD",
+    "externalId": "Radeon 535",
+    "url": "https://www.amd.com/en/support/downloads/drivers.html/graphics/radeon-600-500-400/radeon-500-series/radeon-535.html",
+    "spec": {
+      "memory": "4 GB",
+      "type": "GDDR5",
+      "watts": null,
+      "length": null,
+      "powerConnectors": "",
+      "recommendedPsu": null,
+      "generation": "Radeon 500 Series"
+    },
+    "model": {
+      "maker": "AMD",
+      "family": "Radeon 600|500|400",
+      "generation": "Radeon 500 Series",
+      "chip": "Radeon 535",
+      "brand": "AMD"
+    }
+  },
+  {
+    "category": "gpu",
+    "title": "Radeon 520",
+    "brand": "AMD",
+    "externalId": "Radeon 520",
+    "url": "https://www.amd.com/en/support/downloads/drivers.html/graphics/radeon-600-500-400/radeon-500-series/radeon-520.html",
+    "spec": {
+      "memory": "4 GB",
+      "type": "GDDR5",
+      "watts": null,
+      "length": null,
+      "powerConnectors": "",
+      "recommendedPsu": null,
+      "generation": "Radeon 500 Series"
+    },
+    "model": {
+      "maker": "AMD",
+      "family": "Radeon 600|500|400",
+      "generation": "Radeon 500 Series",
+      "chip": "Radeon 520",
+      "brand": "AMD"
+    }
+  },
+  {
+    "category": "gpu",
+    "title": "Radeon 530",
+    "brand": "AMD",
+    "externalId": "Radeon 530",
+    "url": "https://www.amd.com/en/support/downloads/drivers.html/graphics/radeon-600-500-400/radeon-500-series/radeon-530.html",
+    "spec": {
+      "memory": "4 GB",
+      "type": "DDR3, GDDR5",
+      "watts": null,
+      "length": null,
+      "powerConnectors": "",
+      "recommendedPsu": null,
+      "generation": "Radeon 500 Series"
+    },
+    "model": {
+      "maker": "AMD",
+      "family": "Radeon 600|500|400",
+      "generation": "Radeon 500 Series",
+      "chip": "Radeon 530",
+      "brand": "AMD"
+    }
+  },
+  {
+    "category": "gpu",
+    "title": "AMD Radeon RX 7400",
+    "brand": "AMD",
+    "externalId": "AMD Radeon RX 7400",
+    "url": "https://www.amd.com/en/products/graphics/desktops/radeon/7000-series/amd-radeon-rx-7400.html",
+    "spec": {
+      "memory": "8 GB",
+      "type": "GDDR6",
+      "watts": 55,
+      "length": 167,
+      "powerConnectors": "",
+      "recommendedPsu": 450,
+      "generation": "Radeon RX 7000 Series"
+    },
+    "model": {
+      "maker": "AMD",
+      "family": "Radeon RX",
+      "generation": "Radeon RX 7000 Series",
+      "chip": "Radeon RX 7400",
+      "brand": "AMD"
+    }
+  },
+  {
+    "category": "gpu",
+    "title": "AMD Radeon RX 7600",
+    "brand": "AMD",
+    "externalId": "AMD Radeon RX 7600",
+    "url": "https://www.amd.com/en/products/graphics/desktops/radeon/7000-series/amd-radeon-rx-7600.html",
+    "spec": {
+      "memory": "8 GB",
+      "type": "GDDR6",
+      "watts": 165,
+      "length": 204,
+      "powerConnectors": "1x8-Pin",
+      "recommendedPsu": 550,
+      "generation": "Radeon RX 7000 Series"
+    },
+    "model": {
+      "maker": "AMD",
+      "family": "Radeon RX",
+      "generation": "Radeon RX 7000 Series",
+      "chip": "Radeon RX 7600",
+      "brand": "AMD"
+    }
+  },
+  {
+    "category": "gpu",
+    "title": "AMD Radeon RX 5300",
+    "brand": "AMD",
+    "externalId": "AMD Radeon RX 5300",
+    "url": "https://www.amd.com/en/support/downloads/drivers.html/graphics/radeon-rx/radeon-rx-5000-series/amd-radeon-rx-5300.html",
+    "spec": {
+      "memory": "3 GB",
+      "type": "GDDR6",
+      "watts": 100,
+      "length": null,
+      "powerConnectors": "",
+      "recommendedPsu": null,
+      "generation": "Radeon RX 5000 Series"
+    },
+    "model": {
+      "maker": "AMD",
+      "family": "Radeon RX",
+      "generation": "Radeon RX 5000 Series",
+      "chip": "Radeon RX 5300",
+      "brand": "AMD"
+    }
+  },
+  {
+    "category": "gpu",
+    "title": "AMD Radeon RX 5500",
+    "brand": "AMD",
+    "externalId": "AMD Radeon RX 5500",
+    "url": "https://www.amd.com/en/support/downloads/drivers.html/graphics/radeon-rx/radeon-rx-5000-series/amd-radeon-rx-5500.html",
+    "spec": {
+      "memory": "4 GB",
+      "type": "GDDR6",
+      "watts": 150,
+      "length": null,
+      "powerConnectors": "1x8-Pin",
+      "recommendedPsu": 550,
+      "generation": "Radeon RX 5000 Series"
+    },
+    "model": {
+      "maker": "AMD",
+      "family": "Radeon RX",
+      "generation": "Radeon RX 5000 Series",
+      "chip": "Radeon RX 5500",
+      "brand": "AMD"
+    }
+  },
+  {
+    "category": "gpu",
+    "title": "AMD Radeon RX 6500 XT",
+    "brand": "AMD",
+    "externalId": "AMD Radeon RX 6500 XT",
+    "url": "https://www.amd.com/en/products/graphics/desktops/radeon/6000-series/amd-radeon-rx-6500-xt.html",
+    "spec": {
+      "memory": "8 GB",
+      "type": "GDDR6",
+      "watts": 113,
+      "length": null,
+      "powerConnectors": "1x6-Pin",
+      "recommendedPsu": 400,
+      "generation": "Radeon RX 6000 Series"
+    },
+    "model": {
+      "maker": "AMD",
+      "family": "Radeon RX",
+      "generation": "Radeon RX 6000 Series",
+      "chip": "Radeon RX 6500 XT",
+      "brand": "AMD"
+    }
+  },
+  {
+    "category": "gpu",
+    "title": "AMD Radeon RX 6500 XT (4GB)",
+    "brand": "AMD",
+    "externalId": "AMD Radeon RX 6500 XT (4GB)",
+    "url": "https://www.amd.com/en/support/downloads/drivers.html/graphics/radeon-rx/radeon-rx-6000-series/amd-radeon-rx-6500-xt.html",
+    "spec": {
+      "memory": "4 GB",
+      "type": "GDDR6",
+      "watts": 107,
+      "length": null,
+      "powerConnectors": "1x6-Pin",
+      "recommendedPsu": 400,
+      "generation": "Radeon RX 6000 Series"
+    },
+    "model": {
+      "maker": "AMD",
+      "family": "Radeon RX",
+      "generation": "Radeon RX 6000 Series",
+      "chip": "Radeon RX 6500 XT (4GB)",
+      "brand": "AMD"
+    }
+  },
+  {
+    "category": "gpu",
+    "title": "AMD Radeon RX 6400",
+    "brand": "AMD",
+    "externalId": "AMD Radeon RX 6400",
+    "url": "https://www.amd.com/en/products/graphics/desktops/radeon/6000-series/amd-radeon-rx-6400.html",
+    "spec": {
+      "memory": "4 GB",
+      "type": "GDDR6",
+      "watts": 53,
+      "length": null,
+      "powerConnectors": "PCIe Powered",
+      "recommendedPsu": 350,
+      "generation": "Radeon RX 6000 Series"
+    },
+    "model": {
+      "maker": "AMD",
+      "family": "Radeon RX",
+      "generation": "Radeon RX 6000 Series",
+      "chip": "Radeon RX 6400",
+      "brand": "AMD"
+    }
+  },
+  {
+    "category": "gpu",
+    "title": "AMD Radeon RX 6650 XT",
+    "brand": "AMD",
+    "externalId": "AMD Radeon RX 6650 XT",
+    "url": "https://www.amd.com/en/products/graphics/desktops/radeon/6000-series/amd-radeon-rx-6650-xt.html",
+    "spec": {
+      "memory": "8 GB",
+      "type": "GDDR6",
+      "watts": 180,
+      "length": null,
+      "powerConnectors": "1x8-Pin",
+      "recommendedPsu": 500,
+      "generation": "Radeon RX 6000 Series"
+    },
+    "model": {
+      "maker": "AMD",
+      "family": "Radeon RX",
+      "generation": "Radeon RX 6000 Series",
+      "chip": "Radeon RX 6650 XT",
+      "brand": "AMD"
+    }
+  },
+  {
+    "category": "gpu",
+    "title": "AMD Radeon RX 6950 XT",
+    "brand": "AMD",
+    "externalId": "AMD Radeon RX 6950 XT",
+    "url": "https://www.amd.com/en/products/graphics/desktops/radeon/6000-series/amd-radeon-rx-6950-xt.html",
+    "spec": {
+      "memory": "16 GB",
+      "type": "GDDR6",
+      "watts": 335,
+      "length": null,
+      "powerConnectors": "2x8-Pin",
+      "recommendedPsu": 850,
+      "generation": "Radeon RX 6000 Series"
+    },
+    "model": {
+      "maker": "AMD",
+      "family": "Radeon RX",
+      "generation": "Radeon RX 6000 Series",
+      "chip": "Radeon RX 6950 XT",
+      "brand": "AMD"
+    }
+  },
+  {
+    "category": "gpu",
+    "title": "Radeon RX Vega 64",
+    "brand": "AMD",
+    "externalId": "Radeon RX Vega 64",
+    "url": "https://www.amd.com/en/support/downloads/drivers.html/graphics/radeon-rx/radeon-rx-vega-series/radeon-rx-vega-64.html",
+    "spec": {
+      "memory": "8 GB",
+      "type": "HBM2",
+      "watts": 295,
+      "length": null,
+      "powerConnectors": "",
+      "recommendedPsu": 750,
+      "generation": "Radeon RX Vega Series"
+    },
+    "model": {
+      "maker": "AMD",
+      "family": "Radeon RX",
+      "generation": "Radeon RX Vega Series",
+      "chip": "Radeon RX Vega 64",
+      "brand": "AMD"
+    }
+  },
+  {
+    "category": "gpu",
+    "title": "Radeon RX Vega 64 Liquid Cooled",
+    "brand": "AMD",
+    "externalId": "Radeon RX Vega 64 Liquid Cooled",
+    "url": "https://www.amd.com/en/products/specifications/graphics.html",
+    "spec": {
+      "memory": "8 GB",
+      "type": "HBM2",
+      "watts": 345,
+      "length": null,
+      "powerConnectors": "",
+      "recommendedPsu": 1000,
+      "generation": "Radeon RX Vega Series"
+    },
+    "model": {
+      "maker": "AMD",
+      "family": "Radeon RX",
+      "generation": "Radeon RX Vega Series",
+      "chip": "Radeon RX Vega 64 Liquid Cooled",
+      "brand": "AMD"
+    }
+  },
+  {
+    "category": "gpu",
+    "title": "Radeon RX Vega 56",
+    "brand": "AMD",
+    "externalId": "Radeon RX Vega 56",
+    "url": "https://www.amd.com/en/support/downloads/drivers.html/graphics/radeon-rx/radeon-rx-vega-series/radeon-rx-vega-56.html",
+    "spec": {
+      "memory": "8 GB",
+      "type": "HBM2",
+      "watts": 210,
+      "length": null,
+      "powerConnectors": "",
+      "recommendedPsu": 650,
+      "generation": "Radeon RX Vega Series"
+    },
+    "model": {
+      "maker": "AMD",
+      "family": "Radeon RX",
+      "generation": "Radeon RX Vega Series",
+      "chip": "Radeon RX Vega 56",
+      "brand": "AMD"
+    }
+  },
+  {
+    "category": "gpu",
+    "title": "AMD Radeon VII",
+    "brand": "AMD",
+    "externalId": "AMD Radeon VII",
+    "url": "https://www.amd.com/en/support/downloads/drivers.html/graphics/radeon-rx/radeon-rx-vega-series/amd-radeon-vii.html",
+    "spec": {
+      "memory": "16 GB",
+      "type": "HBM2",
+      "watts": 300,
+      "length": null,
+      "powerConnectors": "",
+      "recommendedPsu": 750,
+      "generation": "Radeon RX Vega Series"
+    },
+    "model": {
+      "maker": "AMD",
+      "family": "Radeon RX",
+      "generation": "Radeon RX Vega Series",
+      "chip": "Radeon VII",
+      "brand": "AMD"
+    }
+  },
+  {
+    "category": "gpu",
+    "title": "AMD Radeon RX 9060 XT LP",
+    "brand": "AMD",
+    "externalId": "AMD Radeon RX 9060 XT LP",
+    "url": "https://www.amd.com/en/products/graphics/desktops/radeon/9000-series/amd-radeon-rx-9060xt-lp.html",
+    "spec": {
+      "memory": "16 GB",
+      "type": "GDDR6",
+      "watts": null,
+      "length": null,
+      "powerConnectors": "1x8-Pin",
+      "recommendedPsu": 450,
+      "generation": "Radeon RX 9000 Series"
+    },
+    "model": {
+      "maker": "AMD",
+      "family": "Radeon RX",
+      "generation": "Radeon RX 9000 Series",
+      "chip": "Radeon RX 9060 XT LP",
+      "brand": "AMD"
+    }
+  },
+  {
+    "category": "gpu",
+    "title": "AMD Radeon RX 9050 (4GB)",
+    "brand": "AMD",
+    "externalId": "AMD Radeon RX 9050 (4GB)",
+    "url": "https://www.amd.com/en/products/graphics/desktops/radeon/9000-series/amd-radeon-rx-9050-4gb.html",
+    "spec": {
+      "memory": "4 GB",
+      "type": "GDDR6",
+      "watts": 92,
+      "length": null,
+      "powerConnectors": "1x8-Pin",
+      "recommendedPsu": 450,
+      "generation": "Radeon RX 9000 Series"
+    },
+    "model": {
+      "maker": "AMD",
+      "family": "Radeon RX",
+      "generation": "Radeon RX 9000 Series",
+      "chip": "Radeon RX 9050 (4GB)",
+      "brand": "AMD"
+    }
+  },
+  {
+    "category": "gpu",
+    "title": "AMD Radeon RX 9060",
+    "brand": "AMD",
+    "externalId": "AMD Radeon RX 9060",
+    "url": "https://www.amd.com/en/products/graphics/desktops/radeon/9000-series/amd-radeon-rx-9060.html",
+    "spec": {
+      "memory": "8 GB",
+      "type": "GDDR6",
+      "watts": 132,
+      "length": null,
+      "powerConnectors": "1x8-Pin",
+      "recommendedPsu": 450,
+      "generation": "Radeon RX 9000 Series"
+    },
+    "model": {
+      "maker": "AMD",
+      "family": "Radeon RX",
+      "generation": "Radeon RX 9000 Series",
+      "chip": "Radeon RX 9060",
+      "brand": "AMD"
+    }
+  },
+  {
+    "category": "gpu",
+    "title": "AMD Radeon RX 9060 XT",
+    "brand": "AMD",
+    "externalId": "AMD Radeon RX 9060 XT",
+    "url": "https://www.amd.com/en/products/graphics/desktops/radeon/9000-series/amd-radeon-rx-9060xt.html",
+    "spec": {
+      "memory": "16 GB",
+      "type": "GDDR6",
+      "watts": 160,
+      "length": null,
+      "powerConnectors": "1x8-Pin",
+      "recommendedPsu": 450,
+      "generation": "Radeon RX 9000 Series"
+    },
+    "model": {
+      "maker": "AMD",
+      "family": "Radeon RX",
+      "generation": "Radeon RX 9000 Series",
+      "chip": "Radeon RX 9060 XT",
+      "brand": "AMD"
+    }
+  },
+  {
+    "category": "gpu",
+    "title": "AMD Radeon RX 9050",
+    "brand": "AMD",
+    "externalId": "AMD Radeon RX 9050",
+    "url": "https://www.amd.com/en/products/graphics/desktops/radeon/9000-series/amd-radeon-rx-9050.html",
+    "spec": {
+      "memory": "8 GB",
+      "type": "GDDR6",
+      "watts": 92,
+      "length": null,
+      "powerConnectors": "1x8-Pin",
+      "recommendedPsu": 450,
+      "generation": "Radeon RX 9000 Series"
+    },
+    "model": {
+      "maker": "AMD",
+      "family": "Radeon RX",
+      "generation": "Radeon RX 9000 Series",
+      "chip": "Radeon RX 9050",
+      "brand": "AMD"
+    }
+  },
+  {
+    "category": "gpu",
+    "title": "AMD Radeon RX 9070 GRE",
+    "brand": "AMD",
+    "externalId": "AMD Radeon RX 9070 GRE",
+    "url": "https://www.amd.com/en/products/graphics/desktops/radeon/9000-series/amd-radeon-rx-9070-gre.html",
+    "spec": {
+      "memory": "12 GB",
+      "type": "GDDR6",
+      "watts": 220,
+      "length": null,
+      "powerConnectors": "2x8-Pin",
+      "recommendedPsu": 650,
+      "generation": "Radeon RX 9000 Series"
+    },
+    "model": {
+      "maker": "AMD",
+      "family": "Radeon RX",
+      "generation": "Radeon RX 9000 Series",
+      "chip": "Radeon RX 9070 GRE",
+      "brand": "AMD"
+    }
+  },
+  {
+    "category": "gpu",
+    "title": "AMD Radeon RX 9070 XT",
+    "brand": "AMD",
+    "externalId": "AMD Radeon RX 9070 XT",
+    "url": "https://www.amd.com/en/products/graphics/desktops/radeon/9000-series/amd-radeon-rx-9070xt.html",
+    "spec": {
+      "memory": "16 GB",
+      "type": "GDDR6",
+      "watts": 304,
+      "length": null,
+      "powerConnectors": "2x8-Pin",
+      "recommendedPsu": 750,
+      "generation": "Radeon RX 9000 Series"
+    },
+    "model": {
+      "maker": "AMD",
+      "family": "Radeon RX",
+      "generation": "Radeon RX 9000 Series",
+      "chip": "Radeon RX 9070 XT",
+      "brand": "AMD"
+    }
+  },
+  {
+    "category": "gpu",
+    "title": "AMD Radeon RX 9060 XT (8GB)",
+    "brand": "AMD",
+    "externalId": "AMD Radeon RX 9060 XT (8GB)",
+    "url": "https://www.amd.com/en/products/graphics/desktops/radeon/9000-series/amd-radeon-rx-9060xt-8gb.html",
+    "spec": {
+      "memory": "8 GB",
+      "type": "GDDR6",
+      "watts": 150,
+      "length": null,
+      "powerConnectors": "1x8-Pin",
+      "recommendedPsu": 450,
+      "generation": "Radeon RX 9000 Series"
+    },
+    "model": {
+      "maker": "AMD",
+      "family": "Radeon RX",
+      "generation": "Radeon RX 9000 Series",
+      "chip": "Radeon RX 9060 XT (8GB)",
+      "brand": "AMD"
+    }
+  },
+  {
+    "category": "gpu",
+    "title": "AMD Radeon RX 9070",
+    "brand": "AMD",
+    "externalId": "AMD Radeon RX 9070",
+    "url": "https://www.amd.com/en/products/graphics/desktops/radeon/9000-series/amd-radeon-rx-9070.html",
+    "spec": {
+      "memory": "16 GB",
+      "type": "GDDR6",
+      "watts": 220,
+      "length": null,
+      "powerConnectors": "2x8-Pin",
+      "recommendedPsu": 650,
+      "generation": "Radeon RX 9000 Series"
+    },
+    "model": {
+      "maker": "AMD",
+      "family": "Radeon RX",
+      "generation": "Radeon RX 9000 Series",
+      "chip": "Radeon RX 9070",
+      "brand": "AMD"
+    }
+  }
+]
