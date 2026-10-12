@@ -63,7 +63,7 @@ export function evaluate(parts,askingPrice) {
  const missing=requiredParts.filter(k=>!map[k]);
  if(parts.some(p=>p.condition==='used')) warnings.push('Для б/у деталей запросите стресс-тест, температуры и историю ремонта.');
  if(cpu&&gpu&&gpu.score-cpu.score>25) warnings.push('В некоторых играх процессор может ограничивать видеокарту.');
- if(parts.some(p=>p.spec.referenceId)) warnings.push('Модель реального товара указана продавцом; соответствие справочнику не проверено сервисом.');
+ if(parts.some(p=>!p.demo&&p.spec.referenceId)) warnings.push('Модель реального товара указана продавцом; соответствие справочнику не проверено сервисом.');
  warnings.push('Проверьте версию BIOS, разъёмы питания и комплектацию у продавца.');
  const total=parts.reduce((s,p)=>s+p.price,0);
  const performance=cpu&&gpu?Math.round(Math.min(gpu.score,cpu.score*1.2)*.75+cpu.score*.25):null;
@@ -73,7 +73,14 @@ export function evaluate(parts,askingPrice) {
  return {total,askingPrice:price,performance,value,watts,recommendedPower,errors,warnings,missing,compatible:errors.length===0,complete:missing.length===0,estimated,method:'Ориентировочный индекс 0–100 на основе демонстрационных коэффициентов CPU/GPU. Не бенчмарк и не оценка рыночной стоимости.',tasks:performance?{games:performance,work:Math.min(100,Math.round(cpu.score*.85+Math.min(ram?.spec.size||0,32)*.45)),render:Math.round(cpu.score*.55+gpu.score*.45)}:null};
 }
 export function recommend(products,budget,condition,task='games') {
- const available=products.filter(p=>(p.demo||p.spec.referenceId)&&(condition==='mixed'||p.condition===condition)&&requiredParts.includes(p.category));
+ const candidates=products.filter(p=>(p.demo||p.spec.referenceId)&&(condition==='mixed'||p.condition===condition)&&requiredParts.includes(p.category));
+ const equivalent=new Map();
+ for(const p of candidates){
+  const specs=Object.fromEntries(Object.entries(p.spec).filter(([key])=>key!=='referenceId').sort(([a],[b])=>a.localeCompare(b)));
+  const key=JSON.stringify([p.category,p.score,specs]);
+  if(!equivalent.has(key)||p.price<equivalent.get(key).price)equivalent.set(key,p);
+ }
+ const available=[...equivalent.values()];
  let best=null;
  for(const cpu of available.filter(p=>p.category==='cpu')) for(const gpu of available.filter(p=>p.category==='gpu')) {
   const selected=[cpu,gpu];

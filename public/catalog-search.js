@@ -21,14 +21,26 @@ export function searchScore(p,query,products=[]){
   const reference=normalizeSearch(referenceModel(p,products)?.title||'');
   return (title.includes(q)?100:0)+tokens.filter(t=>titleWords.has(t)).length*10+(reference.includes(q)?50:0)+1;
 }
-export function effectiveQuery(products,query){const clean=normalizeSearch(query);if(!clean||products.some(p=>searchScore(p,clean,products)))return {query:clean,corrected:false};const alternate=normalizeSearch(fixKeyboard(query));return alternate!==clean&&products.some(p=>searchScore(p,alternate,products))?{query:alternate,corrected:true}:{query:clean,corrected:false}}
-export function filterProducts(products,f,city='',ignore=''){
-  const query=effectiveQuery(products,f.q).query;
-  return products.filter(p=>(ignore==='category'||!f.category||f.category==='all'||p.category===f.category)&&(ignore==='condition'||!f.condition||f.condition==='all'||p.condition===f.condition)&&(ignore==='city'||!city||p.city===city)&&(ignore==='source'||!f.source||f.source==='all'||(f.source==='real'?!p.demo:p.demo))&&(ignore==='q'||searchScore(p,query,products)>0)&&(ignore==='brand'||!f.brand?.length||f.brand.includes(p.brand))&&(ignore==='price'||((!f.min||p.price>=Number(f.min))&&(!f.max||p.price<=Number(f.max))))&&Object.entries(f.spec||{}).every(([key,values])=>ignore==='spec.'+key||!values.length||values.some(v=>[].concat(p.spec?.[key]??[]).map(String).includes(v)))).sort((a,b)=>{
+export function createSearchContext(products){
+  const queries=new Map();
+  return {effective:new Map(),score(p,q){if(!q)return 1;if(!queries.has(q))queries.set(q,new Map());const scores=queries.get(q);if(!scores.has(p))scores.set(p,searchScore(p,q,products));return scores.get(p)}};
+}
+export function effectiveQuery(products,query,context){
+  const clean=normalizeSearch(query),key=String(query||'');
+  if(context?.effective.has(key))return context.effective.get(key);
+  const score=(p,q)=>context?context.score(p,q):searchScore(p,q,products);
+  let result={query:clean,corrected:false};
+  if(clean&&!products.some(p=>score(p,clean))){const alternate=normalizeSearch(fixKeyboard(key));if(alternate!==clean&&products.some(p=>score(p,alternate)))result={query:alternate,corrected:true}}
+  context?.effective.set(key,result);return result;
+}
+export function filterProducts(products,f,city='',ignore='',context=createSearchContext(products)){
+  const query=effectiveQuery(products,f.q,context).query;
+  const score=p=>context.score(p,query);
+  return products.filter(p=>(ignore==='category'||!f.category||f.category==='all'||p.category===f.category)&&(ignore==='condition'||!f.condition||f.condition==='all'||p.condition===f.condition)&&(ignore==='city'||!city||p.city===city)&&(ignore==='source'||!f.source||f.source==='all'||(f.source==='real'?!p.demo:p.demo))&&(ignore==='q'||score(p)>0)&&(ignore==='brand'||!f.brand?.length||f.brand.includes(p.brand))&&(ignore==='price'||((!f.min||p.price>=Number(f.min))&&(!f.max||p.price<=Number(f.max))))&&Object.entries(f.spec||{}).every(([key,values])=>ignore==='spec.'+key||!values.length||values.some(v=>[].concat(p.spec?.[key]??[]).map(String).includes(v)))).sort((a,b)=>{
     if(f.sort==='cheap')return a.price-b.price||a.id-b.id;
     if(f.sort==='expensive')return b.price-a.price||a.id-b.id;
     if(f.sort==='recent')return b.id-a.id;
-    return (query?searchScore(b,query,products)-searchScore(a,query,products):0)||Number(a.demo)-Number(b.demo)||b.id-a.id;
+    return (query?score(b)-score(a):0)||Number(a.demo)-Number(b.demo)||b.id-a.id;
   });
 }
 function distance(a,b){const prev=Array.from({length:b.length+1},(_,i)=>i);for(let i=1;i<=a.length;i++){let diagonal=prev[0];prev[0]=i;for(let j=1;j<=b.length;j++){const old=prev[j];prev[j]=Math.min(prev[j]+1,prev[j-1]+1,diagonal+(a[i-1]===b[j-1]?0:1));diagonal=old}}return prev[b.length]}

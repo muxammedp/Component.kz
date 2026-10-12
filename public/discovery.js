@@ -1,8 +1,8 @@
-import {filterProducts,effectiveQuery,suggestQueries,specFields,parsePrice,normalizeSearch,refineCategory} from './catalog-search.js';
+import {createSearchContext,filterProducts,effectiveQuery,suggestQueries,specFields,parsePrice,normalizeSearch,refineCategory} from './catalog-search.js';
 export function createDiscovery(ctx){
   const {state,esc,icon,money,market,card,categories,breadcrumb,demoNote,go}=ctx;
-  let view=null,priceDraft=null,brandQuery='',brandCategory='';
-  const list=(ignore='')=>filterProducts(state.products,ignore==='category'?{...state.filter,spec:{}}:state.filter,state.city,ignore);
+  let view=null,priceDraft=null,brandQuery='',brandCategory='',searchContext;
+  const list=(ignore='')=>filterProducts(state.products,ignore==='category'?{...state.filter,spec:{}}:state.filter,state.city,ignore,searchContext);
   const context=()=>[state.filter.category,state.filter.q].join('|');
   function remember(el){
     view={y:scrollY,panelY:document.querySelector('#filters')?.scrollTop||0,selector:el?.dataset.brand?`[data-brand="${CSS.escape(el.dataset.brand)}"]`:el?.dataset.spec?`[data-spec="${el.dataset.spec}"][value="${CSS.escape(el.value)}"]`:el?.dataset.filter?`[data-filter="${el.dataset.filter}"]${el.type==='radio'?`[value="${el.value}"]`:''}`:null};
@@ -24,7 +24,7 @@ export function createDiscovery(ctx){
   function facets(){
     const f=state.filter;
     if(brandCategory!==f.category){brandCategory=f.category;brandQuery=''}
-    const categoryOptions=[{id:'all',name:'Все категории'},...state.categories].map(c=>{const filter=c.id===f.category?f:refineCategory(state.products,f,c.id);return `<option value="${c.id}" ${f.category===c.id?'selected':''}>${esc(c.name)} (${filterProducts(state.products,filter,state.city).length})</option>`}).join('');
+    const categoryOptions=[{id:'all',name:'Все категории'},...state.categories].map(c=>{const filter=c.id===f.category?f:refineCategory(state.products,f,c.id);return `<option value="${c.id}" ${f.category===c.id?'selected':''}>${esc(c.name)} (${filterProducts(state.products,filter,state.city,'',searchContext).length})</option>`}).join('');
     const condition=list('condition'),brandPool=list('brand');
     const brands=[...new Set([...state.products.filter(p=>f.category==='all'||p.category===f.category).map(p=>p.brand),...f.brand])].sort((a,b)=>a.localeCompare(b,'ru'));
     const count=(items,predicate)=>items.filter(predicate).length;
@@ -38,7 +38,8 @@ export function createDiscovery(ctx){
     return `<div class="empty search-empty">${icon('search')}<h3>По этим условиям ничего не найдено</h3><p>Попробуй уточнить модель или снять одно из ограничений.</p>${suggestions.length?`<div class="search-recovery"><strong>Возможно, ты искал:</strong>${suggestions.map(q=>`<button class="btn soft compact" data-action="search-suggestion" data-value="${esc(q)}">${esc(q)}</button>`).join('')}</div>`:''}${relax.length?`<div class="search-recovery">${relax.map(r=>`<button class="btn soft compact" data-action="relax-filter" data-key="${r.key}">${esc(r.label)} · ${r.count}</button>`).join('')}</div>`:''}<div class="search-recovery">${f.q?'<button class="btn" data-action="search-everywhere">Искать запрос во всём каталоге</button>':''}<button class="btn primary" data-action="reset-filters">Сбросить фильтры</button></div></div>`;
   }
   function page(){
-    const f=state.filter,items=list(),effective=effectiveQuery(state.products,f.q);
+    searchContext=createSearchContext(state.products);
+    const f=state.filter,items=list(),effective=effectiveQuery(state.products,f.q,searchContext);
     return `<div class="container page">${breadcrumb([['Каталог']])}<h1 class="page-heading">${f.category==='all'?'Каталог комплектующих':state.categories.find(c=>c.id===f.category)?.name||'Каталог'}</h1><p class="page-subtitle">Найди именно то, что нужно твоему ПК</p><div class="catalog-layout">${facets()}<section>${categories(false)}${f.q?`<div class="search-context"><span>Поиск: <strong>${esc(f.q)}</strong>${effective.corrected?`<small>Исправлена раскладка: ${esc(effective.query)}</small>`:''}</span><button class="reset" data-action="search-clear">Очистить запрос</button><button class="reset" data-action="search-everywhere">Во всём каталоге</button></div>`:''}${market.filterChips()}<div class="catalog-toolbar" id="catalog-results" tabindex="-1"><span role="status">Найдено объявлений: <strong>${items.length}</strong></span><button class="btn compact mobile-filter" data-action="filters-toggle" aria-expanded="${!!state.filtersOpen}" aria-controls="filters">${icon('filter')} Фильтры</button><select class="select" data-filter="sort" aria-label="Сортировка">${[['popular',f.q?'По релевантности':'Сначала реальные'],['cheap','Сначала дешевле'],['expensive','Сначала дороже'],['recent','Сначала новые объявления']].map(([v,t])=>`<option value="${v}" ${f.sort===v?'selected':''}>${t}</option>`).join('')}</select></div>${items.length?`<div class="products-grid">${market.pageItems(items).map(card).join('')}</div>`:emptyResults()}${market.pagination(items)}${demoNote()}</section></div></div>`;
   }
   function clear(key){const f=state.filter;if(key==='city')state.city='';else if(key==='price'){f.min='';f.max='';priceDraft=null}else if(key==='brand')f.brand=[];else if(key.startsWith('spec.'))delete f.spec[key.slice(5)];else f[key]='all'}
