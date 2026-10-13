@@ -4,6 +4,8 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "test:browser:assemblies": "node tests/browser-assemblies.mjs",
+    "test:browser:recommendations": "node tests/browser-recommendations.mjs",
     "test:browser:messages": "node tests/browser-messages.mjs",
     "admin:user": "node --env-file-if-exists=.env scripts/admin-user.mjs",
     "test:browser:admin": "node tests/browser-admin.mjs",

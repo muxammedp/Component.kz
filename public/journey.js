@@ -41,7 +41,7 @@ export function createJourney({state,api,bootstrap,render,openModal,toast,money,
       state.orderDraft.expectedPrices=Object.fromEntries(items.map(p=>[p.id,p.price]));
       const form=document.querySelector('#checkout-form');
       form.insertAdjacentHTML('afterbegin',`<div class="checkout-summary">${changed?'<div class="warning">Цена изменилась. Проверь актуальную сумму перед отправкой.</div>':''}<h3>Состав заявки</h3>${items.map(p=>`<div><span>${esc(p.title)}</span><strong>${money(p.price)}</strong></div>`).join('')}<div class="checkout-total"><span>Итого</span><strong>${money(items.reduce((s,p)=>s+p.price,0))}</strong></div></div>`);
-      if(contact)for(const name of ['name','phone','city','note'])if(typeof contact[name]==='string')form.elements.namedItem(name).value=contact[name];
+      if(contact)for(const name of ['name','phone','city','note','address'])if(typeof contact[name]==='string')form.elements.namedItem(name)&&(form.elements.namedItem(name).value=contact[name]);
     }catch(e){toast(e.message)}finally{busy=false}
   }
   function takePending(){const pending=pendingCheckout;pendingCheckout=null;return pending}
@@ -58,7 +58,7 @@ export function createJourney({state,api,bootstrap,render,openModal,toast,money,
       openModal('Сбросить черновик?','Несохранённый текст и выбранное фото будут удалены из формы. Опубликованное объявление останется прежним.',`<button class="btn primary wide" data-action="draft-confirm" data-form="${form.id}" data-id="${form.dataset.id||''}">Сбросить</button>`);return true;
     }
     if(action==='draft-confirm'){const current=document.getElementById(b.dataset.form);if(current&&String(current.dataset.id||'')===b.dataset.id){clearDraft(current);document.getElementById('modal').close();await render()}return true}
-    if(action==='checkout-refresh'){const contacts=Object.fromEntries(new FormData(form));await checkout(state.orderDraft.kind,[...state.orderDraft.ids],contacts);return true}
+    if(action==='checkout-refresh'){const contacts=Object.fromEntries(new FormData(form)),requestKey=state.orderDraft.requestKey;await checkout(state.orderDraft.kind,[...state.orderDraft.ids],contacts);if(requestKey)state.orderDraft.requestKey=requestKey;return true}
     if(action==='close-modal')cancelPending();
     return false;
   }

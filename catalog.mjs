@@ -100,8 +100,13 @@ export function evaluate(parts,askingPrice) {
  const value=total&&performance?Math.max(1,Math.min(10,Math.round((performance/price*42000)*10)/10)):null;
  return {total,askingPrice:price,performance,value,watts:unverified.length?null:watts,recommendedPower:unverified.length?null:recommendedPower,dataIncomplete:!!unverified.length,errors,warnings,missing,graphics:gpu?{type:'discrete',name:gpu.title}:integrated?{type:'integrated',name:cpu.spec.graphics}:null,compatible:errors.length===0,complete:missing.length===0,estimated,method:'Ориентировочный индекс 0–100 на основе демонстрационных коэффициентов CPU/GPU. Не бенчмарк и не оценка рыночной стоимости.',tasks:performance?{games:performance,work:Math.min(100,Math.round(cpu.score*.85+Math.min(ram?.spec.size||0,32)*.45)),render:Math.round(cpu.score*.55+graphicsScore*.45)}:null};
 }
-export function recommend(products,budget,condition,task='games') {
- const candidates=products.filter(p=>p.evaluationReady!==false&&(p.demo||p.spec.referenceId)&&(condition==='mixed'||p.condition===condition)&&requiredParts.includes(p.category));
+export function recommend(products,budget,condition,task='games',preferences={}) {
+ const {cpuMaker='any',gpuMaker='any',peripherals=false}=preferences;
+ const eligible=products.filter(p=>p.evaluationReady!==false&&(p.demo||p.spec.referenceId)&&(condition==='mixed'||p.condition===condition));
+ const extras=peripherals?['monitor','peripheral'].map(kind=>eligible.filter(p=>p.category===kind&&(kind!=='peripheral'||/клавиатура.*мышь/i.test(p.spec.type||''))).sort((a,b)=>a.price-b.price)[0]):[];
+ if(extras.some(p=>!p))return preferences.pool?[]:null;
+ const maker=p=>p.model?.maker||classifyModel(p).maker;
+ const candidates=eligible.filter(p=>requiredParts.includes(p.category)&&(p.category!=='cpu'||cpuMaker==='any'||maker(p)===cpuMaker)&&(p.category!=='gpu'||gpuMaker==='any'||maker(p)===gpuMaker));
  const equivalent=new Map();
  for(const p of candidates){
   const specs=Object.fromEntries(Object.entries(p.spec).filter(([key])=>key!=='referenceId').sort(([a],[b])=>a.localeCompare(b)));
@@ -110,8 +115,9 @@ export function recommend(products,budget,condition,task='games') {
  }
  const available=[...equivalent.values()];
  let best=null;
- for(const cpu of available.filter(p=>p.category==='cpu')) for(const gpu of [...(hasIntegratedGraphics(cpu)?[null]:[]),...available.filter(p=>p.category==='gpu')]) for(const board of available.filter(p=>p.category==='board'&&p.spec.socket===cpu.spec.socket)) {
-  const selected=[cpu,...(gpu?[gpu]:[]),board];
+ const pool=new Map();
+ for(const cpu of available.filter(p=>p.category==='cpu')) for(const gpu of [...(hasIntegratedGraphics(cpu)&&['any','integrated'].includes(gpuMaker)?[null]:[]),...available.filter(p=>p.category==='gpu')]) for(const board of available.filter(p=>p.category==='board'&&p.spec.socket===cpu.spec.socket)) {
+  const selected=[cpu,...(gpu?[gpu]:[]),board,...extras];
   if(evaluate(selected).errors.length) continue;
   for(const kind of ['ram','ssd','psu','case','cooler']) {
    const options=available.filter(p=>p.category===kind).filter(p=>task!=='work'||(kind!=='ram'||p.spec.size>=16)&&(kind!=='ssd'||p.spec.size>=240)).filter(p=>evaluate([...selected,p]).errors.length===0).sort((a,b)=>a.price-b.price);
@@ -120,8 +126,29 @@ export function recommend(products,budget,condition,task='games') {
   const result=evaluate(selected);
   if(!result.complete||!result.compatible||result.total>budget) continue;
   const utility=task==='work'?Math.min(result.tasks.work,55):result.tasks[task==='render'?'render':'games'];
+  if(preferences.pool){
+   const key=JSON.stringify(selected.filter(p=>['cpu','gpu','ram','ssd'].includes(p.category)).map(p=>[p.category,p.score,p.spec]));
+   if(!pool.has(key)||result.total<pool.get(key).evaluation.total)pool.set(key,{parts:selected,evaluation:result,utility});
+  }
   if(!best||utility>best.utility||(utility===best.utility&&result.total<best.evaluation.total)) best={parts:selected,evaluation:result,utility};
  }
  if(best&&task==='work') best.reason=best.evaluation.graphics.type==='integrated'?'Для документов, браузера и учёбы достаточно встроенной графики. Выбрана недорогая конфигурация с 16 ГБ памяти или больше; весь бюджет тратить необязательно.':'В подходящей конфигурации нет встроенной графики, поэтому добавлена отдельная видеокарта. Для офисных задач выбираем достаточную мощность по меньшей цене.';
- return best;
+ return preferences.pool?[...pool.values()]:best;
+}
+
+export function recommendVariants(products,budget,task='games',preferences={}) {
+ let pool=recommend(products,budget,'new',task,{...preferences,pool:true});
+ if(!pool.length)return null;
+ // An office alternative should not spend the spare budget on a gaming GPU.
+ if(task==='work'&&(preferences.gpuMaker||'any')==='any'&&pool.some(r=>r.evaluation.graphics.type==='integrated'&&r.utility>=55))pool=pool.filter(r=>r.evaluation.graphics.type==='integrated');
+ pool.sort((a,b)=>b.utility-a.utility||a.evaluation.total-b.evaluation.total);
+ const first=pool[0],variants=[];
+ const add=(result,label)=>{if(result&&!variants.includes(result)){result.label=label;result.id=result.parts.map(p=>p.id).sort((a,b)=>a-b).join('-');variants.push(result)}};
+ add(first,task==='work'?'Для повседневной работы':'Максимум мощности');
+ const suitable=pool.filter(r=>r.utility>=Math.min(first.utility,task==='work'?55:first.utility*.65));
+ add([...suitable].sort((a,b)=>a.evaluation.total-b.evaluation.total||b.utility-a.utility)[0],'Экономнее');
+ add([...suitable].filter(r=>!variants.includes(r)).sort((a,b)=>(b.utility/b.evaluation.total)-(a.utility/a.evaluation.total)||a.evaluation.total-b.evaluation.total)[0],'Баланс цены и мощности');
+ for(const r of pool){if(variants.length>=3)break;add(r,'Альтернативная конфигурация')}
+ for(const r of variants)if(task==='work')r.reason=r.evaluation.graphics.type==='integrated'?'Встроенной графики достаточно для повседневных офисных задач. Бюджет — верхний предел: тратить его целиком не обязательно.':'Отдельная видеокарта добавлена с учётом выбранного производителя или отсутствия подходящей встроенной графики.';
+ return {...variants[0],variants,budget,preferences:{cpuMaker:preferences.cpuMaker||'any',gpuMaker:preferences.gpuMaker||'any',peripherals:!!preferences.peripherals},notice:variants.length<3?`По этим условиям найдено ${variants.length} различных конфигураций. Можно увеличить бюджет или убрать ограничения по производителям.`:null};
 }

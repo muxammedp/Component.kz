@@ -52,7 +52,7 @@ test('admin permissions, reversible moderation and service workflows',async t=>{
  });
  await t.test('assembly transitions are visible to buyer and require shipping details',async()=>{
   const rec=(await request(buyer,'/recommend','POST',{budget:450000,condition:'new',task:'work'})).data;
-  const created=await request(buyer,'/orders','POST',{kind:'assembly',ids:rec.parts.map(p=>p.id),name:'Buyer',phone:'+77001234567',city:'Астана'});assert.equal(created.status,201);const id=created.data.id;
+  const created=await request(buyer,'/orders','POST',{kind:'assembly',address:'улица Тестовая, дом 10, квартира 5',ids:rec.parts.map(p=>p.id),name:'Buyer',phone:'+77001234567',city:'Астана'});assert.equal(created.status,201);const id=created.data.id;
   const patch=(status,version,expectedStatus,extra={})=>request(admin,'/admin/assemblies/'+id,'PATCH',{status,version,expectedStatus,reason:'Проверка сборки',...extra});
   assert.equal((await patch('Отправлена',0,'Новая заявка')).status,409);
   assert.equal((await patch('В работе',0,'Новая заявка')).status,200);

@@ -90,7 +90,7 @@ test('listing editor and multi-seller request lifecycle',async t=>{
     }
   });
   await t.test('assembly requests do not reach individual component sellers',async()=>{
-    const r=await request(buyer,'/orders','POST',{...contact,kind:'assembly',ids:[2,3,4,another,24,26,29,31]});assert.equal(r.status,201);
+    const r=await request(buyer,'/orders','POST',{...contact,kind:'assembly',address:'улица Тестовая, дом 10, квартира 5',ids:[2,3,4,another,24,26,29,31]});assert.equal(r.status,201);
     assert.ok(!(await request(second,'/profile')).data.inquiries.some(o=>o.id===r.data.id));
     assert.equal((await request(seller,`/orders/${r.data.id}`)).status,404);
     assert.equal((await request(buyer,`/orders/${r.data.id}`,'PATCH',{status:'cancelled'})).status,200);

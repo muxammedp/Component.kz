@@ -25,5 +25,5 @@ test('real listings inherit imported models but unknown performance cannot be us
  const r=await api('/listings',listing);assert.equal(r.status,201);
  const p=(await api('/bootstrap')).data.products.find(p=>p.id===r.data.id);assert.equal(p.model.name,model.title);assert.equal(p.evaluationReady,false);assert.equal(p.price,120000);
  const result=await api('/evaluate',{ids:[r.data.id,18,4,1,24,26,29,31]});assert.equal(result.status,200);assert.equal(result.data.compatible,false);assert.equal(result.data.value,null);
- assert.equal((await api('/orders',{ids:[r.data.id,18,4,1,24,26,29,31],kind:'assembly',name:'QA',phone:'+77001234567',city:'Астана'})).status,400);
+ assert.equal((await api('/orders',{ids:[r.data.id,18,4,1,24,26,29,31],kind:'assembly',address:'улица Тестовая, дом 10, квартира 5',name:'QA',phone:'+77001234567',city:'Астана'})).status,400);
 });

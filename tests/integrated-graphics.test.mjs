@@ -75,7 +75,7 @@ test('HTTP recommendation, saved build and assembly order accept integrated grap
   assert.equal(r.status,200);assert.equal(r.data.parts.length,7);
   assert.equal((await api('/evaluate',{ids:officeIds})).data.graphics.type,'integrated');
   const saved=await api('/builds',{ids:officeIds,name:'Office with integrated graphics'});assert.equal(saved.status,201);
-  const order={ids:officeIds,kind:'assembly',name:'Office Tester',phone:'+77001234567',city:'Астана'};
+  const order={ids:officeIds,kind:'assembly',address:'улица Тестовая, дом 10, квартира 5',name:'Office Tester',phone:'+77001234567',city:'Астана'};
   const created=await api('/orders',order);assert.equal(created.status,201);assert.equal(created.data.total,evaluate(parts(officeIds)).total);
   assert.equal((await api('/orders',{...order,ids:[2,...officeIds.slice(1)]})).status,400);
   const p=(await api('/profile')).data;assert.equal(p.orders.length,1);assert.equal(p.builds.length,1);

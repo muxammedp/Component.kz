@@ -1,3 +1,4 @@
+import {isStoreOperator} from './store-orders.mjs';
 export const assemblyStates={'Новая заявка':['В работе','Отклонена'],'В работе':['Готова к отправке','Отклонена'],'Готова к отправке':['Отправлена','В работе'],'Отправлена':['Завершена'],'Завершена':[],'Отклонена':[],'Отменена покупателем':[]};
 export function initAdmin(db){
  db.exec(`CREATE TABLE IF NOT EXISTS admins(user_id INTEGER PRIMARY KEY REFERENCES users(id));
@@ -5,6 +6,9 @@ export function initAdmin(db){
  const add=(table,name,type)=>{if(!db.prepare(`PRAGMA table_info(${table})`).all().some(c=>c.name===name))db.exec(`ALTER TABLE ${table} ADD COLUMN ${name} ${type}`)};
  add('products','moderation',"TEXT NOT NULL DEFAULT 'visible'");add('products','moderation_reason',"TEXT NOT NULL DEFAULT ''");add('products','admin_version','INTEGER NOT NULL DEFAULT 0');
  for(const table of ['orders','model_requests','users'])add(table,'admin_version','INTEGER NOT NULL DEFAULT 0');
+ add('orders','address',"TEXT NOT NULL DEFAULT ''");add('orders','operator_id','INTEGER REFERENCES users(id)');
+ add('orders','request_key','TEXT');add('orders','request_hash','TEXT');
+ db.exec("CREATE UNIQUE INDEX IF NOT EXISTS assembly_request_key ON orders(user_id,request_key) WHERE kind='assembly' AND request_key IS NOT NULL");
  add('orders','operator_note',"TEXT NOT NULL DEFAULT ''");add('orders','shipping_carrier',"TEXT NOT NULL DEFAULT ''");add('orders','shipping_tracking',"TEXT NOT NULL DEFAULT ''");
  add('model_requests','review_note',"TEXT NOT NULL DEFAULT ''");add('model_requests','resolved_model_id','INTEGER');
 }
@@ -14,9 +18,11 @@ export function createAdmin(db,{fail,txt,int,body,json}){
  const count=(sql,...params)=>db.prepare(sql).get(...params).n;
  const audit=(user,entity,id,action,reason)=>db.prepare('INSERT INTO admin_audit(actor_id,entity,entity_id,action,reason) VALUES(?,?,?,?,?)').run(user.id,entity,id,action,reason);
  return async(req,res,url,user)=>{
-  if(!url.pathname.startsWith('/api/admin/'))return false;
-  if(!user)fail(401,'Войдите в аккаунт администратора.');if(!isAdmin(db,user))fail(403,'Этот раздел доступен только администратору.');
-  const route=url.pathname.slice('/api/admin/'.length),q=url.searchParams;
+  const operatorRoute=/^\/api\/operator\/assemblies(?:\/\d+)?$/.test(url.pathname);
+  if(!operatorRoute&&!url.pathname.startsWith('/api/admin/'))return false;
+  const permitted=()=>isAdmin(db,user)||(operatorRoute&&isStoreOperator(db,user));
+  if(!user)fail(401,'Войдите в аккаунт.');if(!permitted())fail(403,'Недостаточно прав для этого раздела.');
+  const route=url.pathname.slice(operatorRoute?'/api/operator/'.length:'/api/admin/'.length),q=url.searchParams;
   if(req.method==='GET'&&route==='overview'){
    json(res,{users:count('SELECT count(*) n FROM users'),realListings:count("SELECT count(*) n FROM products WHERE demo=0"),demoListings:count('SELECT count(*) n FROM products WHERE demo=1'),hiddenListings:count("SELECT count(*) n FROM products WHERE moderation='hidden'"),pendingAssemblies:count("SELECT count(*) n FROM orders WHERE kind='assembly' AND status='Новая заявка'"),activeAssemblies:count("SELECT count(*) n FROM orders WHERE kind='assembly' AND status IN ('В работе','Готова к отправке','Отправлена')"),pendingModels:count("SELECT count(*) n FROM model_requests WHERE status IN ('pending','reviewing')"),models:count('SELECT count(*) n FROM hardware_models'),pendingStore:count("SELECT count(*) n FROM store_requests WHERE status='pending'"),activeStore:count("SELECT count(*) n FROM store_requests WHERE status IN ('quoted','paid','purchased','shipped')"),recent:db.prepare('SELECT a.*,u.name actor FROM admin_audit a JOIN users u ON u.id=a.actor_id ORDER BY a.id DESC LIMIT 8').all()});return true;
   }
@@ -30,9 +36,9 @@ export function createAdmin(db,{fail,txt,int,body,json}){
     if(source){if(!['real','demo'].includes(source))fail(400,'Неверный источник.');filter('p.demo=?',source==='demo'?1:0)}
     if(search)filter("(instr(admin_lower(p.title),admin_lower(?))>0 OR CAST(p.id AS TEXT)=? OR instr(admin_lower(coalesce(u.email,'')),admin_lower(?))>0)",search),params.push(search,search);
    }else if(route==='assemblies'){
-    from='orders p JOIN users u ON u.id=p.user_id';columns='p.*,u.email';where.push("p.kind='assembly'");
+    from='orders p JOIN users u ON u.id=p.user_id LEFT JOIN users handler ON handler.id=p.operator_id';columns='p.*,u.email,handler.name operator_name';where.push("p.kind='assembly'");
     if(status){if(!Object.hasOwn(assemblyStates,status))fail(400,'Неверный статус.');filter('p.status=?',status)}
-    if(search)filter('(instr(admin_lower(p.name),admin_lower(?))>0 OR CAST(p.id AS TEXT)=? OR instr(p.phone,?)>0)',search),params.push(search,search);
+    if(search)filter('(instr(admin_lower(p.name),admin_lower(?))>0 OR CAST(p.id AS TEXT)=? OR instr(p.phone,?)>0 OR instr(admin_lower(u.email),admin_lower(?))>0)',search),params.push(search,search,search);
    }else if(route==='models'){
     from='model_requests p JOIN users u ON u.id=p.user_id';columns='p.*,u.name requester';
     if(status){if(!['pending','reviewing','resolved','rejected'].includes(status))fail(400,'Неверный статус.');filter('p.status=?',status)}
@@ -52,7 +58,7 @@ export function createAdmin(db,{fail,txt,int,body,json}){
   const table={listings:'products',assemblies:'orders',models:'model_requests',users:'users'}[kind];
   db.exec('BEGIN IMMEDIATE');
   try{
-   if(!isAdmin(db,user))fail(403,'Права администратора были отозваны.');
+   if(!permitted())fail(403,'Права на обработку заявки были отозваны.');
    const row=db.prepare(`SELECT * FROM ${table} WHERE id=?`).get(id);if(!row||kind==='assemblies'&&row.kind!=='assembly')fail(404,'Запись не найдена.');
    if(b.version!==row.admin_version)fail(409,'Запись изменилась. Обновите страницу и повторите действие.');
    const reason=txt(b.reason,3,1000,'Комментарий');
@@ -61,9 +67,9 @@ export function createAdmin(db,{fail,txt,int,body,json}){
     db.prepare('UPDATE products SET moderation=?,moderation_reason=?,admin_version=admin_version+1 WHERE id=?').run(b.status,reason,id);
    }else if(kind==='assemblies'){
     if(b.expectedStatus!==row.status||!assemblyStates[row.status]?.includes(b.status))fail(409,'Этот переход недоступен. Обновите заявку.');
-    let carrier=row.shipping_carrier,tracking=row.shipping_tracking;
-    if(b.status==='Отправлена'){carrier=txt(b.carrier,2,80,'Служба доставки');tracking=txt(b.tracking,3,120,'Трек-номер')}
-    db.prepare('UPDATE orders SET status=?,operator_note=?,shipping_carrier=?,shipping_tracking=?,admin_version=admin_version+1 WHERE id=?').run(b.status,reason,carrier,tracking,id);
+    let carrier=row.shipping_carrier,tracking=row.shipping_tracking,address=row.address;
+    if(b.status==='Отправлена'){carrier=txt(b.carrier,2,80,'Служба доставки');tracking=txt(b.tracking,3,120,'Трек-номер');address=txt(b.address||row.address,5,300,'Адрес доставки')}
+    db.prepare('UPDATE orders SET status=?,operator_note=?,shipping_carrier=?,shipping_tracking=?,address=?,operator_id=COALESCE(operator_id,?),admin_version=admin_version+1 WHERE id=?').run(b.status,reason,carrier,tracking,address,user.id,id);
    }else if(kind==='users'){
     if(typeof b.isAdmin!=='boolean'||typeof b.isOperator!=='boolean')fail(400,'Укажите роли пользователя.');
     const wasAdmin=isAdmin(db,row),wasOperator=!!db.prepare('SELECT 1 FROM store_operators WHERE user_id=?').get(id);
