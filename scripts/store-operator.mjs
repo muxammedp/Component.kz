@@ -1,0 +1,13 @@
+import {DatabaseSync} from 'node:sqlite';
+import {fileURLToPath} from 'node:url';
+import {initStoreOrders} from '../store-orders.mjs';
+const email=process.argv[2]?.trim().toLowerCase();
+if(!email)throw new Error('Usage: npm run store:operator -- existing-account@email.kz [--revoke]');
+const db=new DatabaseSync(process.env.DB_PATH||fileURLToPath(new URL('../data/component.sqlite',import.meta.url)));
+db.exec('PRAGMA foreign_keys=ON');initStoreOrders(db);
+const user=db.prepare('SELECT id,email FROM users WHERE email=?').get(email);
+if(!user)throw new Error('Account not found. Register on the site first. No role was granted.');
+const revoke=process.argv.includes('--revoke');
+if(revoke)db.prepare('DELETE FROM store_operators WHERE user_id=?').run(user.id);
+else db.prepare('INSERT OR IGNORE INTO store_operators(user_id) VALUES(?)').run(user.id);
+console.log(`${revoke?'Revoked':'Granted'} store operator: ${user.email} (user ${user.id})`);db.close();

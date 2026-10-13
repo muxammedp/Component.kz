@@ -43,5 +43,17 @@ try {
  await navigate('profile');await wait('document.querySelector("#my-builds").textContent.includes("Office integrated graphics")');assert(true,'integrated graphics build saved in profile');
  await navigate('builder');await call('Emulation.setDeviceMetricsOverride',{width:390,height:844,deviceScaleFactor:1,mobile:true});await wait('document.querySelectorAll(".selected-part").length===7&&!!document.querySelector(".integrated-graphics")');await shot('integrated-graphics-mobile');
  assert(await evaluate('document.documentElement.scrollWidth<=innerWidth+1'),'integrated graphics builder fits mobile');
+
+ const data=await evaluate('fetch("/api/bootstrap").then(r=>r.json())');
+ const shown=await evaluate('[...document.querySelectorAll(".part-product [data-action=build-add]")].map(b=>Number(b.dataset.id))');
+ assert(shown.length>0&&shown.every(id=>data.products.find(p=>p.id===id).condition==='new'),'builder only lists new parts');
+ assert(await evaluate('!document.querySelector("[data-action=builder-condition]")'),'used condition selector removed from builder');
+ await evaluate('const b=JSON.parse(localStorage.getItem("component-build"));b.cpu=1000002;localStorage.setItem("component-build",JSON.stringify(b))');
+ await call('Page.reload');await wait('document.querySelector("[data-action=assembly]")?.disabled');
+ assert(await evaluate('document.querySelector(".build-actions").textContent.includes("Замени их на новые")'),'legacy used build blocks ordering with explanation');
+ assert(await evaluate('JSON.parse(localStorage.getItem("component-build")).cpu===1000002'),'legacy selection is retained, not silently replaced');
+ await click('[data-action="builder-category"][data-value="cpu"]');await click('[data-action="build-add"][data-id="1000001"]');await wait('!document.querySelector("[data-action=assembly]").disabled');assert(true,'replacing used CPU with new restores order');
+ await navigate('product/1000002');assert(await evaluate('!document.querySelector("[data-action=build-add]")&&!!document.querySelector("[data-action=buy-now]")'),'used listing remains purchasable individually but cannot enter assembly');
+ await navigate('ai');assert(await evaluate('!document.querySelector("[data-action=ai-condition]")&&document.querySelector("#ai-form").textContent.includes("только из новых")'),'AI form explains new-only assembly');
  assert(errors.length===0,'no browser JavaScript exceptions');console.log(JSON.stringify({browserErrors:errors}));
 } finally {await call('Browser.close').catch(()=>{});ws.close();proc.kill();appServer.kill()}

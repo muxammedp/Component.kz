@@ -4,6 +4,8 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "store:operator": "node --env-file-if-exists=.env scripts/store-operator.mjs",
+    "test:browser:store": "node tests/browser-store.mjs",
     "start": "node --env-file-if-exists=.env server.mjs",
     "models:import": "node --env-file-if-exists=.env scripts/import-models.mjs",
     "models:sync": "node --env-file-if-exists=.env scripts/sync-models.mjs",

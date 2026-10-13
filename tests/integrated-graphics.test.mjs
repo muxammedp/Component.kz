@@ -79,5 +79,13 @@ test('HTTP recommendation, saved build and assembly order accept integrated grap
   const created=await api('/orders',order);assert.equal(created.status,201);assert.equal(created.data.total,evaluate(parts(officeIds)).total);
   assert.equal((await api('/orders',{...order,ids:[2,...officeIds.slice(1)]})).status,400);
   const p=(await api('/profile')).data;assert.equal(p.orders.length,1);assert.equal(p.builds.length,1);
+  for(const condition of ['used','mixed'])assert.equal((await api('/recommend',{budget:450000,condition,task:'work'})).status,400);
+  const defaultPick=await api('/recommend',{budget:450000,task:'work'});assert.equal(defaultPick.status,200);assert.ok(defaultPick.data.parts.every(p=>p.condition==='new'));
+  for(const usedId of [1000002,25,28]){
+   const used=parts([usedId])[0],ids=officeIds.map(id=>parts([id])[0].category===used.category?usedId:id);
+   const rejected=await api('/orders',{...order,ids});assert.equal(rejected.status,400);assert.match(rejected.data.error,/только из новых/);
+  }
+  assert.equal((await api('/profile')).data.orders.length,1);
+  assert.equal((await api('/orders',{...order,kind:'purchase',ids:[1000002]})).status,201);
  }finally{if(child.exitCode===null)await new Promise(resolve=>{child.once('exit',resolve);child.kill()})}
 });

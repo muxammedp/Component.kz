@@ -12,7 +12,7 @@ export function createModelGuide({state,esc,render,modelOptions}){
   }).join('')}</div></div>`;
  }
  const selection=()=>state.builderFilters[state.builderCategory]||{};
- function builder(){return controls(state.builderCategory,selection(),state.products,'builder')+'<p class="small muted">Здесь модели с объявлениями. <a href="#models">Весь справочник →</a></p>'}
+ function builder(){return controls(state.builderCategory,selection(),state.products.filter(p=>p.condition==='new'),'builder')+'<p class="small muted">Здесь модели с объявлениями. <a href="#models">Весь справочник →</a></p>'}
  function matches(p){return modelMatches(p,selection())}
  function formGuide(form,fromModel=false){
   const category=form.elements.category.value,field=form.elements.modelId;
@@ -51,7 +51,7 @@ export function createModelGuide({state,esc,render,modelOptions}){
  }
  function action(action,b){
   if(action!=='model-guide-reset')return false;
-  if(b.dataset.scope==='builder'){state.builderFilters[state.builderCategory]={};state.builderQ='';state.builderCondition='all';state.builderLimit=24;save();render()}
+  if(b.dataset.scope==='builder'){state.builderFilters[state.builderCategory]={};state.builderQ='';state.builderCondition='new';state.builderLimit=24;save();render()}
   else{const form=b.closest('form');form.elements.modelGuide.value='{}';form.elements.modelId.value='';formGuide(form);form.elements.modelGuide.dispatchEvent(new Event('change',{bubbles:true}))}
   return true;
  }

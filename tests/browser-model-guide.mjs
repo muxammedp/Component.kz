@@ -35,7 +35,7 @@ try {
  await choose('builder','maker','Intel');assert(await evaluate('document.querySelector("[data-model-step=family]").value===""&&document.querySelector("[data-model-step=generation]").disabled&&document.querySelector("[data-model-step=name]").value===""'),'changing manufacturer clears all dependent choices');
  await choose('builder','family','Core i5');await choose('builder','generation','12-е поколение');await choose('builder','name','Intel Core i5-12400');
  await call('Page.reload');await wait('document.querySelector("[data-model-step=name]")?.value==="Intel Core i5-12400"');assert(true,'builder hierarchy persists across reload');
- await click('[data-action="builder-condition"][data-value="used"]');await wait('!!document.querySelector(".model-guide-empty")');assert(true,'no used offers gives an explicit recoverable empty state');
+ await fill('#builder-search input','no-such-new-part');await submit('#builder-search');await wait('!!document.querySelector(".model-guide-empty")');assert(true,'no new offers gives an explicit recoverable empty state');
  await click('.model-guide-empty [data-action="model-guide-reset"]');await wait('document.querySelectorAll(".part-product").length>0');assert(await evaluate('document.querySelector("[data-model-step=maker]").value===""'),'empty state reset clears hierarchy and condition');
  for(const cat of ['gpu','board','ram','ssd','psu','case','cooler']){
   await click(`[data-action="builder-category"][data-value="${cat}"]`);

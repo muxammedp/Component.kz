@@ -21,7 +21,7 @@ test('listing editor and multi-seller request lifecycle',async t=>{
   for(const name of ['Seller One','Seller Two','Buyer Test','Unrelated User']){const r=await request('', '/auth/register','POST',{name,email:name.replaceAll(' ','')+'@example.test',password:'StrongPassword123!'});assert.equal(r.status,201);users.push(r.cookie)}
   const [seller,second,buyer,stranger]=users;
   const first=(await request(seller,'/listings','POST',{...fields,image})).data.id;
-  const another=(await request(second,'/listings','POST',{...fields,title:'Second seller GPU',price:140000})).data.id;
+  const another=(await request(second,'/listings','POST',{...fields,condition:'new',title:'Second seller GPU',price:140000})).data.id;
   let orderId;
   await t.test('listing editor rejects anonymous and unrelated accounts',async()=>{
     assert.equal((await request('',`/listings/${first}`)).status,401);
@@ -90,8 +90,8 @@ test('listing editor and multi-seller request lifecycle',async t=>{
     }
   });
   await t.test('assembly requests do not reach individual component sellers',async()=>{
-    const r=await request(buyer,'/orders','POST',{...contact,kind:'assembly',ids:[2,3,4,first,24,26,29,31]});assert.equal(r.status,201);
-    assert.ok(!(await request(seller,'/profile')).data.inquiries.some(o=>o.id===r.data.id));
+    const r=await request(buyer,'/orders','POST',{...contact,kind:'assembly',ids:[2,3,4,another,24,26,29,31]});assert.equal(r.status,201);
+    assert.ok(!(await request(second,'/profile')).data.inquiries.some(o=>o.id===r.data.id));
     assert.equal((await request(seller,`/orders/${r.data.id}`)).status,404);
     assert.equal((await request(buyer,`/orders/${r.data.id}`,'PATCH',{status:'cancelled'})).status,200);
   });

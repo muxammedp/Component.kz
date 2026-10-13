@@ -34,6 +34,7 @@ export function createJourney({state,api,bootstrap,render,openModal,toast,money,
       const items=ids.map(id=>state.products.find(p=>p.id===id));
       if(!items.length){toast('Сначала выбери товары.');return}
       if(items.some(p=>!p)){openModal('Предложение уже недоступно','Продавец снял один из товаров с продажи. Обнови состав заявки.',`<a class="btn primary wide" href="#${kind==='assembly'?'builder':'cart'}" data-action="close-modal">${kind==='assembly'?'Вернуться к сборке':'Проверить корзину'}</a>`);await render();return}
+      if(kind==='assembly'&&items.some(p=>p.condition!=='new')){openModal('Замени б/у комплектующие','ПК на заказ собирается только из новых деталей.',`<a class="btn primary" href="#builder" data-action="close-modal">Вернуться к сборке</a>`);await render();return}
       if(items.some(p=>p.owner_id===state.user.id)){toast('В составе есть твоё объявление. Убери его перед оформлением.');return}
       const changed=items.some(p=>old.has(p.id)&&old.get(p.id)!==p.price);
       checkoutForm(kind,ids);
