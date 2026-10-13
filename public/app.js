@@ -27,7 +27,7 @@ const market=createMarketplace({state,esc,money,icon,api,find,go,render,bootstra
 const journey=createJourney({state,api,bootstrap,render,openModal,toast,money,esc,icon,authModal,checkoutForm,modelOptions});
 const discovery=createDiscovery({state,esc,icon,money,market,card,categories,breadcrumb:(...args)=>breadcrumb(...args),demoNote:()=>demoNote(),go,toast});
 const catalogReturn=createCatalogReturn({esc,icon,go});
-const modelDirectory=createModelDirectory({state,esc,api,go,authModal,toast});
+const modelDirectory=createModelDirectory({state,esc,api,go,authModal,toast,compareButton:market.compareButton});
 const store=createStore({state,api,esc,money,icon,go,render,toast,openModal,loginGate});
 const modelGuide=createModelGuide({state,esc,render,modelOptions});
 const singular=id=>state.categories.find(c=>c.id===id)?.singular||id;

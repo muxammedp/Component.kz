@@ -1,33 +1,37 @@
+import {directorySpecLabels} from './model-directory.js';
 import {specFields} from './catalog-search.js';
 export function createMarketplace(ctx) {
   const {state,esc,money,icon,api,find,go,render,bootstrap,toast,openModal,productImage,categoryName,modelOptions,sell,loginGate}=ctx;
   let compared=[];
-  try {const saved=JSON.parse(localStorage.getItem('component-compare'));if(Array.isArray(saved))compared=[...new Set(saved.filter(Number.isInteger))].slice(0,4)} catch {}
+  try {const saved=JSON.parse(localStorage.getItem('component-compare'));if(Array.isArray(saved))compared=[...new Set(saved.map(v=>Number.isInteger(v)?'product:'+v:v).filter(v=>typeof v==='string'&&/^(product|model):[1-9][0-9]*$/.test(v)))].slice(0,4)} catch {}
   let differences=false;
   const own=p=>!!state.user&&p.owner_id===state.user.id;
   const saveCompare=()=>{try{localStorage.setItem('component-compare',JSON.stringify(compared))}catch{}};
-  function compareButton(p) {
-    const selected=compared.includes(p.id);
-    return `<button type="button" class="compare-button ${selected?'selected':''}" data-action="compare-toggle" data-id="${p.id}" aria-pressed="${selected}" aria-label="${selected?'Убрать из сравнения':'Сравнить'}: ${esc(p.title)}">${icon('swap')} ${selected?'В сравнении':'Сравнить'}</button>`;
+  const compareKey=(id,kind='product')=>`${kind}:${id}`;
+  const resolveCompare=key=>{const [kind,id]=key.split(':');const p=kind==='model'?state.models.find(m=>m.id===Number(id)):find(Number(id));if(!p)return null;const model=kind==='model'?p:state.models.find(m=>m.id===(p.modelId||p.spec.referenceId));return {...p,compareKind:kind,compareKey:key,compareSpec:model?.facts||p.spec}};
+  function compareButton(p,kind='product') {
+    const selected=compared.includes(compareKey(p.id,kind));
+    return `<button type="button" class="compare-button ${selected?'selected':''}" data-action="compare-toggle" data-kind="${kind}" data-id="${p.id}" aria-pressed="${selected}" aria-label="${selected?'Убрать из сравнения':'Сравнить'}: ${esc(p.title)}">${icon('swap')} ${selected?'В сравнении':'Сравнить'}</button>`;
   }
   function afterRender() {
-    compared=compared.filter(id=>find(id));saveCompare();
+    compared=compared.filter(resolveCompare);saveCompare();
     let tools=document.getElementById('marketplace-tools');
     if(!tools){tools=document.createElement('div');tools.id='marketplace-tools';document.body.append(tools)}
     const page=location.hash.slice(1).split('?')[0]||'home';
-    const showTray=compared.length>0&&(['home','catalog','favorites','cart'].includes(page)||page.startsWith('product/'));
-    tools.innerHTML=`${showTray?`<aside class="compare-tray" aria-label="Выбрано для сравнения"><div><strong>Сравнение · ${compared.length} из 4</strong><small>${esc(categoryName(find(compared[0])?.category))}</small></div><a class="btn primary compact" href="#compare">Сравнить ${icon('arrow')}</a><button class="icon-btn" data-action="compare-clear" aria-label="Очистить сравнение">${icon('close')}</button></aside>`:''}<nav class="mobile-bottom" aria-label="Навигация на телефоне">${[['home','box','Главная'],['catalog','grid','Каталог'],['builder','tool','Собрать ПК'],['cart','cart','Корзина'],['profile','user','Профиль']].map(([href,i,label])=>`<a href="#${href}" ${page===href?'aria-current="page"':''}>${icon(i)}<span>${label}</span></a>`).join('')}</nav>`;
+    const showTray=compared.length>0&&(['home','catalog','favorites','cart','models'].includes(page)||page.startsWith('product/'));
+    tools.innerHTML=`${showTray?`<aside class="compare-tray" aria-label="Выбрано для сравнения"><div><strong>Сравнение · ${compared.length} из 4</strong><small>${esc(categoryName(resolveCompare(compared[0])?.category))}</small></div><a class="btn primary compact" href="#compare">Сравнить ${icon('arrow')}</a><button class="icon-btn" data-action="compare-clear" aria-label="Очистить сравнение">${icon('close')}</button></aside>`:''}<nav class="mobile-bottom" aria-label="Навигация на телефоне">${[['home','box','Главная'],['catalog','grid','Каталог'],['builder','tool','Собрать ПК'],['cart','cart','Корзина'],['profile','user','Профиль']].map(([href,i,label])=>`<a href="#${href}" ${page===href?'aria-current="page"':''}>${icon(i)}<span>${label}</span></a>`).join('')}</nav>`;
     document.body.classList.toggle('has-compare-tray',showTray);
-    document.querySelectorAll('.compare-button').forEach(button=>{const p=find(Number(button.dataset.id));if(p)button.outerHTML=compareButton(p)});
+    document.querySelectorAll('.compare-button').forEach(button=>{const kind=button.dataset.kind||'product',p=resolveCompare(compareKey(Number(button.dataset.id),kind));if(p)button.outerHTML=compareButton(p,kind)});
   }
-  const value=v=>Array.isArray(v)?v.join(', '):String(v??'—');
+  const value=v=>v==null||v===''||Array.isArray(v)&&!v.length?'—':Array.isArray(v)?v.join(', '):typeof v==='boolean'?(v?'Да':'Нет'):String(v);
   function comparePage() {
-    const items=compared.map(find).filter(Boolean);
-    if(!items.length)return `<div class="container page"><h1 class="page-heading">Сравнение товаров</h1><div class="empty">${icon('swap')}<h3>Выбери, что сравнить</h3><p>Добавь до четырёх товаров одной категории кнопкой «Сравнить» в каталоге.</p><a class="btn primary" href="#catalog">Выбрать товары ${icon('arrow')}</a></div></div>`;
-    const keys=[...new Set(items.flatMap(p=>Object.keys(p.spec)))].filter(k=>!['referenceId','graphicsScore'].includes(k));
-    const rows=[['Цена',p=>money(p.price)],['Состояние',p=>p.condition==='used'?'Б/у':'Новое'],['Город',p=>p.city],['Бренд',p=>p.brand],...keys.map(k=>[ctx.getSpecLabels()[k]||k,p=>value(p.spec[k])])];
+    const items=compared.map(resolveCompare).filter(Boolean),hasModels=items.some(p=>p.compareKind==='model');
+    if(!items.length)return `<div class="container page"><h1 class="page-heading">Сравнение товаров и моделей</h1><div class="empty">${icon('swap')}<h3>Выбери, что сравнить</h3><p>Добавь до четырёх товаров или моделей одной категории кнопкой «Сравнить».</p><div class="flex"><a class="btn primary" href="#models">Из справочника ${icon('arrow')}</a><a class="btn soft" href="#catalog">Из каталога</a></div></div></div>`;
+    const keys=[...new Set(items.flatMap(p=>Object.keys(p.compareSpec)))].filter(k=>!['referenceId','graphicsScore'].includes(k));
+    const rows=[['Цена объявления',p=>p.compareKind==='model'?'—':money(p.price)],['Состояние',p=>p.compareKind==='model'?'—':p.condition==='used'?'Б/у':'Новое'],['Город',p=>p.compareKind==='model'?'—':value(p.city)],['Бренд',p=>value(p.brand)],...keys.map(k=>[(k==='tdp'&&items[0].category==='cooler'?'Отвод тепла до, Вт':directorySpecLabels[k])||ctx.getSpecLabels()[k]||k,p=>value(p.compareSpec[k])])];
     const visible=rows.filter(([,get])=>!differences||new Set(items.map(get)).size>1);
-    return `<div class="container page"><div class="breadcrumb"><a href="#catalog">Каталог</a>${icon('chevron')}<span>Сравнение</span></div><div class="section-head"><div><h1 class="page-heading">Сравни и выбери своё</h1><p class="page-subtitle">${esc(categoryName(items[0].category))} · ${items.length} из 4 товаров</p></div><a class="btn soft" href="#catalog?category=${items[0].category}">${icon('plus')} Добавить товар</a></div><div class="between comparison-controls"><label class="check"><input type="checkbox" id="compare-differences" ${differences?'checked':''}>Только различия</label><button class="reset" data-action="compare-clear">Очистить всё</button></div><div class="comparison-scroll" tabindex="0" role="region" aria-label="Таблица сравнения, прокручивается по горизонтали"><table class="comparison-table"><thead><tr><th scope="col">Характеристики<small>Прокрути таблицу, чтобы увидеть все товары</small></th>${items.map(p=>`<th scope="col"><div class="comparison-product"><button class="icon-btn" data-action="compare-toggle" data-id="${p.id}" aria-label="Убрать из сравнения">${icon('close')}</button><a class="comparison-image" href="#product/${p.id}">${productImage(p)}</a><a href="#product/${p.id}">${esc(p.title)}</a><small>${p.demo?'Демо-предложение':esc(p.seller)}</small><strong class="price">${money(p.price)}</strong><a class="btn soft compact" href="#product/${p.id}">Подробнее ${icon('arrow')}</a></div></th>`).join('')}</tr></thead><tbody>${visible.map(([label,get])=>`<tr><th scope="row">${esc(label)}</th>${items.map(p=>`<td>${esc(get(p))}</td>`).join('')}</tr>`).join('')||`<tr><td colspan="${items.length+1}">В выбранных характеристиках различий нет.</td></tr>`}</tbody></table></div><p class="ai-fineprint">Характеристики моделей из справочника. Состояние и комплектность б/у товара уточни у продавца. Прочерк означает, что данные не указаны.</p></div>`;
+    const link=p=>p.compareKind==='model'?`#models?category=${p.category}&q=${encodeURIComponent(p.title)}&model=${p.id}`:`#product/${p.id}`;
+    return `<div class="container page"><div class="breadcrumb"><a href="#models">Справочник</a>${icon('chevron')}<span>Сравнение</span></div><div class="section-head"><div><h1 class="page-heading">Сравни и выбери своё</h1><p class="page-subtitle">${esc(categoryName(items[0].category))} · ${items.length} из 4 позиций</p></div><div class="flex"><a class="btn soft" href="#models?category=${items[0].category}">${icon('plus')} Из справочника</a><a class="btn soft" href="#catalog?category=${items[0].category}">Из каталога</a></div></div><div class="between comparison-controls"><label class="check"><input type="checkbox" id="compare-differences" ${differences?'checked':''}>Только различия</label><button class="reset" data-action="compare-clear">Очистить всё</button></div><div class="comparison-scroll" tabindex="0" role="region" aria-label="Таблица сравнения, прокручивается по горизонтали"><table class="comparison-table"><thead><tr><th scope="col">Характеристики<small>Прокрути таблицу, чтобы увидеть все позиции</small></th>${items.map(p=>`<th scope="col"><div class="comparison-product"><button class="icon-btn" data-action="compare-toggle" data-kind="${p.compareKind}" data-id="${p.id}" aria-label="Убрать из сравнения: ${esc(p.title)}">${icon('close')}</button><a class="comparison-image" href="${esc(link(p))}">${p.compareKind==='model'?`<span class="comparison-model-icon">${icon(p.category==='cpu'?'cpu':p.category==='gpu'?'gpu':'box')}</span>`:productImage(p)}</a><a href="${esc(link(p))}">${esc(p.title)}</a><small>${p.compareKind==='model'?'Модель из справочника':p.demo?'Демо-предложение':esc(p.seller)}</small>${p.compareKind==='model'?'<span class="small muted">Цена зависит от объявления</span>':`<strong class="price">${money(p.price)}</strong>`}<a class="btn soft compact" href="${esc(link(p))}">${p.compareKind==='model'?'Характеристики и предложения':'Подробнее'} ${icon('arrow')}</a></div></th>`).join('')}</tr></thead><tbody>${visible.map(([label,get])=>`<tr><th scope="row">${esc(label)}</th>${items.map(p=>`<td>${esc(get(p))}</td>`).join('')}</tr>`).join('')||`<tr><td colspan="${items.length+1}">В выбранных характеристиках различий нет.</td></tr>`}</tbody></table></div><p class="ai-fineprint">${hasModels?'Модель из справочника не является объявлением: у неё нет цены, города и состояния. ':''}Используются доступные характеристики справочника; источники указаны на странице модели. Прочерк означает отсутствие данных. Состояние и комплектность товара уточни у продавца.</p></div>`;
   }
   function readFilters(query) {
     const params=new URLSearchParams(query||'');
@@ -117,9 +121,9 @@ export function createMarketplace(ctx) {
   async function action(action,b) {
     const id=Number(b.dataset.id);
     if(action==='compare-toggle') {
-      const p=find(id);if(!p)return true;
-      if(compared.includes(id))compared=compared.filter(n=>n!==id);
-      else {compared=compared.filter(n=>find(n));if(compared.length>=4){toast('Можно сравнить до четырёх товаров. Убери один из выбранных.');return true}if(compared.length&&find(compared[0]).category!==p.category){toast('Выбери товары одной категории. Текущее сравнение можно очистить.');return true}compared.push(id)}
+      const key=compareKey(id,b.dataset.kind||'product'),p=resolveCompare(key);if(!p)return true;
+      if(compared.includes(key))compared=compared.filter(n=>n!==key);
+      else {compared=compared.filter(resolveCompare);if(compared.length>=4){toast('Можно сравнить до четырёх позиций. Убери один из выбранных.');return true}if(compared.length&&resolveCompare(compared[0]).category!==p.category){toast('Выбери товары или модели одной категории. Текущее сравнение можно очистить.');return true}compared.push(key)}
       saveCompare();if(location.hash==='#compare')await render();else afterRender();return true;
     }
     if(action==='compare-clear'){compared=[];saveCompare();if(location.hash==='#compare')await render();else afterRender();return true}

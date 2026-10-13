@@ -4,6 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "test:browser:compare": "node tests/browser-compare.mjs",
     "store:operator": "node --env-file-if-exists=.env scripts/store-operator.mjs",
     "test:browser:store": "node tests/browser-store.mjs",
     "start": "node --env-file-if-exists=.env server.mjs",
