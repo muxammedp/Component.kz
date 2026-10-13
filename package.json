@@ -4,6 +4,9 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "test:browser:messages": "node tests/browser-messages.mjs",
+    "admin:user": "node --env-file-if-exists=.env scripts/admin-user.mjs",
+    "test:browser:admin": "node tests/browser-admin.mjs",
     "test:browser:compare": "node tests/browser-compare.mjs",
     "store:operator": "node --env-file-if-exists=.env scripts/store-operator.mjs",
     "test:browser:store": "node tests/browser-store.mjs",

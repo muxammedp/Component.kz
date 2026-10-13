@@ -1,3 +1,5 @@
+import {initMessages,createMessages,unreadMessages} from './messages.mjs';
+import {initAdmin,createAdmin,isAdmin} from './admin.mjs';
 import http from 'node:http';
 import {DatabaseSync} from 'node:sqlite';
 import {randomBytes,scryptSync,timingSafeEqual,createHash} from 'node:crypto';
@@ -36,13 +38,15 @@ const product=r=>{
  if(model&&model.category===p.category&&(p.spec.referenceId||p.title===model.title))return {...p,model:model.model,modelId:model.id,evaluationReady:model.evaluationReady,modelSources:model.sources};
  return p;
 };
-const products=()=>db.prepare("SELECT p.*,u.name AS seller FROM products p LEFT JOIN users u ON u.id=p.owner_id WHERE p.status='active' ORDER BY p.id").all().map(product);
+const products=()=>db.prepare("SELECT p.*,u.name AS seller FROM products p LEFT JOIN users u ON u.id=p.owner_id WHERE p.status='active' AND p.moderation='visible' ORDER BY p.id").all().map(product);
 initStoreOrders(db);
-const publicUser=u=>u?{id:u.id,name:u.name,email:u.email,city:u.city,isStoreOperator:isStoreOperator(db,u)}:null;
+initAdmin(db);
+initMessages(db);
+const publicUser=u=>u?{id:u.id,name:u.name,email:u.email,city:u.city,isStoreOperator:isStoreOperator(db,u),isAdmin:isAdmin(db,u)}:null;
 const fail=(status,message)=>{throw Object.assign(new Error(message),{status})};
 const txt=(v,min,max,label)=>{if(typeof v!=='string'||v.trim().length<min||v.trim().length>max) fail(400,`${label}: от ${min} до ${max} символов.`);return v.trim()};
 const int=(v,min,max,label)=>{const n=Number(v);if(!Number.isSafeInteger(n)||n<min||n>max) fail(400,`${label}: укажите число от ${min} до ${max}.`);return n};
-const pickParts=ids=>{if(!Array.isArray(ids)||!ids.length||ids.length>12) fail(400,'Выберите от 1 до 12 комплектующих.');const parts=ids.map(id=>product(db.prepare("SELECT * FROM products WHERE id=? AND status='active'").get(int(id,1,1e9,'Товар'))));if(parts.some(p=>!p)) fail(400,'Одно из объявлений больше недоступно.');if(new Set(parts.map(p=>p.category)).size!==parts.length) fail(400,'В сборке может быть только одна позиция каждой категории.');return parts};
+const pickParts=ids=>{if(!Array.isArray(ids)||!ids.length||ids.length>12) fail(400,'Выберите от 1 до 12 комплектующих.');const parts=ids.map(id=>product(db.prepare("SELECT * FROM products WHERE id=? AND status='active' AND moderation='visible'").get(int(id,1,1e9,'Товар'))));if(parts.some(p=>!p)) fail(400,'Одно из объявлений больше недоступно.');if(new Set(parts.map(p=>p.category)).size!==parts.length) fail(400,'В сборке может быть только одна позиция каждой категории.');return parts};
 const limits=new Map();
 function rate(key,max=40) {const now=Date.now();const entry=limits.get(key)||{until:now+60000,count:0};if(entry.until<now){entry.until=now+60000;entry.count=0;}entry.count++;limits.set(key,entry);if(entry.count>max) fail(429,'Слишком много запросов. Попробуйте через минуту.');if(limits.size>10000) for(const [k,v] of limits) if(v.until<now) limits.delete(k)}
 async function body(req) {let text='';for await(const chunk of req){text+=chunk;if(Buffer.byteLength(text)>2_500_000) fail(413,'Файл слишком большой. Максимум 1,5 МБ.');}try{return JSON.parse(text||'{}')}catch{fail(400,'Некорректный JSON.')}}
@@ -51,6 +55,7 @@ function session(res,userId){const raw=randomBytes(32).toString('hex');db.prepar
 function json(res,data,status=200){res.writeHead(status,{'Content-Type':'application/json; charset=utf-8','Cache-Control':'no-store'});res.end(JSON.stringify(data))}
 const orderLabels={pending:'Новая заявка',accepted:'Принята продавцом',declined:'Отклонена продавцом',completed:'Завершена',cancelled:'Отменена покупателем',partial:'Ответы продавцов различаются'};
 function orderView(row,sellerId){
+ if(row.kind==='assembly')return {...row,items:JSON.parse(row.items),statusCode:({'Новая заявка':'pending','В работе':'accepted','Готова к отправке':'ready','Отправлена':'shipped','Завершена':'completed','Отклонена':'declined','Отменена покупателем':'cancelled'})[row.status]||'pending',responses:[],canCancel:row.status==='Новая заявка'};
  const all=JSON.parse(row.items),items=sellerId?all.filter(p=>p.owner_id===sellerId):all;
  const responses=db.prepare('SELECT s.seller_id AS sellerId,s.status AS statusCode,u.name AS seller FROM order_sellers s JOIN users u ON u.id=s.seller_id WHERE s.order_id=?').all(row.id).filter(r=>!sellerId||r.sellerId===sellerId).map(r=>({...r,status:orderLabels[r.statusCode]}));
  const codes=responses.map(r=>r.statusCode);
@@ -72,14 +77,18 @@ function listingFields(b,previous){
  if(b.modelId&&(!model||model.category!==b.category))fail(400,'Модель должна соответствовать категории объявления.');
  return {title,description,city,category:b.category,price:int(b.price,100,100000000,'Цена'),condition:b.condition,brand:txt(b.brand||'Частное объявление',1,60,'Бренд'),spec:JSON.stringify(model?{...model.spec,referenceId:model.id}:{}),art:`cat${categories.find(c=>c.id===b.category).art}`,image,score:model?.score||0};
 }
+const messagesApi=createMessages(db,{fail,txt,int,body,json,rate});
+const adminApi=createAdmin(db,{fail,txt,int,body,json});
 const storeOrders=createStoreOrders(db,{fail,txt,int,body,json});
 async function api(req,res,url){
  const route=url.pathname,method=req.method;
- if(!['GET','HEAD'].includes(method)) {rate(req.socket.remoteAddress);if(req.headers.origin&&req.headers.origin!==`http://${req.headers.host}`&&req.headers.origin!==process.env.PUBLIC_ORIGIN) fail(403,'Запрос с другого сайта запрещён.');if(!req.headers['content-type']?.startsWith('application/json')) fail(415,'Ожидается application/json.');}
+ if(!['GET','HEAD'].includes(method)) {if(/^\/api\/conversations\/\d+\/read$/.test(route))rate('chat-read:'+req.socket.remoteAddress,240);else rate(req.socket.remoteAddress);if(req.headers.origin&&req.headers.origin!==`http://${req.headers.host}`&&req.headers.origin!==process.env.PUBLIC_ORIGIN) fail(403,'Запрос с другого сайта запрещён.');if(!req.headers['content-type']?.startsWith('application/json')) fail(415,'Ожидается application/json.');}
  const user=getUser(req), auth=()=>{if(!user) fail(401,'Войдите в аккаунт, чтобы продолжить.');return user};
+ if(await messagesApi(req,res,url,user))return;
+ if(await adminApi(req,res,url,user))return;
  if(await storeOrders(req,res,url,user))return;
  if(route==='/api/health') return json(res,{ok:true});
- if(route==='/api/bootstrap'&&method==='GET') return json(res,{categories,models:listModels(db),products:products(),user:publicUser(user),favorites:user?db.prepare('SELECT product_id FROM favorites WHERE user_id=?').all(user.id).map(r=>r.product_id):[],aiEnabled:!!(process.env.OPENAI_API_KEY&&process.env.OPENAI_MODEL)});
+ if(route==='/api/bootstrap'&&method==='GET') return json(res,{categories,models:listModels(db),products:products(),user:publicUser(user),messageUnread:unreadMessages(db,user),favorites:user?db.prepare('SELECT product_id FROM favorites WHERE user_id=?').all(user.id).map(r=>r.product_id):[],aiEnabled:!!(process.env.OPENAI_API_KEY&&process.env.OPENAI_MODEL)});
  if(route==='/api/models'&&method==='GET'){
   const q=(url.searchParams.get('q')||'').toLowerCase().slice(0,120),category=url.searchParams.get('category');
   const offset=int(url.searchParams.get('offset')||0,0,1000000,'Смещение'),limit=int(url.searchParams.get('limit')||50,1,100,'Лимит');
@@ -106,7 +115,7 @@ async function api(req,res,url){
   auth();return json(res,{user:publicUser(user),listings:db.prepare('SELECT * FROM products WHERE owner_id=? ORDER BY id DESC').all(user.id).map(product),builds:db.prepare('SELECT * FROM builds WHERE user_id=? ORDER BY id DESC').all(user.id).map(r=>({...r,parts:JSON.parse(r.parts)})),orders:db.prepare('SELECT * FROM orders WHERE user_id=? ORDER BY id DESC').all(user.id).map(r=>orderView(r)),inquiries:db.prepare("SELECT o.* FROM orders o JOIN order_sellers s ON s.order_id=o.id WHERE s.seller_id=? AND o.kind='purchase' ORDER BY o.id DESC").all(user.id).map(r=>orderView(r,user.id))});
  }
  if(route==='/api/profile'&&method==='PATCH'){auth();const b=await body(req);db.prepare('UPDATE users SET name=?,city=? WHERE id=?').run(txt(b.name,2,60,'Имя'),txt(b.city,2,60,'Город'),user.id);return json(res,{user:publicUser(db.prepare('SELECT * FROM users WHERE id=?').get(user.id))})}
- if(route==='/api/favorites'&&method==='POST'){auth();const b=await body(req);const id=int(b.id,1,1e9,'Товар');if(!db.prepare("SELECT id FROM products WHERE id=? AND status='active'").get(id)) fail(404,'Товар не найден.');if(b.active===true)db.prepare('INSERT OR IGNORE INTO favorites VALUES(?,?)').run(user.id,id);else db.prepare('DELETE FROM favorites WHERE user_id=? AND product_id=?').run(user.id,id);return json(res,{ok:true})}
+ if(route==='/api/favorites'&&method==='POST'){auth();const b=await body(req);const id=int(b.id,1,1e9,'Товар');if(!db.prepare("SELECT id FROM products WHERE id=? AND status='active' AND moderation='visible'").get(id)) fail(404,'Товар не найден.');if(b.active===true)db.prepare('INSERT OR IGNORE INTO favorites VALUES(?,?)').run(user.id,id);else db.prepare('DELETE FROM favorites WHERE user_id=? AND product_id=?').run(user.id,id);return json(res,{ok:true})}
  if(route==='/api/listings'&&method==='POST'){
   auth();const b=listingFields(await body(req));
   const r=db.prepare('INSERT INTO products(owner_id,title,category,price,condition,city,brand,description,spec,art,image,score) VALUES(?,?,?,?,?,?,?,?,?,?,?,?)').run(user.id,b.title,b.category,b.price,b.condition,b.city,b.brand,b.description,b.spec,b.art,b.image,b.score);return json(res,{id:Number(r.lastInsertRowid)},201);
@@ -143,7 +152,7 @@ async function api(req,res,url){
  if(route==='/api/builds'&&method==='POST'){auth();const b=await body(req);const parts=pickParts(b.ids);const r=db.prepare('INSERT INTO builds(user_id,name,parts) VALUES(?,?,?)').run(user.id,txt(b.name,2,80,'Название сборки'),JSON.stringify(parts.map(p=>p.id)));return json(res,{id:Number(r.lastInsertRowid)},201)}
  if(/^\/api\/builds\/\d+$/.test(route)&&method==='DELETE'){auth();db.prepare('DELETE FROM builds WHERE id=? AND user_id=?').run(Number(route.split('/').at(-1)),user.id);return json(res,{ok:true})}
  if(route==='/api/orders'&&method==='POST'){
-  auth();const b=await body(req);if(!['purchase','assembly'].includes(b.kind))fail(400,'Выберите тип заявки.');if(!Array.isArray(b.ids)||b.ids.length<1||b.ids.length>30||new Set(b.ids.map(Number)).size!==b.ids.length)fail(400,'Проверьте состав заявки.');const items=b.ids.map(id=>product(db.prepare("SELECT * FROM products WHERE id=? AND status='active'").get(int(id,1,1e9,'Товар'))));if(items.some(p=>!p))fail(409,'Одно из объявлений уже недоступно. Обновите каталог.');if(items.some(p=>p.owner_id===user.id))fail(400,'Нельзя отправить заявку на собственное объявление.');if(b.expectedPrices!==undefined){if(!b.expectedPrices||typeof b.expectedPrices!=='object'||Array.isArray(b.expectedPrices))fail(400,'Проверьте цены заявки.');for(const p of items){const expected=int(b.expectedPrices[p.id],100,1e8,'Ожидаемая цена');if(expected!==p.price)fail(409,'Цена одного из товаров изменилась. Обновите состав и цены перед отправкой.');}}if(b.kind==='assembly'){if(items.some(p=>p.condition!=='new'))fail(400,'ПК на заказ собирается только из новых комплектующих. Замените б/у детали.');const evaluation=evaluate(pickParts(b.ids));if(!evaluation.complete||!evaluation.compatible||items.some(p=>!p.demo&&!p.spec.referenceId))fail(400,'Для заказа сборки выберите полный совместимый набор с проверенными характеристиками.');}
+  auth();const b=await body(req);if(!['purchase','assembly'].includes(b.kind))fail(400,'Выберите тип заявки.');if(!Array.isArray(b.ids)||b.ids.length<1||b.ids.length>30||new Set(b.ids.map(Number)).size!==b.ids.length)fail(400,'Проверьте состав заявки.');const items=b.ids.map(id=>product(db.prepare("SELECT * FROM products WHERE id=? AND status='active' AND moderation='visible'").get(int(id,1,1e9,'Товар'))));if(items.some(p=>!p))fail(409,'Одно из объявлений уже недоступно. Обновите каталог.');if(items.some(p=>p.owner_id===user.id))fail(400,'Нельзя отправить заявку на собственное объявление.');if(b.expectedPrices!==undefined){if(!b.expectedPrices||typeof b.expectedPrices!=='object'||Array.isArray(b.expectedPrices))fail(400,'Проверьте цены заявки.');for(const p of items){const expected=int(b.expectedPrices[p.id],100,1e8,'Ожидаемая цена');if(expected!==p.price)fail(409,'Цена одного из товаров изменилась. Обновите состав и цены перед отправкой.');}}if(b.kind==='assembly'){if(items.some(p=>p.condition!=='new'))fail(400,'ПК на заказ собирается только из новых комплектующих. Замените б/у детали.');const evaluation=evaluate(pickParts(b.ids));if(!evaluation.complete||!evaluation.compatible||items.some(p=>!p.demo&&!p.spec.referenceId))fail(400,'Для заказа сборки выберите полный совместимый набор с проверенными характеристиками.');}
   const phone=txt(b.phone,10,25,'Телефон');if(!/^\+?[\d\s()\-]+$/.test(phone)||phone.replace(/\D/g,'').length<10)fail(400,'Введите корректный номер телефона.');const total=items.reduce((s,p)=>s+p.price,0);const r=db.prepare('INSERT INTO orders(user_id,kind,items,total,name,phone,city,note) VALUES(?,?,?,?,?,?,?,?)').run(user.id,b.kind,JSON.stringify(items.map(({id,title,price,owner_id,demo})=>({id,title,price,owner_id,demo}))),total,txt(b.name,2,60,'Имя'),phone,txt(b.city,2,60,'Город'),typeof b.note==='string'?b.note.trim().slice(0,1000):'');if(b.kind==='purchase')for(const owner of new Set(items.map(p=>p.owner_id).filter(Boolean)))registerSeller.run(Number(r.lastInsertRowid),owner);return json(res,{id:Number(r.lastInsertRowid),total,demo:items.some(p=>p.demo)},201);
  }
  fail(404,'Страница API не найдена.');
